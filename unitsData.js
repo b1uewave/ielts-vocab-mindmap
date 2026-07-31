@@ -2068,5 +2068,749 @@ window.unitsData = {
         ]
       }
     ]
+  },
+
+"unit-11": {
+    id: "unit-11",
+    number: 11,
+    titleEn: "Education & Learning",
+    titleCn: "教 育 與 學 習",
+    badgeText: "Unit 11 Education & Learning 教育學術圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 & 閱讀考點",
+      content: "Education 題型極常考！注意 distance learning (遠距教學)、curriculum (課程體系) 與 pedagogy (教學法) 的拼寫與主題替換！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <path d="M 30 70 L 100 30 L 170 70 L 100 110 Z" fill="#3b82f6" stroke="#1e3a8a" stroke-width="4"/>
+          <rect x="55" y="75" width="90" height="45" rx="6" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="3"/>
+          <path d="M 170 70 L 170 120" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="170" cy="125" r="6" fill="#f59e0b"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec11_1",
+        themeClass: "blue-theme",
+        titleCn: "學習模式 (Learning Methods)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "distance learning",
+            band: "6.5",
+            ipa: "[ˈdɪs.təns ˈlɝː.nɪŋ]",
+            cn: "遠距學習 / 線上課程",
+            example: "Distance learning offers flexibility for working professionals.",
+            tip: "寫作 Task 2 探討科技對教育影響時的高頻主題詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="24" rx="3" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2.5"/><path d="M 16 34 L 32 34 M 24 34 L 24 40" stroke="#1e3a8a" stroke-width="3"/></svg>`
+          },
+          {
+            word: "rote learning",
+            band: "6.5",
+            ipa: "[roʊt ˈlɝː.nɪŋ]",
+            cn: "死記硬背 / 填鴨式學習",
+            example: "Rote learning focuses on memorization rather than deep understanding.",
+            tip: "與 critical thinking (批判性思考) 形成鮮明對比。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="10" width="24" height="28" rx="2" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/><line x1="18" y1="18" x2="30" y2="18" stroke="#1e3a8a" stroke-width="2"/><line x1="18" y1="24" x2="30" y2="24" stroke="#1e3a8a" stroke-width="2"/></svg>`
+          },
+          {
+            word: "critical thinking",
+            band: "7.5+",
+            ipa: "[ˈkrɪt̬.ɪ.kəl ˈθɪŋ.kɪŋ]",
+            cn: "批判性思考",
+            example: "Higher education encourages students to cultivate critical thinking skills.",
+            tip: "雅思口說 Part 3 與寫作 Task 2 提分必備詞組！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/><path d="M 20 20 L 28 28 M 28 20 L 20 28" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "lifelong learning",
+            band: "6.5",
+            ipa: "[ˈlaɪf.lɑːŋ ˈlɝː.nɪŋ]",
+            cn: "終身學習",
+            example: "Rapid technological advances require continuous lifelong learning.",
+            tip: "探討現代社會競爭力時的精準同義詞組。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 24 C 12 16, 36 16, 36 24 C 36 32, 12 32, 12 24 Z" fill="none" stroke="#2563eb" stroke-width="3"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec11_2",
+        themeClass: "green-theme",
+        titleCn: "學術體系 (Academic System)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "curriculum",
+            band: "6.5",
+            ipa: "[kəˈrɪk.jə.ləm]",
+            cn: "學校課程體系",
+            example: "The national curriculum was revised to include environmental science.",
+            tip: "注意複數形式可為 curricula。寫作極高頻！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 12 L 38 12 L 38 36 L 10 36 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/><line x1="16" y1="20" x2="32" y2="20" stroke="#15803d" stroke-width="2"/></svg>`
+          },
+          {
+            word: "literacy rate",
+            band: "6.5",
+            ipa: "[ˈlɪt̬.ɚ.ə.si reɪt]",
+            cn: "識字率 / 文化普及率",
+            example: "Investments in primary education significantly boosted the literacy rate.",
+            tip: "寫作 Task 1 圖表分析常用統計詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 36 L 18 24 L 26 30 L 38 14" fill="none" stroke="#16a34a" stroke-width="3"/></svg>`
+          },
+          {
+            word: "vocational training",
+            band: "6.5",
+            ipa: "[voʊˈkeɪ.ʃən.əl ˈtreɪ.nɪŋ]",
+            cn: "職業技能培訓",
+            example: "Vocational training prepares students for specialized technical careers.",
+            tip: "與 academic education (學術教育) 形成對比。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="16" width="28" height="20" rx="3" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "academic achievement",
+            band: "6.5",
+            ipa: "[ˌæk.əˈdem.ɪk əˈtʃiːv.mənt]",
+            cn: "學術成就 / 學業表現",
+            example: "Parental involvement strongly correlates with high academic achievement.",
+            tip: "常用於寫作論述學生表現。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="20" r="10" fill="#fde68a" stroke="#b45309" stroke-width="2.5"/><path d="M 18 30 L 14 42 L 24 36 L 34 42 L 30 30" fill="#fde68a" stroke="#b45309" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec11_3",
+        themeClass: "purple-theme",
+        titleCn: "評量與測驗 (Assessment & Testing)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "continuous assessment",
+            band: "6.5",
+            ipa: "[kənˈtɪn.ju.əs əˈses.mənt]",
+            cn: "平時持續性評量",
+            example: "Final marks are based on continuous assessment throughout the semester.",
+            tip: "指不單靠一次期末考，而是綜合平時表現打分。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="4" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><path d="M 18 24 L 22 28 L 30 18" stroke="#7e22ce" stroke-width="3" fill="none"/></svg>`
+          },
+          {
+            word: "standardized test",
+            band: "6.5",
+            ipa: "[ˈstæn.dɚ.daɪzd test]",
+            cn: "標準化測驗",
+            example: "IELTS is a globally recognized standardized test for English proficiency.",
+            tip: "描述雅思、TOEFL 等全球統一考試。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="32" rx="2" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "diploma",
+            band: "5.0",
+            ipa: "[dɪˈploʊ.mə]",
+            cn: "文憑 / 畢業證書",
+            example: "She received her diploma in business administration after graduation.",
+            tip: "聽力 Section 1 學生諮詢常用詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="20" rx="3" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec11_4",
+        themeClass: "orange-theme",
+        titleCn: "教育公平 (Educational Equity)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "educational subsidy",
+            band: "7.5+",
+            ipa: "[ˌedʒ.əˈkeɪ.ʃən.əl ˈsʌb.sə.di]",
+            cn: "教育津貼 / 助學金",
+            example: "Government educational subsidies ensure low-income students attend college.",
+            tip: "探討政府財政支出與社會福祉的高階詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#ffedd5" stroke="#c2410c" stroke-width="2.5"/><text x="24" y="29" font-size="16" font-weight="bold" fill="#c2410c" text-anchor="middle">$</text></svg>`
+          },
+          {
+            word: "inclusive education",
+            band: "7.5+",
+            ipa: "[ɪnˈkluː.sɪv ˌedʒ.əˈkeɪ.ʃən]",
+            cn: "融合教育 / 包容性教育",
+            example: "Inclusive education accommodates students with diverse learning needs.",
+            tip: "現代教育政策寫作熱門主題。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="18" cy="24" r="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/><circle cx="30" cy="24" r="10" fill="#fde68a" stroke="#d97706" stroke-width="2"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-12": {
+    id: "unit-12",
+    number: 12,
+    titleEn: "Media & Communication",
+    titleCn: "媒 體 與 傳 播",
+    badgeText: "Unit 12 Media & Communication 大眾傳播圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 Task 2 熱門題型",
+      content: "大眾媒體與社群網路是寫作高頻常客！注意 censorship (審查)、propaganda (宣傳) 與 algorithm (演算法) 的搭配使用！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <path d="M 100 120 L 100 50 M 80 70 C 90 55, 110 55, 120 70 M 65 90 C 85 70, 115 70, 135 90" fill="none" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
+          <rect x="75" y="115" width="50" height="30" rx="4" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec12_1",
+        themeClass: "orange-theme",
+        titleCn: "新聞與廣播 (News & Broadcasting)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "journalism",
+            band: "6.5",
+            ipa: "[ˈdʒɝː.nə.lɪz.əm]",
+            cn: "新聞業 / 新聞工作",
+            example: "Ethical journalism prioritizes objective facts over sensational headlines.",
+            tip: "描繪新聞媒體道德與責任的關鍵詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="3" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/><line x1="16" y1="18" x2="32" y2="18" stroke="#ea580c" stroke-width="2"/></svg>`
+          },
+          {
+            word: "investigative report",
+            band: "7.5+",
+            ipa: "[ɪnˈves.tə.ɡə.t̬ɪv rɪˈpɔːrt]",
+            cn: "調查性報導",
+            example: "The investigative report uncovered financial misconduct within the firm.",
+            tip: "閱讀 Section 2 媒體專題高階片語。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="20" cy="20" r="10" fill="none" stroke="#ea580c" stroke-width="2.5"/><line x1="28" y1="28" x2="38" y2="38" stroke="#ea580c" stroke-width="3"/></svg>`
+          },
+          {
+            word: "broadcasting",
+            band: "6.5",
+            ipa: "[ˈbrɑːd.kæs.tɪŋ]",
+            cn: "電視廣播 / 播送",
+            example: "Public broadcasting networks rely on state subsidies and listener donations.",
+            tip: "聽力 Section 2 媒體機構介紹常考名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 36 L 24 12 L 36 36 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec12_2",
+        themeClass: "blue-theme",
+        titleCn: "數位與社群 (Digital & Social Media)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "viral content",
+            band: "6.5",
+            ipa: "[ˈvaɪ.rəl ˈkɑːn.tent]",
+            cn: "瘋傳的網路內容",
+            example: "Short video clips can quickly become viral content across global platforms.",
+            tip: "描述現代網路流行現象的通俗表達。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 14 34 Q 24 10 34 34 Z" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "cyberbullying",
+            band: "6.5",
+            ipa: "[ˈsaɪ.bɚˌbʊl.i.ɪŋ]",
+            cn: "網路霸凌",
+            example: "Schools implement anti-cyberbullying policies to protect students online.",
+            tip: "探討網路負面影響時寫作高頻考詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec12_3",
+        themeClass: "purple-theme",
+        titleCn: "媒體倫理 (Media Ethics & Bias)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "censorship",
+            band: "7.5+",
+            ipa: "[ˈsen.sɚ.ʃɪp]",
+            cn: "審查制度 / 內容過濾",
+            example: "Strict internet censorship restricts free exchange of political ideas.",
+            tip: "討論言論自由與媒體管制的高階核心詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="20" rx="3" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><line x1="10" y1="14" x2="38" y2="34" stroke="#dc2626" stroke-width="3"/></svg>`
+          },
+          {
+            word: "propaganda",
+            band: "7.5+",
+            ipa: "[ˌprɑː.pəˈɡæn.də]",
+            cn: "政治宣傳 / 偏見宣傳",
+            example: "Wartime media was heavily influenced by state-sponsored propaganda.",
+            tip: "閱讀 Section 3 政治與歷史題型極常見。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 16 L 36 10 L 36 34 L 12 28 Z" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "misinformation",
+            band: "7.5+",
+            ipa: "[ˌmɪs.ɪn.fɚˈmeɪ.ʃən]",
+            cn: "假新聞 / 錯誤資訊",
+            example: "Social media platforms struggle to combat the spread of misinformation.",
+            tip: "當代媒體議題最新極高頻詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 8 L 40 38 L 8 38 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/><text x="24" y="32" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">!</text></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec12_4",
+        themeClass: "green-theme",
+        titleCn: "廣告行銷 (Advertising & Marketing)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "target audience",
+            band: "6.5",
+            ipa: "[ˈtɑːr.ɡɪt ˈɑː.di.əns]",
+            cn: "目標受眾 / 目標客群",
+            example: "Marketing campaigns are tailored specifically to appeal to the target audience.",
+            tip: "商業與廣告寫作常用固定搭配。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="#15803d"/></svg>`
+          },
+          {
+            word: "sponsorship",
+            band: "6.5",
+            ipa: "[ˈspɑːn.sɚ.ʃɪp]",
+            cn: "贊助 / 贊助金",
+            example: "The international sports tournament secured lucrative corporate sponsorship.",
+            tip: "聽力 Section 2 賽事或展覽舉辦常考名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="16" width="28" height="20" rx="3" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-13": {
+    id: "unit-13",
+    number: 13,
+    titleEn: "Law, Crime & Society",
+    titleCn: "法 律 與 社 會",
+    badgeText: "Unit 13 Law, Crime & Society 法律治安圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 Task 2 犯罪題型",
+      content: "Crime & Punishment 是 Task 2 經典大題！注意 rehabilitation (改造性復建)、juvenile delinquency (青少年犯罪) 與 deterrence (威懾力) 的精準論述！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <line x1="100" y1="30" x2="100" y2="130" stroke="#1e293b" stroke-width="5"/>
+          <line x1="50" y1="50" x2="150" y2="50" stroke="#1e293b" stroke-width="4"/>
+          <path d="M 50 50 L 35 90 L 65 90 Z M 150 50 L 135 90 L 165 90 Z" fill="#94a3b8" stroke="#1e293b" stroke-width="2"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec13_1",
+        themeClass: "purple-theme",
+        titleCn: "法律體系 (Legal System)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "legislation",
+            band: "7.5+",
+            ipa: "[ˌledʒ.əˈsleɪ.ʃən]",
+            cn: "法律制定 / 立法",
+            example: "The parliament enacted strict environmental protection legislation.",
+            tip: "正式寫作 Task 2 替代 laws 的高階學術詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="32" rx="3" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><line x1="16" y1="16" x2="32" y2="16" stroke="#7e22ce" stroke-width="2"/></svg>`
+          },
+          {
+            word: "verdict",
+            band: "7.5+",
+            ipa: "[ˈvɝː.dɪkt]",
+            cn: "法庭判決 / 裁決",
+            example: "The jury reached a unanimous guilty verdict after long deliberation.",
+            tip: "閱讀 Section 2 法庭專題高階詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 34 L 32 14 L 38 20 L 18 40 Z" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "attorney",
+            band: "6.5",
+            ipa: "[əˈtɝː.ni]",
+            cn: "律師 / 訴訟代理人",
+            example: "The defendant consulted with his defense attorney before trial.",
+            tip: "美式常用（等同於英式的 barrister / solicitor）。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="16" width="24" height="24" rx="3" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec13_2",
+        themeClass: "orange-theme",
+        titleCn: "犯罪類型 (Crime Types)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "juvenile delinquency",
+            band: "7.5+",
+            ipa: "[ˈdʒuː.və.nəl dɪˈlɪŋ.kwən.si]",
+            cn: "青少年犯罪 / 少年違法",
+            example: "Community youth centers aim to reduce rates of juvenile delinquency.",
+            tip: "寫作 Task 2 青少年犯罪題型專用高端詞組！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "fraud",
+            band: "6.5",
+            ipa: "[frɑːd]",
+            cn: "詐欺 / 騙局",
+            example: "Online financial fraud has surged with rising e-commerce transactions.",
+            tip: "金融犯罪與網路安全常見名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="20" rx="3" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "white-collar crime",
+            band: "7.5+",
+            ipa: "[waɪt ˈkɑː.lɚ kraɪm]",
+            cn: "白領階級犯罪 (高智商經濟犯罪)",
+            example: "White-collar crime includes embezzlement, bribery, and insider trading.",
+            tip: "寫作與閱讀探討商業罪案高階片語。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 16 L 24 8 L 36 16 L 36 38 L 12 38 Z" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec13_3",
+        themeClass: "blue-theme",
+        titleCn: "司法懲處 (Justice & Punishment)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "rehabilitation",
+            band: "7.5+",
+            ipa: "[ˌriː.həˌbɪl.əˈteɪ.ʃən]",
+            cn: "罪犯感化改造 / 復建",
+            example: "Prisons should prioritize education and rehabilitation over mere punishment.",
+            tip: "寫作 Task 2 辯論「懲罰 vs 改造罪犯」時最高分的論點詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 14 24 A 10 10 0 0 1 34 24" fill="none" stroke="#2563eb" stroke-width="3"/></svg>`
+          },
+          {
+            word: "deterrence",
+            band: "7.5+",
+            ipa: "[dɪˈtɝː.əns]",
+            cn: "威嚇作用 / 遏止力",
+            example: "Stiffer penalties serve as a powerful deterrence against serious crime.",
+            tip: "探討法律嚴懲效果時的高階學術詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="14" y="14" width="20" height="20" rx="3" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "community service",
+            band: "5.0",
+            ipa: "[kəˈmjuː.nə.t̬i ˈsɝː.vɪs]",
+            cn: "社區服務 (非監禁刑罰)",
+            example: "Minor offenders are often sentenced to unpaid community service.",
+            tip: "雅思寫作常用輕罪替代刑罰名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 24 L 24 10 L 38 24 L 30 24 L 30 38 L 18 38 L 18 24 Z" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec13_4",
+        themeClass: "green-theme",
+        titleCn: "社會治安 (Public Safety & Surveillance)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "surveillance",
+            band: "7.5+",
+            ipa: "[sɚˈveɪ.ləns]",
+            cn: "監視 / 監控系統",
+            example: "CCTV surveillance cameras reduce street crime in metropolitan areas.",
+            tip: "科技與隱私寫作議題核心單字！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="20" r="8" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/><path d="M 10 36 C 10 28, 38 28, 38 36" fill="none" stroke="#15803d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "law enforcement",
+            band: "6.5",
+            ipa: "[lɑː ɪnˈfɔːrs.mənt]",
+            cn: "執法單位 / 警察機關",
+            example: "Law enforcement agencies cooperate globally to combat drug trafficking.",
+            tip: "描述警察與執法機關的正式表達。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 8 L 38 16 L 38 32 L 24 40 L 10 32 L 10 16 Z" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-14": {
+    id: "unit-14",
+    number: 14,
+    titleEn: "Culture, Art & History",
+    titleCn: "文 化 與 歷 史",
+    badgeText: "Unit 14 Culture, Art & History 文化藝術圖鑑",
+    stickyNote: {
+      title: "📌 雅思閱讀 Section 3 常客",
+      content: "考古學與文化遺產保護是閱讀高分段考題！注意 artifact (歷史文物)、multiculturalism (多元文化) 與 preservation (保存)！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <path d="M 20 50 L 100 20 L 180 50 Z" fill="#f59e0b" stroke="#78350f" stroke-width="4"/>
+          <rect x="35" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="75" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="115" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="155" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="25" y="120" width="150" height="15" rx="2" fill="#d97706" stroke="#78350f" stroke-width="3"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec14_1",
+        themeClass: "orange-theme",
+        titleCn: "歷史與遺跡 (History & Artifacts)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "archeology",
+            band: "7.5+",
+            ipa: "[ˌɑːr.kiˈɑː.lə.dʒi]",
+            cn: "考古學",
+            example: "Archeology uncovers ancient civilizations through excavated material remains.",
+            tip: "閱讀 Section 3 歷史文化專題極高頻名詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 36 L 24 12 L 36 36 Z" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "historical artifact",
+            band: "6.5",
+            ipa: "[hɪˈstɔːr.ɪ.kəl ˈɑːr.t̬ə.fækt]",
+            cn: "歷史文物 / 手工藝古物",
+            example: "The museum displays priceless historical artifacts from ancient Egypt.",
+            tip: "博物館與展覽主題常考專有名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="14" ry="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "heritage site",
+            band: "6.5",
+            ipa: "[ˈher.ɪ.t̬ɪdʒ saɪt]",
+            cn: "文化遺產遺址",
+            example: "UNESCO designates protected status to endangered heritage sites.",
+            tip: "常與 UNESCO, World Heritage 搭配。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="22" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec14_2",
+        themeClass: "purple-theme",
+        titleCn: "藝術與美學 (Fine Arts & Aesthetics)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "aesthetic",
+            band: "7.5+",
+            ipa: "[esˈθet.ɪk]",
+            cn: "美學的 / 藝術美感的",
+            example: "Modern architecture harmonizes structural utility with aesthetic value.",
+            tip: "藝術、建築與設計議題高階形容詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "masterpiece",
+            band: "6.5",
+            ipa: "[ˈmæs.tɚ.piːs]",
+            cn: "傑作 / 代表作",
+            example: "Leonardo da Vinci's Mona Lisa remains an iconic Renaissance masterpiece.",
+            tip: "描述頂尖藝術作品的標準詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="10" width="24" height="28" rx="2" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec14_3",
+        themeClass: "blue-theme",
+        titleCn: "文化認同 (Cultural Identity)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "multiculturalism",
+            band: "7.5+",
+            ipa: "[ˌmʌl.tiˈkʌl.tʃɚ.əl.ɪz.əm]",
+            cn: "多元文化主義",
+            example: "Global cities thrive on diversity fostered by active multiculturalism.",
+            tip: "寫作 Task 2 探討全球化與文化融合時的高分詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="18" cy="20" r="8" fill="#93c5fd"/><circle cx="30" cy="20" r="8" fill="#bfdbfe"/><circle cx="24" cy="30" r="8" fill="#60a5fa"/></svg>`
+          },
+          {
+            word: "indigenous",
+            band: "7.5+",
+            ipa: "[ɪnˈdɪdʒ.ə.nəs]",
+            cn: "土著的 / 本地原住民的",
+            example: "Preserving indigenous languages protects unique traditional ecological knowledge.",
+            tip: "閱讀 Section 2/3 人文地理專題高頻詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 10 L 34 38 L 14 38 Z" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec14_4",
+        themeClass: "green-theme",
+        titleCn: "文化保存 (Preservation & Folklore)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "restoration",
+            band: "7.5+",
+            ipa: "[ˌres.təˈreɪ.ʃən]",
+            cn: "古蹟修復 / 藝術品還原",
+            example: "Meticulous restoration saved the medieval cathedral's stained glass windows.",
+            tip: "古物文物保護主題常見名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="14" width="24" height="24" rx="4" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "folklore",
+            band: "6.5",
+            ipa: "[ˈfoʊk.lɔːr]",
+            cn: "民間傳說 / 民俗文化",
+            example: "Traditional folklore conveys ancestral wisdom and moral values.",
+            tip: "人文與傳統文化描繪名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 24 Q 24 12 36 24 Q 24 36 12 24 Z" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-15": {
+    id: "unit-15",
+    number: 15,
+    titleEn: "Transportation & Planning",
+    titleCn: "交 通 與 都 市 規 劃",
+    badgeText: "Unit 15 Transportation & Urban Planning 交通都市圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 & 閱讀高頻題",
+      content: "Urbanization (都市化) 與 traffic congestion (交通壅塞) 是寫作常見考題！注意 infrastructure (基礎設施)、commuter (通勤者) 與 congestion charging (擁堵費) 的表達！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <rect x="20" y="80" width="160" height="40" rx="8" fill="#3b82f6" stroke="#1e3a8a" stroke-width="4"/>
+          <rect x="35" y="90" width="30" height="20" rx="2" fill="#ffffff"/>
+          <rect x="85" y="90" width="30" height="20" rx="2" fill="#ffffff"/>
+          <rect x="135" y="90" width="30" height="20" rx="2" fill="#ffffff"/>
+          <line x1="10" y1="125" x2="190" y2="125" stroke="#1e293b" stroke-width="4"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec15_1",
+        themeClass: "blue-theme",
+        titleCn: "大眾運輸 (Public Transit)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "commuter",
+            band: "6.5",
+            ipa: "[kəˈmjuː.t̬ɚ]",
+            cn: "每日通勤者",
+            example: "Thousands of daily commuters rely on the suburban rail network.",
+            tip: "描述都市上下班人潮的高頻考詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="18" r="8" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2.5"/><path d="M 12 38 C 12 28, 36 28, 36 38" fill="none" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "high-speed rail",
+            band: "6.5",
+            ipa: "[haɪ spiːd reɪl]",
+            cn: "高速鐵路 (高鐵)",
+            example: "High-speed rail drastically cuts travel time between major regional hubs.",
+            tip: "現代交通升級寫作常考詞組。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="16" rx="4" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec15_2",
+        themeClass: "orange-theme",
+        titleCn: "交通壅塞 (Traffic Congestion)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "traffic congestion",
+            band: "6.5",
+            ipa: "[ˈtræf.ɪk kənˈdʒes.tʃən]",
+            cn: "交通車流壅塞",
+            example: "Promoting public transport relieves severe urban traffic congestion.",
+            tip: "寫作 Task 2 城市問題核心表達！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="14" y="10" width="20" height="28" rx="4" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/><circle cx="24" cy="17" r="3" fill="#dc2626"/><circle cx="24" cy="24" r="3" fill="#f59e0b"/><circle cx="24" cy="31" r="3" fill="#16a34a"/></svg>`
+          },
+          {
+            word: "congestion charging",
+            band: "7.5+",
+            ipa: "[kənˈdʒes.tʃən ˈtʃɑːr.dʒɪŋ]",
+            cn: "市區進城交通擁堵費",
+            example: "London introduced congestion charging to reduce central city car emissions.",
+            tip: "都市治理寫作 Task 2 高分對策詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/><text x="24" y="29" font-size="14" font-weight="bold" fill="#ea580c" text-anchor="middle">£</text></svg>`
+          },
+          {
+            word: "pedestrian zone",
+            band: "6.5",
+            ipa: "[pəˈdes.tri.ən zoʊn]",
+            cn: "行人徒步區",
+            example: "Transforming main streets into pedestrian zones boosts retail foot traffic.",
+            tip: "都市更新與環保規劃常用表達。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="14" r="5" fill="#ea580c"/><path d="M 18 24 L 30 24 M 24 24 L 24 38" stroke="#ea580c" stroke-width="3"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec15_3",
+        themeClass: "purple-theme",
+        titleCn: "都市基礎建設 (Urban Infrastructure)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "infrastructure",
+            band: "7.5+",
+            ipa: "[ˈɪn.frəˌstrʌk.tʃɚ]",
+            cn: "國家/都市基礎建設",
+            example: "Economic growth relies on heavy investment in transport infrastructure.",
+            tip: "雅思寫作與閱讀出現率極高的高階必背詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="18" rx="2" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><path d="M 14 20 L 24 8 L 34 20" stroke="#7e22ce" stroke-width="2.5" fill="none"/></svg>`
+          },
+          {
+            word: "metropolis",
+            band: "7.5+",
+            ipa: "[məˈtrɑː.pəl.ɪs]",
+            cn: "國際大都會 / 首府城市",
+            example: "Tokyo is a bustling metropolis combining ancient shrines with skyscrapers.",
+            tip: "寫作 Task 2 替代 big city 的高級詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="12" height="24" fill="#ddd6fe"/><rect x="22" y="8" width="18" height="30" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec15_4",
+        themeClass: "green-theme",
+        titleCn: "永續智慧城市 (Smart & Green Cities)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "urbanization",
+            band: "7.5+",
+            ipa: "[ˌɝː.bən.əˈzeɪ.ʃən]",
+            cn: "都市化進程",
+            example: "Rapid urbanization drives demand for sustainable housing and clean energy.",
+            tip: "社會學與地理閱讀專題核心詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="16" width="12" height="22" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/><rect x="24" y="10" width="14" height="28" fill="#86efac" stroke="#15803d" stroke-width="2"/></svg>`
+          },
+          {
+            word: "sustainable mobility",
+            band: "7.5+",
+            ipa: "[səˈsteɪ.nə.bəl moʊˈbɪl.ə.t̬i]",
+            cn: "永續綠色交通運輸",
+            example: "Electric buses and bicycle sharing schemes promote sustainable mobility.",
+            tip: "現代都市政策與減碳寫作最高分表達！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="16" cy="30" r="6" fill="none" stroke="#15803d" stroke-width="2.5"/><circle cx="32" cy="30" r="6" fill="none" stroke="#15803d" stroke-width="2.5"/><path d="M 16 30 L 24 18 L 32 30" stroke="#15803d" stroke-width="2.5" fill="none"/></svg>`
+          }
+        ]
+      }
+    ]
   }
 };

@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Global State
   let currentUnitId = 'unit-1';
   let currentBandFilter = 'all';
+  let currentQuadrantView = 'all'; // 'all' or specific quadrant id
   let speechRate = 1.0;
   let synth = window.speechSynthesis;
 
@@ -96,17 +97,30 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // 3. Render Quadrants Grid & Cards
-    quadrantsGrid.innerHTML = unit.quadrants.map(q => `
-      <section class="quadrant ${q.themeClass}" id="${q.id}">
-        <div class="quadrant-header-pill">
-          <span class="pill-text">${q.titleCn}</span>
-          <span class="count-tag">${q.words.length} 詞</span>
-        </div>
-        <div class="cards-wrapper grid-layout">
-          ${q.words.map(w => {
-            const bandVal = w.band || '6.5';
-            const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
-            return `
+    if (currentQuadrantView === 'all') {
+      quadrantsGrid.classList.remove('single-quadrant-mode');
+      // OVERVIEW MODE: Render ALL 4 Quadrant sections, each showing up to 9 featured cards + 10th More card
+      quadrantsGrid.innerHTML = unit.quadrants.map(q => {
+        let qWords = [...q.words];
+
+        // Prioritize matching score-band words if a band filter is selected
+        if (currentBandFilter !== 'all') {
+          qWords.sort((a, b) => {
+            const aMatch = (a.band === currentBandFilter);
+            const bMatch = (b.band === currentBandFilter);
+            if (aMatch && !bMatch) return -1;
+            if (!aMatch && bMatch) return 1;
+            return 0;
+          });
+        }
+
+        const top9Words = qWords.slice(0, 9);
+        const remainingCount = qWords.length - top9Words.length;
+
+        let cardsHtml = top9Words.map(w => {
+          const bandVal = w.band || '6.5';
+          const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
+          return `
             <div class="vocab-card" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
               <span class="band-badge ${bandClass}">${escapeHtml(bandVal)}</span>
               <div class="card-inner">
@@ -120,10 +134,97 @@ document.addEventListener('DOMContentLoaded', () => {
               </div>
             </div>
           `;
-          }).join('')}
-        </div>
-      </section>
-    `).join('');
+        }).join('');
+
+        if (remainingCount > 0) {
+          cardsHtml += `
+            <div class="more-action-card btn-expand-quadrant" data-quadrant-id="${q.id}" title="展開 ${escapeHtml(q.titleCn)} 完整分頁">
+              <div class="more-card-count">+${remainingCount}</div>
+              <div class="more-card-text">More <span class="more-card-arrow">➔</span></div>
+            </div>
+          `;
+        }
+
+        return `
+          <section class="quadrant ${q.themeClass}" id="${q.id}">
+            <div class="quadrant-header-pill">
+              <span class="pill-text">${q.titleCn}</span>
+              <span class="count-tag">${q.words.length} 詞</span>
+            </div>
+            <div class="cards-wrapper grid-layout">
+              ${cardsHtml}
+            </div>
+          </section>
+        `;
+      }).join('');
+
+      // Bind click event on all .btn-expand-quadrant cards
+      quadrantsGrid.querySelectorAll('.btn-expand-quadrant').forEach(card => {
+        card.addEventListener('click', () => {
+          const qId = card.getAttribute('data-quadrant-id');
+          currentQuadrantView = qId;
+          renderUnit(currentUnitId);
+        });
+      });
+
+    } else {
+      // EXPANDED FULL-WIDTH QUADRANT MODE: Show only the selected quadrant with ALL words + Floating Back button
+      quadrantsGrid.classList.add('single-quadrant-mode');
+      const targetQuadrant = unit.quadrants.find(q => q.id === currentQuadrantView) || unit.quadrants[0];
+
+      let qWords = [...targetQuadrant.words];
+      if (currentBandFilter !== 'all') {
+        qWords.sort((a, b) => {
+          const aMatch = (a.band === currentBandFilter);
+          const bMatch = (b.band === currentBandFilter);
+          if (aMatch && !bMatch) return -1;
+          if (!aMatch && bMatch) return 1;
+          return 0;
+        });
+      }
+
+      quadrantsGrid.innerHTML = `
+        <section class="quadrant ${targetQuadrant.themeClass} expanded-full" id="${targetQuadrant.id}">
+          <div class="quadrant-header-pill">
+            <span class="pill-text">📌 ${targetQuadrant.titleCn}</span>
+            <span class="count-tag">共 ${targetQuadrant.words.length} 詞</span>
+          </div>
+          <div class="cards-wrapper grid-layout">
+            ${qWords.map(w => {
+              const bandVal = w.band || '6.5';
+              const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
+              return `
+                <div class="vocab-card" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
+                  <span class="band-badge ${bandClass}">${escapeHtml(bandVal)}</span>
+                  <div class="card-inner">
+                    <div class="card-icon-wrapper">${w.icon}</div>
+                    <div class="card-body">
+                      <div class="word-en">${escapeHtml(w.word)}</div>
+                      <div class="word-ipa">${escapeHtml(w.ipa)}</div>
+                      <div class="word-cn">${escapeHtml(w.cn)}</div>
+                    </div>
+                    <button class="audio-btn" title="朗讀">🔊</button>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
+        </section>
+
+        <!-- Floating Back Button at Bottom Right -->
+        <button id="btnFloatingBack" class="floating-back-btn" title="返回單元總覽">
+          ⬅️ 返回單元總覽 (Back to Overview)
+        </button>
+      `;
+
+      const btnFloatingBack = document.getElementById('btnFloatingBack');
+      if (btnFloatingBack) {
+        btnFloatingBack.addEventListener('click', () => {
+          currentQuadrantView = 'all';
+          renderUnit(currentUnitId);
+        });
+      }
+    }
 
     // 4. Bind Card Event Listeners
     bindCardEvents();
@@ -362,6 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
      6. Speed Toggle, Unit Switcher & Search Filter
      ------------------------------------------------------------------------ */
   unitSelect.addEventListener('change', (e) => {
+    currentSubUnitTab = 'overview';
     renderUnit(e.target.value);
   });
 
@@ -378,7 +480,11 @@ document.addEventListener('DOMContentLoaded', () => {
       bandBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentBandFilter = btn.getAttribute('data-band');
-      applyFilters();
+      if (currentSubUnitTab === 'overview') {
+        renderUnit(currentUnitId);
+      } else {
+        applyFilters();
+      }
     });
   });
 
