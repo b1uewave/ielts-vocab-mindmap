@@ -1797,22 +1797,6 @@ body.flashcard-mode .vocab-card.flipped .word-cn::after {
   box-shadow: 0 6px 18px rgba(99, 102, 241, 0.4);
 }
 
-.demo-reset-btn {
-  margin-top: 8px;
-  background: transparent;
-  border: none;
-  color: #64748b;
-  font-size: 12px;
-  cursor: pointer;
-  padding: 4px 8px;
-  border-radius: 6px;
-  transition: color 0.2s ease;
-  text-decoration: underline;
-}
-
-.demo-reset-btn:hover {
-  color: #ef4444;
-}
 
 
 
