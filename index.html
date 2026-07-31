@@ -21,54 +21,80 @@
 
     <!-- Top Navigation & Control Bar -->
     <header class="top-bar">
-      <div class="brand">
-        <span class="brand-badge" id="brandBadge">IELTS Mindmap</span>
-        <h1 class="page-title" id="pageTitle">Unit 1 Accommodation 住宿單字圖鑑</h1>
+      <!-- Left Column: Navigation Controls & Sticky Note Tips -->
+      <div class="top-bar-left">
+        <div class="top-bar-nav">
+          <div class="brand">
+            <span class="brand-badge" id="brandBadge">IELTS Mindmap</span>
+            <h1 class="page-title" id="pageTitle">Unit 1 Accommodation 住宿單字圖鑑</h1>
+          </div>
+
+          <div class="controls-group">
+            <!-- Unit Switcher Dropdown -->
+            <div class="unit-selector-box" title="切換雅思場景單元">
+              <span class="unit-select-icon">📚</span>
+              <select id="unitSelect" class="unit-select-dropdown">
+                <option value="unit-1">Unit 1: Accommodation (住宿)</option>
+                <option value="unit-2">Unit 2: Campus Life (校園)</option>
+                <option value="unit-3">Unit 3: Travel & Tourism (旅遊)</option>
+                <option value="unit-4">Unit 4: Health & Medical (健康)</option>
+                <option value="unit-5">Unit 5: Work & Career (工作)</option>
+                <option value="unit-6">Unit 6: Environment (環境)</option>
+                <option value="unit-7">Unit 7: Banking & Services (金融)</option>
+                <option value="unit-8">Unit 8: Food & Dining (飲食)</option>
+                <option value="unit-9">Unit 9: Entertainment & Sports (娛樂)</option>
+                <option value="unit-10">Unit 10: Science & Technology (科技)</option>
+                <option value="unit-11">Unit 11: Education & Learning (教育)</option>
+                <option value="unit-12">Unit 12: Media & Communication (傳播)</option>
+                <option value="unit-13">Unit 13: Law, Crime & Society (法律與社會)</option>
+                <option value="unit-14">Unit 14: Culture, Art & History (文化與歷史)</option>
+                <option value="unit-15">Unit 15: Transportation & Planning (交通與都市規劃)</option>
+              </select>
+            </div>
+
+            <!-- Search Box -->
+            <div class="search-box">
+              <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+              <input type="text" id="searchInput" placeholder="搜尋單字 (如 rent, deposit, 陽台)..." autocomplete="off">
+              <button id="clearSearch" class="clear-btn" title="清除搜尋" style="display:none;">✕</button>
+            </div>
+
+            <!-- IELTS Band Score Filter -->
+            <div class="band-filter-group" title="依雅思目標分數篩選單字">
+              <span class="band-filter-label">🎯 分數:</span>
+              <button class="band-btn active" data-band="all">全部</button>
+              <button class="band-btn band-btn-5" data-band="5.0">🟢 5.0</button>
+              <button class="band-btn band-btn-6" data-band="6.5">🟡 6.5</button>
+              <button class="band-btn band-btn-7" data-band="7.5+">🟣 7.5+</button>
+            </div>
+
+            <!-- Speech Speed Switcher -->
+            <div class="speed-toggle" title="朗讀語速">
+              <button class="speed-btn active" data-speed="1.0">⚡ 正常</button>
+              <button class="speed-btn" data-speed="0.75">🐢 慢速</button>
+            </div>
+
+            <!-- Flashcard Quiz Mode Toggle -->
+            <button id="toggleFlashcards" class="action-btn">
+              <span class="icon">👁️</span>
+              <span class="label">遮蔽中文 (背單字)</span>
+            </button>
+
+            <!-- Dictation Test Mode Toggle -->
+            <button id="btnDictationQuiz" class="action-btn highlight">
+              <span class="icon">✏️</span>
+              <span class="label">聽寫測驗</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Sticky Note Tips Bar (Integrated inside Left Column under Navigation) -->
+        <div class="hero-sticky-note" id="topBarStickyNote"></div>
       </div>
 
-      <div class="controls-group">
-        <!-- Unit Switcher Dropdown -->
-        <div class="unit-selector-box" title="切換雅思場景單元">
-          <span class="unit-select-icon">📚</span>
-          <select id="unitSelect" class="unit-select-dropdown">
-            <option value="unit-1">Unit 1: Accommodation (住宿)</option>
-            <option value="unit-2">Unit 2: Campus Life (校園)</option>
-            <option value="unit-3">Unit 3: Travel & Tourism (旅遊)</option>
-            <option value="unit-4">Unit 4: Health & Medical (健康)</option>
-            <option value="unit-5">Unit 5: Work & Career (工作)</option>
-          </select>
-        </div>
-
-        <!-- Search Box -->
-        <div class="search-box">
-          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-          <input type="text" id="searchInput" placeholder="搜尋單字 (如 rent, deposit, 陽台)..." autocomplete="off">
-          <button id="clearSearch" class="clear-btn" title="清除搜尋" style="display:none;">✕</button>
-        </div>
-
-        <!-- Speech Speed Switcher -->
-        <div class="speed-toggle" title="朗讀語速">
-          <button class="speed-btn active" data-speed="1.0">⚡ 正常</button>
-          <button class="speed-btn" data-speed="0.75">🐢 慢速</button>
-        </div>
-
-        <!-- Flashcard Quiz Mode Toggle -->
-        <button id="toggleFlashcards" class="action-btn">
-          <span class="icon">👁️</span>
-          <span class="label">遮蔽中文 (背單字)</span>
-        </button>
-
-        <!-- Dictation Test Mode Toggle -->
-        <button id="btnDictationQuiz" class="action-btn highlight">
-          <span class="icon">✏️</span>
-          <span class="label">聽寫測驗</span>
-        </button>
-
-        <!-- View Mode Switch -->
-        <div class="view-switch">
-          <button id="btnMindmapView" class="view-btn active" title="心智圖視圖">🗺️ 心智圖</button>
-          <button id="btnGridView" class="view-btn" title="網格卡片視圖">📱 網格</button>
-        </div>
+      <!-- Right Column: Unit Mindmap Illustration & Cloud Title -->
+      <div class="top-bar-right">
+        <div class="hero-graphic-card" id="topBarGraphic"></div>
       </div>
     </header>
 
@@ -106,27 +132,11 @@
       </div>
     </div>
 
-    <!-- Mind Map Canvas Wrapper -->
-    <div class="mindmap-wrapper" id="mindmapWrapper">
-      <!-- SVG Connecting Lines Layer -->
-      <svg id="svgConnectors" class="svg-connectors"></svg>
-
-      <!-- Center Hub Node (Rendered dynamically by script.js) -->
-      <div class="center-hub" id="centerHub"></div>
-
-      <!-- Mind Map Quadrants Grid Container (Rendered dynamically by script.js) -->
+    <!-- Main Content Container -->
+    <main class="mindmap-wrapper" id="mindmapWrapper">
+      <!-- Quadrants Cards Grid Container (Rendered dynamically by script.js) -->
       <div class="quadrants-grid" id="quadrantsGrid"></div>
-
-      <!-- Center Sticky Note (Tips) -->
-      <div class="sticky-note" id="stickyNote">
-        <div class="pin">📌</div>
-        <div class="note-title" id="noteTitle">💡 小貼士 (Tips)</div>
-        <div class="note-content" id="noteContent">
-          聽力中常考住宿場景，注意數字、拼寫和同義替換哦！😊
-        </div>
-      </div>
-
-    </div> <!-- End Mindmap Wrapper -->
+    </main> <!-- End Content Wrapper -->
 
     <!-- Audio Toast / Speaking Indicator -->
     <div id="audioToast" class="audio-toast">
@@ -141,7 +151,10 @@
         <div class="modal-header">
           <div id="modalIcon" class="modal-icon">🏢</div>
           <div class="modal-title-group">
-            <h2 id="modalWordEn">apartment</h2>
+            <div class="modal-title-top-row">
+              <h2 id="modalWordEn">apartment</h2>
+              <span id="modalBandBadge" class="modal-band-tag band-5">5.0</span>
+            </div>
             <div class="modal-ipa-row">
               <span id="modalWordIpa" class="modal-ipa">[əˈpɑːrt.mənt]</span>
               <button id="modalAudioBtn" class="modal-audio-btn" title="播放發音">🔊 朗讀發音</button>

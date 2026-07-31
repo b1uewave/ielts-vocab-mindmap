@@ -59,6 +59,7 @@ window.unitsData = {
         words: [
           {
             word: "apartment",
+            band: "5.0",
             ipa: "[əˈpɑːrt.mənt]",
             cn: "公寓",
             example: "I'm looking for a two-bedroom apartment near the university.",
@@ -67,6 +68,7 @@ window.unitsData = {
           },
           {
             word: "flat",
+            band: "5.0",
             ipa: "[flæt]",
             cn: "公寓 (英式)",
             example: "She rented a small flat in central London.",
@@ -75,6 +77,7 @@ window.unitsData = {
           },
           {
             word: "studio",
+            band: "6.5",
             ipa: "[ˈstjuː.di.oʊ]",
             cn: "單間套房",
             example: "A studio apartment includes a bedroom and kitchen in one open room.",
@@ -83,6 +86,7 @@ window.unitsData = {
           },
           {
             word: "dormitory",
+            band: "6.5",
             ipa: "[ˈdɔːr.mə.tɔːr.i]",
             cn: "宿舍",
             example: "On-campus dormitory rooms are usually shared by two students.",
@@ -91,6 +95,7 @@ window.unitsData = {
           },
           {
             word: "twin room",
+            band: "5.0",
             ipa: "[twɪn ruːm]",
             cn: "雙床房",
             example: "We booked a twin room with two separate single beds.",
@@ -99,6 +104,7 @@ window.unitsData = {
           },
           {
             word: "single room",
+            band: "5.0",
             ipa: "[ˈsɪŋ.ɡəl ruːm]",
             cn: "單人房",
             example: "The single room includes a single bed and a study desk.",
@@ -107,6 +113,7 @@ window.unitsData = {
           },
           {
             word: "double room",
+            band: "5.0",
             ipa: "[ˈdʌb.əl ruːm]",
             cn: "雙人房",
             example: "A double room comes with one large double bed.",
@@ -115,6 +122,7 @@ window.unitsData = {
           },
           {
             word: "shared room",
+            band: "5.0",
             ipa: "[ʃerd ruːm]",
             cn: "合住房",
             example: "A shared room helps reduce monthly rent for students.",
@@ -123,6 +131,7 @@ window.unitsData = {
           },
           {
             word: "ensuite room",
+            band: "6.5",
             ipa: "[ɑːn ˈswiːt ruːm]",
             cn: "獨立衛浴套房",
             example: "The bedroom has an ensuite room with private shower.",
@@ -131,6 +140,7 @@ window.unitsData = {
           },
           {
             word: "furnished",
+            band: "6.5",
             ipa: "[ˈfɜːr.nɪʃt]",
             cn: "配傢俱的",
             example: "The apartment comes fully furnished with a bed, table, and sofa.",
@@ -139,6 +149,7 @@ window.unitsData = {
           },
           {
             word: "unfurnished",
+            band: "6.5",
             ipa: "[ʌnˈfɜːr.nɪʃt]",
             cn: "空房 (無傢俱)",
             example: "An unfurnished room gives you the freedom to buy your own furniture.",
@@ -155,6 +166,7 @@ window.unitsData = {
         words: [
           {
             word: "kitchen",
+            band: "5.0",
             ipa: "[ˈkɪtʃ.ən]",
             cn: "廚房",
             example: "The shared kitchen is equipped with a stove and oven.",
@@ -163,6 +175,7 @@ window.unitsData = {
           },
           {
             word: "bathroom",
+            band: "5.0",
             ipa: "[ˈbæθ.ruːm]",
             cn: "浴室",
             example: "The house has two shared bathrooms and one ensuite.",
@@ -171,6 +184,7 @@ window.unitsData = {
           },
           {
             word: "balcony",
+            band: "5.0",
             ipa: "[ˈbæl.kə.ni]",
             cn: "陽台",
             example: "You can dry your clothes on the sunny balcony.",
@@ -179,6 +193,7 @@ window.unitsData = {
           },
           {
             word: "garden",
+            band: "5.0",
             ipa: "[ˈɡɑːr.dən]",
             cn: "花園",
             example: "The bungalow includes a small front garden.",
@@ -187,6 +202,7 @@ window.unitsData = {
           },
           {
             word: "garage",
+            band: "5.0",
             ipa: "[ɡəˈrɑːʒ]",
             cn: "車庫",
             example: "There is a garage attached to the house for car parking.",
@@ -195,6 +211,7 @@ window.unitsData = {
           },
           {
             word: "washing machine",
+            band: "5.0",
             ipa: "[ˈwɑː.ʃɪŋ məˈʃiːn]",
             cn: "洗衣機",
             example: "A coin-operated washing machine is in the laundry room.",
@@ -203,6 +220,7 @@ window.unitsData = {
           },
           {
             word: "microwave",
+            band: "5.0",
             ipa: "[ˈmaɪ.krə.weɪv]",
             cn: "微波爐",
             example: "Heat your frozen dinner in the kitchen microwave.",
@@ -211,6 +229,7 @@ window.unitsData = {
           },
           {
             word: "refrigerator",
+            band: "5.0",
             ipa: "[rɪˈfrɪdʒ.ə.reɪ.t̬ɚ]",
             cn: "冰箱",
             example: "Keep milk and vegetables fresh inside the refrigerator.",
@@ -219,6 +238,7 @@ window.unitsData = {
           },
           {
             word: "heater",
+            band: "5.0",
             ipa: "[ˈhiː.t̬ɚ]",
             cn: "暖氣",
             example: "Turn on the electric heater during cold winter nights.",
@@ -227,6 +247,7 @@ window.unitsData = {
           },
           {
             word: "air conditioning",
+            band: "5.0",
             ipa: "[er kənˈdɪʃ.ən.ɪŋ]",
             cn: "空調",
             example: "Central air conditioning keeps the house cool.",
@@ -243,6 +264,7 @@ window.unitsData = {
         words: [
           {
             word: "rent",
+            band: "5.0",
             ipa: "[rent]",
             cn: "房租",
             example: "How much is the weekly rent for this double room?",
@@ -251,6 +273,7 @@ window.unitsData = {
           },
           {
             word: "deposit",
+            band: "5.0",
             ipa: "[dɪˈpɑː.zɪt]",
             cn: "押金",
             example: "You need to pay one month's rent as a deposit.",
@@ -259,6 +282,7 @@ window.unitsData = {
           },
           {
             word: "landlord",
+            band: "6.5",
             ipa: "[ˈlænd.lɔːrd]",
             cn: "房東",
             example: "The landlord agreed to fix the broken shower today.",
@@ -267,6 +291,7 @@ window.unitsData = {
           },
           {
             word: "tenant",
+            band: "6.5",
             ipa: "[ˈten.ənt]",
             cn: "租客",
             example: "The new tenant will move in next Monday.",
@@ -275,6 +300,7 @@ window.unitsData = {
           },
           {
             word: "lease",
+            band: "6.5",
             ipa: "[liːs]",
             cn: "租約",
             example: "We signed a 12-month lease for the apartment.",
@@ -283,6 +309,7 @@ window.unitsData = {
           },
           {
             word: "contract",
+            band: "6.5",
             ipa: "[ˈkɑːn.trækt]",
             cn: "合同",
             example: "Please check all terms before signing the contract.",
@@ -291,6 +318,7 @@ window.unitsData = {
           },
           {
             word: "utility bills",
+            band: "6.5",
             ipa: "[juːˈtɪl.ə.t̬i bɪlz]",
             cn: "水電費帳單",
             example: "Are utility bills included in the monthly rent?",
@@ -299,6 +327,7 @@ window.unitsData = {
           },
           {
             word: "electricity",
+            band: "5.0",
             ipa: "[ɪˌlekˈtrɪs.ə.t̬i]",
             cn: "電費",
             example: "Electricity is charged separately every month.",
@@ -307,6 +336,7 @@ window.unitsData = {
           },
           {
             word: "gas",
+            band: "5.0",
             ipa: "[ɡæs]",
             cn: "燃氣費",
             example: "Gas bill is usually lower during summer.",
@@ -315,6 +345,7 @@ window.unitsData = {
           },
           {
             word: "internet",
+            band: "5.0",
             ipa: "[ˈɪn.t̬ɚ.net]",
             cn: "網絡費",
             example: "Free high-speed wireless internet is available.",
@@ -331,6 +362,7 @@ window.unitsData = {
         words: [
           {
             word: "vacancy",
+            band: "6.5",
             ipa: "[ˈveɪ.kən.si]",
             cn: "空房; 空缺",
             example: "The student lodge currently has no vacancy.",
@@ -339,6 +371,7 @@ window.unitsData = {
           },
           {
             word: "available",
+            band: "5.0",
             ipa: "[əˈveɪ.lə.bəl]",
             cn: "可用的; 有空的",
             example: "The double room will be available from September 1st.",
@@ -347,6 +380,7 @@ window.unitsData = {
           },
           {
             word: "move in",
+            band: "5.0",
             ipa: "[muːv ɪn]",
             cn: "入住; 搬入",
             example: "You can move in as soon as the contract is signed.",
@@ -355,6 +389,7 @@ window.unitsData = {
           },
           {
             word: "notice",
+            band: "6.5",
             ipa: "[ˈnoʊ.t̬ɪs]",
             cn: "通知; 告知",
             example: "Tenants must give one month's notice before moving out.",
@@ -363,6 +398,7 @@ window.unitsData = {
           },
           {
             word: "monthly payment",
+            band: "5.0",
             ipa: "[ˈmʌn.θli peɪ.mənt]",
             cn: "月付款",
             example: "The monthly payment is due on the first day of each month.",
@@ -371,6 +407,7 @@ window.unitsData = {
           },
           {
             word: "weekly rent",
+            band: "5.0",
             ipa: "[ˈwiː.kli rent]",
             cn: "周租金",
             example: "Weekly rent is £120 excluding gas and electricity.",
@@ -428,6 +465,7 @@ window.unitsData = {
         words: [
           {
             word: "due date",
+            band: "5.0",
             ipa: "[djuː deɪt]",
             cn: "到期日",
             example: "The book is past its due date, so I must pay a fine.",
@@ -436,6 +474,7 @@ window.unitsData = {
           },
           {
             word: "recall",
+            band: "6.5",
             ipa: "[rɪˈkɔːl]",
             cn: "召回圖書",
             example: "The library sent an email to recall the borrowed textbook.",
@@ -444,6 +483,7 @@ window.unitsData = {
           },
           {
             word: "journal",
+            band: "6.5",
             ipa: "[ˈdʒɜːr.nəl]",
             cn: "學術期刊",
             example: "You can find peer-reviewed articles in academic journals.",
@@ -452,6 +492,7 @@ window.unitsData = {
           },
           {
             word: "catalogue",
+            band: "6.5",
             ipa: "[ˈkæt.əl.ɑːɡ]",
             cn: "圖書目錄",
             example: "Search the online catalogue to locate the shelf number.",
@@ -460,6 +501,7 @@ window.unitsData = {
           },
           {
             word: "loan period",
+            band: "6.5",
             ipa: "[loʊn ˈpɪr.i.əd]",
             cn: "借閱期限",
             example: "The standard loan period for undergraduates is two weeks.",
@@ -468,6 +510,7 @@ window.unitsData = {
           },
           {
             word: "reference book",
+            band: "5.0",
             ipa: "[ˈref.ɚ.əns bʊk]",
             cn: "參考書 (不外借)",
             example: "Reference books can only be read inside the reading room.",
@@ -484,6 +527,7 @@ window.unitsData = {
         words: [
           {
             word: "assignment",
+            band: "5.0",
             ipa: "[əˈsaɪn.mənt]",
             cn: "課堂作業",
             example: "Submit your written assignment before midnight on Friday.",
@@ -492,6 +536,7 @@ window.unitsData = {
           },
           {
             word: "lecture",
+            band: "5.0",
             ipa: "[ˈlek.tʃɚ]",
             cn: "大學大課/講座",
             example: "Professor Smith will give a lecture on climate statistics.",
@@ -500,6 +545,7 @@ window.unitsData = {
           },
           {
             word: "seminar",
+            band: "6.5",
             ipa: "[ˈsem.ə.nɑːr]",
             cn: "研討會/小組討論",
             example: "We discussed our research findings during today's seminar.",
@@ -508,6 +554,7 @@ window.unitsData = {
           },
           {
             word: "tutorial",
+            band: "6.5",
             ipa: "[tuːˈtɔːr.i.əl]",
             cn: "導師輔導課",
             example: "Book an individual tutorial with your personal tutor.",
@@ -516,6 +563,7 @@ window.unitsData = {
           },
           {
             word: "dissertation",
+            band: "7.5+",
             ipa: "[ˌdɪs.ɚˈteɪ.ʃən]",
             cn: "學位論文",
             example: "Master's students must hand in a 10,000-word dissertation.",
@@ -524,6 +572,7 @@ window.unitsData = {
           },
           {
             word: "prerequisite",
+            band: "7.5+",
             ipa: "[ˌpriːˈrek.wə.zɪt]",
             cn: "先修課程/前提",
             example: "Basic algebra is a prerequisite for advanced calculus.",
@@ -540,6 +589,7 @@ window.unitsData = {
         words: [
           {
             word: "plagiarism",
+            band: "7.5+",
             ipa: "[ˈpleɪ.dʒɚ.ɪ.zəm]",
             cn: "抄襲/剽竊",
             example: "Turnitin software is used to check papers for plagiarism.",
@@ -548,6 +598,7 @@ window.unitsData = {
           },
           {
             word: "feedback",
+            band: "5.0",
             ipa: "[ˈfiːd.bæk]",
             cn: "回饋/批改意見",
             example: "The tutor gave detailed feedback on my draft essay.",
@@ -556,6 +607,7 @@ window.unitsData = {
           },
           {
             word: "deadline",
+            band: "5.0",
             ipa: "[ˈded.laɪn]",
             cn: "最後截止日期",
             example: "The deadline for scholarship applications is May 1st.",
@@ -564,6 +616,7 @@ window.unitsData = {
           },
           {
             word: "grade",
+            band: "5.0",
             ipa: "[ɡreɪd]",
             cn: "成績/等第",
             example: "She achieved an A grade in environmental science.",
@@ -572,6 +625,7 @@ window.unitsData = {
           },
           {
             word: "transcript",
+            band: "6.5",
             ipa: "[ˈtræn.skrɪpt]",
             cn: "成績單",
             example: "Official academic transcripts are required for master's admission.",
@@ -588,6 +642,7 @@ window.unitsData = {
         words: [
           {
             word: "campus",
+            band: "5.0",
             ipa: "[ˈkæm.pəs]",
             cn: "大學校區",
             example: "Free shuttle buses run between the north and south campus.",
@@ -596,6 +651,7 @@ window.unitsData = {
           },
           {
             word: "laboratory",
+            band: "6.5",
             ipa: "[ˈlæb.rə.tɔːr.i]",
             cn: "實驗室",
             example: "Safety goggles must be worn in the chemistry laboratory.",
@@ -604,6 +660,7 @@ window.unitsData = {
           },
           {
             word: "canteen",
+            band: "5.0",
             ipa: "[kænˈtiːn]",
             cn: "學生餐廳",
             example: "The campus canteen serves affordable lunch for students.",
@@ -612,6 +669,7 @@ window.unitsData = {
           },
           {
             word: "registration",
+            band: "6.5",
             ipa: "[ˌredʒ.əˈstreɪ.ʃən]",
             cn: "報到註冊",
             example: "Complete your online registration before attending classes.",
@@ -667,6 +725,7 @@ window.unitsData = {
         words: [
           {
             word: "itinerary",
+            band: "6.5",
             ipa: "[aɪˈtɪn.ə.rer.i]",
             cn: "旅遊行程表",
             example: "The travel agent gave us a detailed daily itinerary.",
@@ -675,6 +734,7 @@ window.unitsData = {
           },
           {
             word: "shuttle bus",
+            band: "5.0",
             ipa: "[ˈʃʌt̬.əl bʌs]",
             cn: "接駁巴士",
             example: "A free shuttle bus operates between the hotel and airport.",
@@ -683,6 +743,7 @@ window.unitsData = {
           },
           {
             word: "departure",
+            band: "5.0",
             ipa: "[dɪˈpɑːr.tʃɚ]",
             cn: "出發/起飛",
             example: "Please check the departure board for your flight status.",
@@ -691,6 +752,7 @@ window.unitsData = {
           },
           {
             word: "destination",
+            band: "5.0",
             ipa: "[ˌdes.təˈneɪ.ʃən]",
             cn: "目的地",
             example: "Our final travel destination is Kyoto, Japan.",
@@ -699,6 +761,7 @@ window.unitsData = {
           },
           {
             word: "delayed",
+            band: "5.0",
             ipa: "[dɪˈleɪd]",
             cn: "誤點/延誤",
             example: "The train was delayed for 30 minutes due to bad weather.",
@@ -715,6 +778,7 @@ window.unitsData = {
         words: [
           {
             word: "reservation",
+            band: "6.5",
             ipa: "[ˌrez.ɚˈveɪ.ʃən]",
             cn: "預訂/訂位",
             example: "I would like to make a reservation for a twin room.",
@@ -723,6 +787,7 @@ window.unitsData = {
           },
           {
             word: "confirmation",
+            band: "6.5",
             ipa: "[ˌkɑːn.fɚˈmeɪ.ʃən]",
             cn: "確認函/確認碼",
             example: "Please show your confirmation email at the check-in desk.",
@@ -731,6 +796,7 @@ window.unitsData = {
           },
           {
             word: "non-refundable",
+            band: "6.5",
             ipa: "[nɑːn rɪˈfʌn.də.bəl]",
             cn: "不可退款的",
             example: "Budget flight tickets are usually non-refundable.",
@@ -739,6 +805,7 @@ window.unitsData = {
           },
           {
             word: "check-in",
+            band: "5.0",
             ipa: "[tʃek ɪn]",
             cn: "辦理入住/登機",
             example: "Hotel check-in starts at 3:00 PM.",
@@ -755,6 +822,7 @@ window.unitsData = {
         words: [
           {
             word: "guided tour",
+            band: "6.5",
             ipa: "[ˈɡaɪ.dɪd tʊr]",
             cn: "有導覽的行程",
             example: "Join a guided tour to learn about the ancient castle.",
@@ -763,6 +831,7 @@ window.unitsData = {
           },
           {
             word: "souvenir",
+            band: "5.0",
             ipa: "[ˌsuː.vəˈnɪr]",
             cn: "紀念品",
             example: "I bought a wooden handicraft as a souvenir.",
@@ -771,6 +840,7 @@ window.unitsData = {
           },
           {
             word: "attraction",
+            band: "5.0",
             ipa: "[əˈtræk.ʃən]",
             cn: "觀光景點",
             example: "The Eiffel Tower is a popular tourist attraction.",
@@ -779,6 +849,7 @@ window.unitsData = {
           },
           {
             word: "admission fee",
+            band: "5.0",
             ipa: "[ədˈmɪʃ.ən fiː]",
             cn: "門票費用",
             example: "Students get a 50% discount on the museum admission fee.",
@@ -795,6 +866,7 @@ window.unitsData = {
         words: [
           {
             word: "insurance",
+            band: "6.5",
             ipa: "[ɪnˈʃʊr.əns]",
             cn: "旅遊保險",
             example: "It is strongly recommended to buy travel insurance.",
@@ -803,6 +875,7 @@ window.unitsData = {
           },
           {
             word: "currency",
+            band: "6.5",
             ipa: "[ˈkɝː.ən.si]",
             cn: "貨幣/外幣",
             example: "You can exchange foreign currency at the bank counter.",
@@ -811,6 +884,7 @@ window.unitsData = {
           },
           {
             word: "passport",
+            band: "5.0",
             ipa: "[ˈpæs.pɔːrt]",
             cn: "護照",
             example: "Ensure your passport is valid for at least 6 months.",
@@ -858,6 +932,7 @@ window.unitsData = {
         words: [
           {
             word: "appointment",
+            band: "6.5",
             ipa: "[əˈpɔɪnt.mənt]",
             cn: "看診預約",
             example: "I need to book an appointment with the doctor for tomorrow.",
@@ -866,6 +941,7 @@ window.unitsData = {
           },
           {
             word: "prescription",
+            band: "6.5",
             ipa: "[prɪˈskrɪp.ʃən]",
             cn: "處方箋",
             example: "Take this prescription to the pharmacy to pick up your medicine.",
@@ -874,6 +950,7 @@ window.unitsData = {
           },
           {
             word: "practitioner",
+            band: "6.5",
             ipa: "[prækˈtɪʃ.ən.ɚ]",
             cn: "執業醫師 (GP)",
             example: "A General Practitioner (GP) handles everyday health issues.",
@@ -882,6 +959,7 @@ window.unitsData = {
           },
           {
             word: "pharmacy",
+            band: "6.5",
             ipa: "[ˈfɑːr.mə.si]",
             cn: "藥局/藥房",
             example: "The hospital pharmacy is open 24 hours a day.",
@@ -898,6 +976,7 @@ window.unitsData = {
         words: [
           {
             word: "symptom",
+            band: "6.5",
             ipa: "[ˈsɪmp.təm]",
             cn: "病狀/症狀",
             example: "Fever and cough are common symptoms of the flu.",
@@ -906,6 +985,7 @@ window.unitsData = {
           },
           {
             word: "headache",
+            band: "5.0",
             ipa: "[ˈhed.eɪk]",
             cn: "頭痛",
             example: "She took an aspirin to relieve her severe headache.",
@@ -914,6 +994,7 @@ window.unitsData = {
           },
           {
             word: "allergy",
+            band: "6.5",
             ipa: "[ˈæl.ɚ.dʒi]",
             cn: "過敏症",
             example: "He has a severe allergy to peanuts and seafood.",
@@ -922,6 +1003,7 @@ window.unitsData = {
           },
           {
             word: "infection",
+            band: "6.5",
             ipa: "[ɪnˈfek.ʃən]",
             cn: "細菌感染",
             example: "Antibiotics are prescribed to treat bacterial infections.",
@@ -938,6 +1020,7 @@ window.unitsData = {
         words: [
           {
             word: "vaccination",
+            band: "7.5+",
             ipa: "[ˌvæk.səˈneɪ.ʃən]",
             cn: "疫苗接種",
             example: "Students are required to show proof of vaccination.",
@@ -946,6 +1029,7 @@ window.unitsData = {
           },
           {
             word: "painkiller",
+            band: "6.5",
             ipa: "[ˈpeɪnˌkɪl.ɚ]",
             cn: "止痛藥",
             example: "The dentist gave him painkillers after extracting his tooth.",
@@ -954,6 +1038,7 @@ window.unitsData = {
           },
           {
             word: "treatment",
+            band: "6.5",
             ipa: "[ˈtriːt.mənt]",
             cn: "治療方案",
             example: "The hospital offers medical treatment for heart disease.",
@@ -970,6 +1055,7 @@ window.unitsData = {
         words: [
           {
             word: "insurance claim",
+            band: "7.5+",
             ipa: "[ɪnˈʃʊr.əns kleɪm]",
             cn: "保險理賠申報",
             example: "Submit your medical receipts for an insurance claim.",
@@ -978,6 +1064,7 @@ window.unitsData = {
           },
           {
             word: "emergency",
+            band: "5.0",
             ipa: "[ɪˈmɝː.dʒən.si]",
             cn: "緊急狀況",
             example: "Call 999 for ambulance service in a life-threatening emergency.",
@@ -1034,6 +1121,7 @@ window.unitsData = {
         words: [
           {
             word: "resume",
+            band: "6.5",
             ipa: "[ˈrez.ə.meɪ]",
             cn: "履歷表",
             example: "Send your updated resume and cover letter by email.",
@@ -1042,6 +1130,7 @@ window.unitsData = {
           },
           {
             word: "interview",
+            band: "5.0",
             ipa: "[ˈɪn.t̬ɚ.vjuː]",
             cn: "求職面試",
             example: "She was invited for a second-round job interview.",
@@ -1050,6 +1139,7 @@ window.unitsData = {
           },
           {
             word: "applicant",
+            band: "6.5",
             ipa: "[ˈæp.lɪ.kənt]",
             cn: "求職申請者",
             example: "Over 100 applicants applied for the marketing position.",
@@ -1058,6 +1148,7 @@ window.unitsData = {
           },
           {
             word: "reference",
+            band: "6.5",
             ipa: "[ˈref.ɚ.əns]",
             cn: "推薦信/推薦人",
             example: "Please provide two professional references from past employers.",
@@ -1074,6 +1165,7 @@ window.unitsData = {
         words: [
           {
             word: "part-time",
+            band: "5.0",
             ipa: "[pɑːrt taɪm]",
             cn: "兼職的",
             example: "Many university students work part-time in cafes.",
@@ -1082,6 +1174,7 @@ window.unitsData = {
           },
           {
             word: "flexible hours",
+            band: "6.5",
             ipa: "[ˈfleks.ə.bəl aʊər z]",
             cn: "彈性工作時間",
             example: "The company offers flexible hours for working parents.",
@@ -1090,6 +1183,7 @@ window.unitsData = {
           },
           {
             word: "internship",
+            band: "6.5",
             ipa: "[ˈɪn.tɝːn.ʃɪp]",
             cn: "企業實習",
             example: "He completed a paid summer internship at an accounting firm.",
@@ -1106,6 +1200,7 @@ window.unitsData = {
         words: [
           {
             word: "minimum wage",
+            band: "6.5",
             ipa: "[ˈmɪn.ə.məm weɪdʒ]",
             cn: "法定最低工資",
             example: "The national minimum wage was raised to £10.42 per hour.",
@@ -1114,6 +1209,7 @@ window.unitsData = {
           },
           {
             word: "hourly rate",
+            band: "5.0",
             ipa: "[ˈaʊər.li reɪt]",
             cn: "時薪標準",
             example: "What is the hourly rate for weekend night shifts?",
@@ -1122,6 +1218,7 @@ window.unitsData = {
           },
           {
             word: "bonus",
+            band: "6.5",
             ipa: "[ˈboʊ.nəs]",
             cn: "年終/績效獎金",
             example: "Employees receive an annual performance bonus at Christmas.",
@@ -1138,6 +1235,7 @@ window.unitsData = {
         words: [
           {
             word: "qualification",
+            band: "6.5",
             ipa: "[ˌkwɑː.lə.fəˈkeɪ.ʃən]",
             cn: "任職資格/學歷",
             example: "Relevant teaching qualifications are required for this role.",
@@ -1146,11 +1244,1570 @@ window.unitsData = {
           },
           {
             word: "promotion",
+            band: "6.5",
             ipa: "[prəˈmoʊ.ʃən]",
             cn: "升遷/晉升",
             example: "She earned a promotion to senior manager after two years.",
             tip: "職務晉升。",
             icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 36 L 24 16 L 36 36" stroke="#ea580c" stroke-width="3.5" stroke-linecap="round"/><polygon points="24,10 18,20 30,20" fill="#ea580c"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+
+  "unit-6": {
+    id: "unit-6",
+    number: 6,
+    titleEn: "Environment",
+    titleCn: "環 境",
+    badgeText: "Unit 6 Environment & Nature 生態環境單字圖鑑",
+    stickyNote: {
+      title: "🌿 雅思聽力考點提醒",
+      content: "Section 4 學術演講大熱門！特別注意 climate change (氣候變遷)、biodiversity (生物多樣性)、renewable energy (可再生能源) 與 habitat (棲息地)！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg class="house-svg" viewBox="0 0 200 160" width="190" height="152">
+          <circle cx="100" cy="75" r="50" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/>
+          <path d="M 60 75 Q 100 50 140 75 T 60 75" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+          <path d="M 100 25 Q 75 75 100 125" fill="none" stroke="#22c55e" stroke-width="2.5"/>
+          <path d="M 100 35 Q 125 55 110 80 Q 90 80 100 35 Z" fill="#15803d" stroke="#14532d" stroke-width="3"/>
+          <rect x="96" y="80" width="8" height="25" fill="#78350f"/>
+        </svg>
+      </div>
+      <div class="backpack-icon" title="IELTS 環境保護背包">
+        <svg viewBox="0 0 60 65" width="46" height="50">
+          <path d="M 15 25 C 15 10, 45 10, 45 25 L 48 55 C 48 60, 42 62, 30 62 C 18 62, 12 60, 12 55 Z" fill="#15803d" stroke="#14532d" stroke-width="3"/>
+          <circle cx="30" cy="38" r="8" fill="#4ade80"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sectionClimate",
+        themeClass: "blue-theme",
+        titleCn: "氣候與災害 (Climate)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "climate change",
+            band: "6.5",
+            ipa: "[ˈklaɪ.mət tʃeɪndʒ]",
+            cn: "氣候變遷",
+            example: "Global efforts are needed to combat severe climate change.",
+            tip: "★ Section 4 極高頻詞！注意 climate 雙音節發音。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/><path d="M 14 24 Q 24 16 34 24" fill="none" stroke="#ef4444" stroke-width="3"/></svg>`
+          },
+          {
+            word: "global warming",
+            band: "6.5",
+            ipa: "[ˈɡloʊ.bəl ˈwɔːr.mɪŋ]",
+            cn: "全球暖化",
+            example: "Rising ocean temperatures are caused by global warming.",
+            tip: "全球暖化。注意 warming 中間是 a 不是 o。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#fee2e2" stroke="#991b1b" stroke-width="2.5"/><path d="M 12 30 L 36 18" stroke="#ef4444" stroke-width="3"/></svg>`
+          },
+          {
+            word: "drought",
+            band: "5.0",
+            ipa: "[draʊt]",
+            cn: "旱災/乾旱",
+            example: "Severe drought destroyed crops across the agricultural region.",
+            tip: "乾旱。注意 gh 不發音！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="16" width="28" height="20" rx="3" fill="#fef08a" stroke="#ca8a04" stroke-width="2.5"/><path d="M 16 26 L 32 26" stroke="#ca8a04" stroke-width="2" stroke-dasharray="3 2"/></svg>`
+          },
+          {
+            word: "flood",
+            band: "5.0",
+            ipa: "[flʌd]",
+            cn: "水災/洪水",
+            example: "Heavy rainfall caused flooding along the river bank.",
+            tip: "洪水。注意雙 o 發音為 [ʌ]。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 8 28 Q 16 20 24 28 T 40 28 L 40 38 L 8 38 Z" fill="#60a5fa" stroke="#1d4ed8" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionEcosystem",
+        themeClass: "green-theme",
+        titleCn: "生態與生物 (Ecosystem)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "biodiversity",
+            band: "7.5+",
+            ipa: "[ˌbaɪ.oʊ.daɪˈvɝː.sə.t̬i]",
+            cn: "生物多樣性",
+            example: "Rainforests are famous for their rich biodiversity.",
+            tip: "★ Section 4 學術重磅詞！生物多樣性。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="16" cy="20" r="6" fill="#86efac"/><circle cx="32" cy="20" r="6" fill="#4ade80"/><circle cx="24" cy="32" r="6" fill="#22c55e"/></svg>`
+          },
+          {
+            word: "habitat",
+            band: "6.5",
+            ipa: "[ˈhæb.ə.tæt]",
+            cn: "野生動植物棲息地",
+            example: "Deforestation threatens the natural habitat of wild tigers.",
+            tip: "★ 棲息地。常見短語 natural habitat。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 36 Q 24 16 38 36 Z" fill="#bbf7d0" stroke="#14532d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "endangered species",
+            band: "6.5",
+            ipa: "[ɪnˈdeɪn.dʒɚd ˈspiː.ʃiːz]",
+            cn: "瀕危物種",
+            example: "The giant panda is one of the world's protected endangered species.",
+            tip: "瀕危物種。species 單複數同形！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="15" fill="#fee2e2" stroke="#991b1b" stroke-width="2.5"/><text x="24" y="28" font-size="14" fill="#991b1b" text-anchor="middle" font-weight="bold">SOS</text></svg>`
+          },
+          {
+            word: "ecosystem",
+            band: "7.5+",
+            ipa: "[ˈiː.koʊˌsɪs.təm]",
+            cn: "生態系統",
+            example: "Coral reefs provide vital marine ecosystems.",
+            tip: "生態系。字首 eco- 表示環境生態。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#dcfce7" stroke="#14532d" stroke-width="2.5"/><path d="M 16 24 C 16 18, 32 18, 32 24" fill="none" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionConservation",
+        themeClass: "purple-theme",
+        titleCn: "環保與能源 (Conservation)",
+        color: "#7c3aed",
+        words: [
+          {
+            word: "renewable energy",
+            band: "6.5",
+            ipa: "[rɪˈnuː.ə.bəl ˈen.ɚ.dʒi]",
+            cn: "可再生能源",
+            example: "Wind and solar power are forms of renewable energy.",
+            tip: "★ 可再生能源。如太陽能、風能。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><polygon points="24,6 30,18 42,18 32,26 36,38 24,30 12,38 16,26 6,18 18,18" fill="#facc15" stroke="#ca8a04" stroke-width="2"/></svg>`
+          },
+          {
+            word: "sustainability",
+            band: "6.5",
+            ipa: "[səˌsteɪ.nəˈbɪl.ə.t̬i]",
+            cn: "永續發展/可持續性",
+            example: "The university promotes environmental sustainability.",
+            tip: "永續性。形容詞為 sustainable。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#ddd6fe" stroke="#5b21b6" stroke-width="2.5"/><path d="M 16 24 L 22 30 L 32 18" fill="none" stroke="#6d28d9" stroke-width="3"/></svg>`
+          },
+          {
+            word: "recycling",
+            band: "5.0",
+            ipa: "[ˌriːˈsaɪ.klɪŋ]",
+            cn: "資源回收",
+            example: "Place plastic bottles inside the green recycling bin.",
+            tip: "資源回收。常見短語 recycling center (回收中心)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 10 L 34 26 L 14 26 Z" fill="none" stroke="#7c3aed" stroke-width="3"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionHighFreqEnv",
+        themeClass: "orange-theme",
+        titleCn: "環境高頻詞 (High-Freq)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "pollution",
+            band: "5.0",
+            ipa: "[pəˈluː.ʃən]",
+            cn: "環境污染",
+            example: "Air pollution in major cities poses health risks.",
+            tip: "★ 聽力極高頻！常見種類 air / water / noise pollution。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="22" rx="3" fill="#fdba74" stroke="#ea580c" stroke-width="2.5"/><path d="M 16 14 Q 20 6 24 14 T 32 14" fill="none" stroke="#c2410c" stroke-width="2"/></svg>`
+          },
+          {
+            word: "carbon footprint",
+            band: "6.5",
+            ipa: "[ˈkɑːr.bən ˈfʊt.prɪnt]",
+            cn: "碳足跡",
+            example: "Taking public transport reduces your personal carbon footprint.",
+            tip: "碳排放足跡。高分口語/寫作常考短語。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="26" rx="10" ry="12" fill="#ea580c"/><circle cx="16" cy="12" r="3" fill="#ea580c"/><circle cx="24" cy="10" r="3.5" fill="#ea580c"/><circle cx="32" cy="12" r="3" fill="#ea580c"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+
+  "unit-7": {
+    id: "unit-7",
+    number: 7,
+    titleEn: "Banking & Services",
+    titleCn: "金 融",
+    badgeText: "Unit 7 Banking & Services 金融服務單字圖鑑",
+    stickyNote: {
+      title: "💳 雅思聽力考點提醒",
+      content: "Section 1 銀行開戶與郵局服務！特別注意 bank account (銀行帳戶)、interest rate (利率)、branch (分行) 與 receipt (收據靜音 c)！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg class="house-svg" viewBox="0 0 200 160" width="190" height="152">
+          <path d="M 20 65 L 100 20 L 180 65 Z" fill="#047857" stroke="#064e3b" stroke-width="4" stroke-linejoin="round"/>
+          <rect x="30" y="63" width="140" height="85" rx="3" fill="#ecfdf5" stroke="#064e3b" stroke-width="4"/>
+          <rect x="44" y="75" width="16" height="73" fill="#34d399" stroke="#064e3b" stroke-width="2"/>
+          <rect x="80" y="75" width="16" height="73" fill="#34d399" stroke="#064e3b" stroke-width="2"/>
+          <rect x="104" y="75" width="16" height="73" fill="#34d399" stroke="#064e3b" stroke-width="2"/>
+          <rect x="140" y="75" width="16" height="73" fill="#34d399" stroke="#064e3b" stroke-width="2"/>
+          <g transform="translate(68, 122)">
+            <rect x="0" y="0" width="64" height="22" rx="4" fill="#a7f3d0" stroke="#047857" stroke-width="2.5"/>
+            <text x="32" y="15" font-family="'Fredoka', sans-serif" font-weight="700" font-size="12" fill="#047857" text-anchor="middle">BANK</text>
+          </g>
+        </svg>
+      </div>
+      <div class="backpack-icon" title="IELTS 信用卡金錢包">
+        <svg viewBox="0 0 60 65" width="46" height="50">
+          <rect x="10" y="18" width="40" height="36" rx="5" fill="#059669" stroke="#064e3b" stroke-width="3"/>
+          <rect x="10" y="26" width="40" height="8" fill="#064e3b"/>
+          <circle cx="22" cy="42" r="4" fill="#facc15"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sectionBanking",
+        themeClass: "blue-theme",
+        titleCn: "銀行服務 (Banking)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "bank account",
+            band: "5.0",
+            ipa: "[bæŋk əˈkaʊnt]",
+            cn: "銀行帳戶",
+            example: "International students must open a local bank account.",
+            tip: "★ Section 1 開戶考點！常見種類 current account (活期) / savings account (定期)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="24" rx="4" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/><text x="24" y="28" font-size="14" fill="#1e3a8a" text-anchor="middle" font-weight="bold">$</text></svg>`
+          },
+          {
+            word: "interest rate",
+            band: "6.5",
+            ipa: "[ˈɪn.trɪst reɪt]",
+            cn: "銀行利率",
+            example: "The savings account offers a 4% annual interest rate.",
+            tip: "存款或貸款利率。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/><text x="24" y="30" font-size="16" fill="#1d4ed8" text-anchor="middle" font-weight="bold">%</text></svg>`
+          },
+          {
+            word: "branch",
+            band: "5.0",
+            ipa: "[bræntʃ]",
+            cn: "銀行分行",
+            example: "You can visit the local branch near the train station.",
+            tip: "分行。聽力填空常見地點說明。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 8 36 L 24 16 L 40 36 Z" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "transfer",
+            band: "5.0",
+            ipa: "[trænsˈfɝː]",
+            cn: "轉帳/匯款",
+            example: "I will transfer the tuition fee via mobile banking.",
+            tip: "轉帳。常見短語 bank transfer。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 20 L 36 20 M 30 14 L 36 20 L 30 26" stroke="#2563eb" stroke-width="3"/><path d="M 36 30 L 12 30 M 18 24 L 12 30 L 18 36" stroke="#2563eb" stroke-width="3"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionPostal",
+        themeClass: "green-theme",
+        titleCn: "郵務物流 (Postal)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "parcel",
+            band: "5.0",
+            ipa: "[ˈpɑːr.səl]",
+            cn: "郵寄包裹",
+            example: "The postman delivered a large parcel to my doorstep.",
+            tip: "★ 郵寄包裹。美式英語也常使用 package。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="22" rx="3" fill="#86efac" stroke="#14532d" stroke-width="2.5"/><line x1="24" y1="14" x2="24" y2="36" stroke="#15803d" stroke-width="2"/><line x1="10" y1="24" x2="38" y2="24" stroke="#15803d" stroke-width="2"/></svg>`
+          },
+          {
+            word: "postage",
+            band: "5.0",
+            ipa: "[ˈpoʊ.stɪdʒ]",
+            cn: "郵資費用",
+            example: "How much is the postage for sending a letter to Australia?",
+            tip: "郵資。常見短語 postage stamp (郵票)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="10" width="24" height="28" rx="2" fill="#bbf7d0" stroke="#14532d" stroke-width="2.5"/><circle cx="24" cy="24" r="6" fill="#22c55e"/></svg>`
+          },
+          {
+            word: "registered mail",
+            band: "6.5",
+            ipa: "[ˈredʒ.ə.stɚd meɪl]",
+            cn: "掛號信件",
+            example: "Important documents should be sent by registered mail.",
+            tip: "掛號郵件，需簽收。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="22" rx="2" fill="#dcfce7" stroke="#14532d" stroke-width="2.5"/><path d="M 8 14 L 24 26 L 40 14" fill="none" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionShoppingFinance",
+        themeClass: "purple-theme",
+        titleCn: "購物退稅 (Shopping)",
+        color: "#7c3aed",
+        words: [
+          {
+            word: "receipt",
+            band: "5.0",
+            ipa: "[rɪˈsiːt]",
+            cn: "收據/發票",
+            example: "Keep your receipt in case you want to exchange the item.",
+            tip: "★ 聽力高頻陷阱詞！注意字母 p 不發音 (靜音 p)！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="32" rx="2" fill="#f5f3ff" stroke="#5b21b6" stroke-width="2.5"/><line x1="16" y1="16" x2="32" y2="16" stroke="#7c3aed" stroke-width="2"/><line x1="16" y1="22" x2="32" y2="22" stroke="#7c3aed" stroke-width="2"/></svg>`
+          },
+          {
+            word: "refund",
+            band: "5.0",
+            ipa: "[ˈriː.fʌnd]",
+            cn: "退款",
+            example: "The store gave me a full refund for the defective phone.",
+            tip: "退款。常見搭配 get a full refund。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 24 A 12 12 0 1 1 24 36" fill="none" stroke="#7c3aed" stroke-width="3"/><polygon points="8,24 16,24 12,18" fill="#7c3aed"/></svg>`
+          },
+          {
+            word: "discount",
+            band: "5.0",
+            ipa: "[ˈdɪs.kaʊnt]",
+            cn: "折扣優惠",
+            example: "Students receive a 10% discount with a valid ID card.",
+            tip: "折扣。常見短語 student discount。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="12" width="28" height="24" rx="3" fill="#ddd6fe" stroke="#5b21b6" stroke-width="2.5"/><text x="24" y="28" font-size="12" fill="#6d28d9" text-anchor="middle" font-weight="bold">OFF</text></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionHighFreqBank",
+        themeClass: "orange-theme",
+        titleCn: "金融高頻詞 (High-Freq)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "credit card",
+            band: "5.0",
+            ipa: "[ˈkred.ɪt kɑːrd]",
+            cn: "信用卡",
+            example: "You can pay by cash or credit card.",
+            tip: "★ Section 1 支付方式極高頻！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="20" rx="3" fill="#fdba74" stroke="#ea580c" stroke-width="2.5"/><rect x="8" y="20" width="32" height="5" fill="#ea580c"/></svg>`
+          },
+          {
+            word: "identification",
+            band: "6.5",
+            ipa: "[aɪˌden.t̬ə.fəˈkeɪ.ʃən]",
+            cn: "身份證明 (ID)",
+            example: "Please bring official identification to open a bank account.",
+            tip: "身分證件。常縮寫為 ID。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="24" rx="3" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/><circle cx="18" cy="24" r="5" fill="#f97316"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+
+  "unit-8": {
+    id: "unit-8",
+    number: 8,
+    titleEn: "Food & Dining",
+    titleCn: "飲 食",
+    badgeText: "Unit 8 Food & Dining 飲食餐廳單字圖鑑",
+    stickyNote: {
+      title: "🍔 雅思聽力考點提醒",
+      content: "Section 1 & 2 餐廳點餐與飲食喜好！特別注意 vegetarian (素食)、allergy (過敏)、reservation (訂位) 與 main course (主菜)！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg class="house-svg" viewBox="0 0 200 160" width="190" height="152">
+          <circle cx="100" cy="75" r="52" fill="#fff7ed" stroke="#ea580c" stroke-width="4"/>
+          <circle cx="100" cy="75" r="40" fill="none" stroke="#fdba74" stroke-width="2.5" stroke-dasharray="4 3"/>
+          <path d="M 32 40 L 32 70 L 38 70 L 38 110" fill="none" stroke="#78350f" stroke-width="3"/>
+          <path d="M 168 40 C 168 40, 160 70, 160 80 L 160 110" fill="none" stroke="#78350f" stroke-width="3"/>
+          <path d="M 85 70 C 70 50, 90 35, 100 45 C 110 35, 130 50, 115 70 Z" fill="#ffffff" stroke="#c2410c" stroke-width="3"/>
+          <rect x="85" y="70" width="30" height="12" rx="2" fill="#ffffff" stroke="#c2410c" stroke-width="2.5"/>
+        </svg>
+      </div>
+      <div class="backpack-icon" title="IELTS 美食餐盒">
+        <svg viewBox="0 0 60 65" width="46" height="50">
+          <rect x="10" y="20" width="40" height="34" rx="6" fill="#f97316" stroke="#c2410c" stroke-width="3"/>
+          <path d="M 10 32 L 50 32" stroke="#c2410c" stroke-width="2"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sectionOrdering",
+        themeClass: "blue-theme",
+        titleCn: "餐廳點餐 (Ordering)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "menu",
+            band: "5.0",
+            ipa: "[ˈmen.juː]",
+            cn: "菜單",
+            example: "May I see the lunch menu and drink list, please?",
+            tip: "菜單。常見分開呈現 set menu (定食/套餐)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="32" rx="2" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/><line x1="18" y1="16" x2="30" y2="16" stroke="#1d4ed8" stroke-width="2"/><line x1="18" y1="22" x2="30" y2="22" stroke="#1d4ed8" stroke-width="2"/></svg>`
+          },
+          {
+            word: "main course",
+            band: "5.0",
+            ipa: "[meɪn kɔːrs]",
+            cn: "餐點主菜",
+            example: "For the main course, I would like the grilled salmon.",
+            tip: "★ 主菜。前菜稱為 starter / appetizer。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/><circle cx="24" cy="24" r="10" fill="#2563eb"/></svg>`
+          },
+          {
+            word: "dessert",
+            band: "5.0",
+            ipa: "[dɪˈzɝːt]",
+            cn: "餐後甜點",
+            example: "Chocolate cake is my favorite dessert.",
+            tip: "★ 甜點。注意雙 s 拼寫！desert (單 s) 為沙漠。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 32 L 36 32 L 30 18 L 18 18 Z" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2.5"/><circle cx="24" cy="14" r="4" fill="#ef4444"/></svg>`
+          },
+          {
+            word: "beverage",
+            band: "5.0",
+            ipa: "[ˈbev.ɚ.ɪdʒ]",
+            cn: "飲料/飲品",
+            example: "Hot and cold beverages are served with the meal.",
+            tip: "飲品統稱 (drink 的正式表達)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 14 14 L 34 14 L 30 38 L 18 38 Z" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/><line x1="28" y1="8" x2="22" y2="24" stroke="#ef4444" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionDietary",
+        themeClass: "green-theme",
+        titleCn: "飲食習慣 (Dietary)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "vegetarian",
+            band: "5.0",
+            ipa: "[ˌvedʒ.əˈter.i.ən]",
+            cn: "素食的/素食者",
+            example: "The restaurant has a variety of vegetarian options.",
+            tip: "★ 聽力大熱考點！不吃肉的素食者。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 34 Q 24 14 36 34 Z" fill="#86efac" stroke="#14532d" stroke-width="2.5"/><path d="M 24 20 L 24 34" stroke="#15803d" stroke-width="2"/></svg>`
+          },
+          {
+            word: "vegan",
+            band: "6.5",
+            ipa: "[ˈviː.ɡən]",
+            cn: "純素主義者",
+            example: "A vegan diet excludes all meat, dairy, and eggs.",
+            tip: "純素者（完全不食用任何動物製品）。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#bbf7d0" stroke="#14532d" stroke-width="2.5"/><path d="M 16 24 L 22 30 L 32 18" fill="none" stroke="#15803d" stroke-width="3"/></svg>`
+          },
+          {
+            word: "seafood",
+            band: "5.0",
+            ipa: "[ˈsiː.fuːd]",
+            cn: "海鮮食材",
+            example: "Fresh seafood is delivered daily from the harbor.",
+            tip: "海鮮。聽力常考過敏源 (seafood allergy)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 24 C 20 14, 30 34, 38 24 C 30 34, 20 14, 10 24 Z" fill="#4ade80" stroke="#14532d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionIngredients",
+        themeClass: "purple-theme",
+        titleCn: "食材調理 (Ingredients)",
+        color: "#7c3aed",
+        words: [
+          {
+            word: "ingredient",
+            band: "6.5",
+            ipa: "[ɪnˈɡriː.di.ənt]",
+            cn: "烹飪食材",
+            example: "All dishes are cooked with fresh organic ingredients.",
+            tip: "食材。注意中間有 -grie-。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="4" fill="#ddd6fe" stroke="#5b21b6" stroke-width="2.5"/><circle cx="20" cy="20" r="4" fill="#a78bfa"/><circle cx="28" cy="28" r="4" fill="#7c3aed"/></svg>`
+          },
+          {
+            word: "nutrition",
+            band: "6.5",
+            ipa: "[nuːˈtrɪʃ.ən]",
+            cn: "營養價值",
+            example: "Proper nutrition is essential for student health.",
+            tip: "營養。形容詞為 nutritious (有營養的)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#f5f3ff" stroke="#5b21b6" stroke-width="2.5"/><path d="M 24 12 L 24 36 M 12 24 L 36 24" stroke="#7c3aed" stroke-width="3"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionHighFreqFood",
+        themeClass: "orange-theme",
+        titleCn: "餐飲高頻詞 (High-Freq)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "takeaway",
+            band: "5.0",
+            ipa: "[ˈteɪk.ə.weɪ]",
+            cn: "外帶餐點",
+            example: "We ordered a Chinese takeaway for dinner.",
+            tip: "外帶。美式英語常稱為 takeout。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="16" width="24" height="22" rx="3" fill="#fdba74" stroke="#ea580c" stroke-width="2.5"/><path d="M 18 16 L 24 8 L 30 16" fill="none" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "buffet",
+            band: "6.5",
+            ipa: "[bəˈfeɪ]",
+            cn: "自助餐",
+            example: "The hotel offers an all-you-can-eat breakfast buffet.",
+            tip: "自助餐。注意法語借詞 t 不發音！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="20" width="32" height="16" rx="2" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/><circle cx="16" cy="20" r="4" fill="#f97316"/><circle cx="32" cy="20" r="4" fill="#f97316"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+
+  "unit-9": {
+    id: "unit-9",
+    number: 9,
+    titleEn: "Entertainment & Sports",
+    titleCn: "娛 樂",
+    badgeText: "Unit 9 Entertainment & Sports 娛樂運動單字圖鑑",
+    stickyNote: {
+      title: "🎨 雅思聽力考點提醒",
+      content: "Section 2 活動與設施簡介！特別注意 exhibition (展覽)、membership (會員資格)、facility (設施) 與 tournament (錦標賽)！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg class="house-svg" viewBox="0 0 200 160" width="190" height="152">
+          <circle cx="85" cy="75" r="45" fill="#fef3c7" stroke="#d97706" stroke-width="4"/>
+          <circle cx="70" cy="85" r="6" fill="#ffffff" stroke="#d97706" stroke-width="2"/>
+          <circle cx="75" cy="60" r="5" fill="#ef4444"/>
+          <circle cx="95" cy="62" r="5" fill="#3b82f6"/>
+          <circle cx="105" cy="78" r="5" fill="#22c55e"/>
+          <circle cx="135" cy="85" r="30" fill="#ffffff" stroke="#1e293b" stroke-width="3.5"/>
+          <polygon points="135,73 143,79 140,89 130,89 127,79" fill="#1e293b"/>
+        </svg>
+      </div>
+      <div class="backpack-icon" title="IELTS 運動休閒背包">
+        <svg viewBox="0 0 60 65" width="46" height="50">
+          <path d="M 15 25 C 15 10, 45 10, 45 25 L 48 55 C 48 60, 42 62, 30 62 C 18 62, 12 60, 12 55 Z" fill="#d97706" stroke="#b45309" stroke-width="3"/>
+          <circle cx="30" cy="38" r="7" fill="#fef3c7"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sectionArtsCulture",
+        themeClass: "blue-theme",
+        titleCn: "藝術與展覽 (Arts)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "exhibition",
+            band: "6.5",
+            ipa: "[ˌek.səˈbɪʃ.ən]",
+            cn: "博物館展覽",
+            example: "The art gallery is hosting an exhibition of modern photography.",
+            tip: "★ 聽力極高頻！注意 h 不發音！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="3" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/><circle cx="20" cy="20" r="4" fill="#f59e0b"/><path d="M 12 32 L 20 24 L 28 32 Z" fill="#1d4ed8"/></svg>`
+          },
+          {
+            word: "gallery",
+            band: "5.0",
+            ipa: "[ˈɡæl.ɚ.i]",
+            cn: "美術館/畫廊",
+            example: "Local artists display their paintings in the national gallery.",
+            tip: "畫廊。常見短語 art gallery。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="12" width="32" height="24" rx="2" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/><line x1="16" y1="12" x2="16" y2="36" stroke="#1e3a8a" stroke-width="2"/></svg>`
+          },
+          {
+            word: "performance",
+            band: "5.0",
+            ipa: "[pɚˈfɔːr.məns]",
+            cn: "舞台演出/表演",
+            example: "The evening theater performance starts at 7:30 PM.",
+            tip: "演出。動詞為 perform。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 36 L 24 12 L 36 36 Z" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionSportsFitness",
+        themeClass: "green-theme",
+        titleCn: "運動與健身 (Sports)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "gymnasium",
+            band: "5.0",
+            ipa: "[dʒɪmˈneɪ.zi.əm]",
+            cn: "體育館/健身房",
+            example: "The campus gymnasium includes a basketball court and swimming pool.",
+            tip: "★ 體育館。常簡稱為 gym。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="20" width="32" height="8" rx="4" fill="#86efac" stroke="#14532d" stroke-width="2.5"/><rect x="14" y="14" width="4" height="20" fill="#14532d"/><rect x="30" y="14" width="4" height="20" fill="#14532d"/></svg>`
+          },
+          {
+            word: "membership",
+            band: "5.0",
+            ipa: "[ˈmem.bɚ.ʃɪp]",
+            cn: "會員資格",
+            example: "Annual gym membership includes access to all fitness classes.",
+            tip: "★ 會員身分。常見短語 membership fee (會費)。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="20" rx="3" fill="#bbf7d0" stroke="#14532d" stroke-width="2.5"/><text x="24" y="28" font-size="11" fill="#15803d" text-anchor="middle" font-weight="bold">VIP</text></svg>`
+          },
+          {
+            word: "tournament",
+            band: "6.5",
+            ipa: "[ˈtʊr.nə.mənt]",
+            cn: "錦標賽/聯賽",
+            example: "Our university tennis team won the national tournament.",
+            tip: "錦標賽。聽力體育話題常用詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 12 L 36 12 L 30 28 L 18 28 Z" fill="#facc15" stroke="#ca8a04" stroke-width="2.5"/><rect x="22" y="28" width="4" height="10" fill="#ca8a04"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionLeisureEvents",
+        themeClass: "purple-theme",
+        titleCn: "休閒與活動 (Leisure)",
+        color: "#7c3aed",
+        words: [
+          {
+            word: "festival",
+            band: "5.0",
+            ipa: "[ˈfes.tə.vəl]",
+            cn: "慶典/音樂節",
+            example: "Thousands of visitors attended the summer music festival.",
+            tip: "節日/慶典。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><polygon points="24,8 30,20 42,20 32,28 36,40 24,32 12,40 16,28 6,20 18,20" fill="#c4b5fd" stroke="#5b21b6" stroke-width="2"/></svg>`
+          },
+          {
+            word: "recreation",
+            band: "6.5",
+            ipa: "[ˌrek.riˈeɪ.ʃən]",
+            cn: "娛樂休閒活動",
+            example: "The park offers various recreation facilities for families.",
+            tip: "娛樂。休閒中心稱為 recreation center。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#ddd6fe" stroke="#5b21b6" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionHighFreqSports",
+        themeClass: "orange-theme",
+        titleCn: "娛樂高頻詞 (High-Freq)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "instructor",
+            band: "6.5",
+            ipa: "[ɪnˈstrʌk.tɚ]",
+            cn: "專業教練/指導員",
+            example: "Book a lesson with a certified skiing instructor.",
+            tip: "★ 聽力常見人物身分。如 fitness instructor。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="16" r="7" fill="#fdba74" stroke="#ea580c" stroke-width="2"/><path d="M 12 36 C 12 26, 36 26, 36 36" fill="#ea580c" stroke="#c2410c" stroke-width="2"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+
+  "unit-10": {
+    id: "unit-10",
+    number: 10,
+    titleEn: "Science & Technology",
+    titleCn: "科 技",
+    badgeText: "Unit 10 Science & Technology 科學科技單字圖鑑",
+    stickyNote: {
+      title: "🔬 雅思聽力考點提醒",
+      content: "Section 4 學術科技演講！特別注意 artificial intelligence (AI)、database (資料庫)、innovation (創新) 與 experiment (實驗)！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg class="house-svg" viewBox="0 0 200 160" width="190" height="152">
+          <rect x="50" y="30" width="100" height="115" rx="10" fill="#0f172a" stroke="#38bdf8" stroke-width="4"/>
+          <circle cx="100" cy="75" r="22" fill="#0284c7" stroke="#38bdf8" stroke-width="3"/>
+          <line x1="100" y1="30" x2="100" y2="53" stroke="#38bdf8" stroke-width="3"/>
+          <line x1="100" y1="97" x2="100" y2="145" stroke="#38bdf8" stroke-width="3"/>
+          <line x1="50" y1="75" x2="78" y2="75" stroke="#38bdf8" stroke-width="3"/>
+          <line x1="122" y1="75" x2="150" y2="75" stroke="#38bdf8" stroke-width="3"/>
+          <circle cx="100" cy="75" r="6" fill="#38bdf8"/>
+        </svg>
+      </div>
+      <div class="backpack-icon" title="IELTS 科技機器人背包">
+        <svg viewBox="0 0 60 65" width="46" height="50">
+          <rect x="10" y="18" width="40" height="38" rx="6" fill="#0284c7" stroke="#0369a1" stroke-width="3"/>
+          <circle cx="22" cy="30" r="4" fill="#38bdf8"/>
+          <circle cx="38" cy="30" r="4" fill="#38bdf8"/>
+          <line x1="20" y1="44" x2="40" y2="44" stroke="#38bdf8" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sectionITDev",
+        themeClass: "blue-theme",
+        titleCn: "資訊與網路 (IT)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "artificial intelligence",
+            band: "7.5+",
+            ipa: "[ˌɑːr.t̬əˈfɪʃ.əl ɪnˈtel.ə.dʒəns]",
+            cn: "人工智慧 (AI)",
+            example: "Artificial intelligence is transforming modern healthcare.",
+            tip: "★ Section 4 學術大考點！常縮寫為 AI。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="6" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/><circle cx="18" cy="20" r="3" fill="#1d4ed8"/><circle cx="30" cy="20" r="3" fill="#1d4ed8"/><line x1="18" y1="28" x2="30" y2="28" stroke="#1d4ed8" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "database",
+            band: "6.5",
+            ipa: "[ˈdeɪ.t̬ə.beɪs]",
+            cn: "數據資料庫",
+            example: "Researchers store all experimental results in a central database.",
+            tip: "資料庫。注意是單一單字，不拆開！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="14" rx="14" ry="5" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2"/><path d="M 10 14 L 10 34 C 10 39, 38 39, 38 34 L 38 14" fill="none" stroke="#1e3a8a" stroke-width="2"/></svg>`
+          },
+          {
+            word: "cybersecurity",
+            band: "7.5+",
+            ipa: "[ˌsaɪ.bɚ.səˈkjʊr.ə.t̬i]",
+            cn: "資訊網路安全",
+            example: "Companies invest heavily in cybersecurity to prevent data breaches.",
+            tip: "網路安全。字首 cyber- 表示網路與電腦。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 8 L 40 14 L 40 26 C 40 36, 24 42, 24 42 C 24 42, 8 36, 8 26 L 8 14 Z" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionResearchExp",
+        themeClass: "green-theme",
+        titleCn: "研究與實驗 (Research)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "experiment",
+            band: "5.0",
+            ipa: "[ɪkˈsper.ə.mənt]",
+            cn: "科學實驗",
+            example: "Scientists conducted a series of laboratory experiments.",
+            tip: "★ 聽力極高頻！常見短語 conduct an experiment。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 18 12 L 30 12 L 30 20 L 38 34 C 40 38, 36 40, 24 40 C 12 40, 8 38, 10 34 L 18 20 Z" fill="#86efac" stroke="#14532d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "hypothesis",
+            band: "7.5+",
+            ipa: "[haɪˈpɑː.θə.sɪs]",
+            cn: "科學假設",
+            example: "The research data supported our initial hypothesis.",
+            tip: "★ 學術假說。複數形式為 hypotheses [haɪˈpɑː.θə.siːz]！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#bbf7d0" stroke="#14532d" stroke-width="2.5"/><text x="24" y="30" font-size="16" fill="#14532d" text-anchor="middle" font-weight="bold">?</text></svg>`
+          },
+          {
+            word: "innovation",
+            band: "6.5",
+            ipa: "[ˌɪn.əˈveɪ.ʃən]",
+            cn: "科技創新",
+            example: "Technological innovation drives economic growth.",
+            tip: "創新。形容詞為 innovative。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="20" r="12" fill="#fef08a" stroke="#ca8a04" stroke-width="2.5"/><rect x="20" y="32" width="8" height="8" fill="#ca8a04"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionTechFuture",
+        themeClass: "purple-theme",
+        titleCn: "未來科技 (Future Tech)",
+        color: "#7c3aed",
+        words: [
+          {
+            word: "automation",
+            band: "6.5",
+            ipa: "[ˌɑː.t̬əˈmeɪ.ʃən]",
+            cn: "自動化技術",
+            example: "Factory automation increases manufacturing efficiency.",
+            tip: "自動化。形容詞為 automated。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#ddd6fe" stroke="#5b21b6" stroke-width="2.5"/><path d="M 24 14 L 24 24 L 30 24" stroke="#5b21b6" stroke-width="3"/></svg>`
+          },
+          {
+            word: "robotics",
+            band: "7.5+",
+            ipa: "[roʊˈbɑː.t̬ɪks]",
+            cn: "機器人學",
+            example: "Robotics engineering is a popular field of study.",
+            tip: "機器人工程學。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="14" width="24" height="20" rx="4" fill="#c4b5fd" stroke="#5b21b6" stroke-width="2.5"/><circle cx="18" cy="22" r="3" fill="#ffffff"/><circle cx="30" cy="22" r="3" fill="#ffffff"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sectionHighFreqTech",
+        themeClass: "orange-theme",
+        titleCn: "科技高頻詞 (High-Freq)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "algorithm",
+            band: "7.5+",
+            ipa: "[ˈæl.ɡə.rɪ.ðəm]",
+            cn: "演算法",
+            example: "Search engines rely on complex algorithms to rank results.",
+            tip: "★ 演算法。聽力 Section 4 常考詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="4" fill="#fdba74" stroke="#ea580c" stroke-width="2.5"/><path d="M 16 24 L 22 30 L 32 18" fill="none" stroke="#c2410c" stroke-width="3"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+
+"unit-11": {
+    id: "unit-11",
+    number: 11,
+    titleEn: "Education & Learning",
+    titleCn: "教 育 與 學 習",
+    badgeText: "Unit 11 Education & Learning 教育學術圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 & 閱讀考點",
+      content: "Education 題型極常考！注意 distance learning (遠距教學)、curriculum (課程體系) 與 pedagogy (教學法) 的拼寫與主題替換！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <path d="M 30 70 L 100 30 L 170 70 L 100 110 Z" fill="#3b82f6" stroke="#1e3a8a" stroke-width="4"/>
+          <rect x="55" y="75" width="90" height="45" rx="6" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="3"/>
+          <path d="M 170 70 L 170 120" stroke="#1e3a8a" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="170" cy="125" r="6" fill="#f59e0b"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec11_1",
+        themeClass: "blue-theme",
+        titleCn: "學習模式 (Learning Methods)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "distance learning",
+            band: "6.5",
+            ipa: "[ˈdɪs.təns ˈlɝː.nɪŋ]",
+            cn: "遠距學習 / 線上課程",
+            example: "Distance learning offers flexibility for working professionals.",
+            tip: "寫作 Task 2 探討科技對教育影響時的高頻主題詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="6" y="10" width="36" height="24" rx="3" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2.5"/><path d="M 16 34 L 32 34 M 24 34 L 24 40" stroke="#1e3a8a" stroke-width="3"/></svg>`
+          },
+          {
+            word: "rote learning",
+            band: "6.5",
+            ipa: "[roʊt ˈlɝː.nɪŋ]",
+            cn: "死記硬背 / 填鴨式學習",
+            example: "Rote learning focuses on memorization rather than deep understanding.",
+            tip: "與 critical thinking (批判性思考) 形成鮮明對比。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="10" width="24" height="28" rx="2" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/><line x1="18" y1="18" x2="30" y2="18" stroke="#1e3a8a" stroke-width="2"/><line x1="18" y1="24" x2="30" y2="24" stroke="#1e3a8a" stroke-width="2"/></svg>`
+          },
+          {
+            word: "critical thinking",
+            band: "7.5+",
+            ipa: "[ˈkrɪt̬.ɪ.kəl ˈθɪŋ.kɪŋ]",
+            cn: "批判性思考",
+            example: "Higher education encourages students to cultivate critical thinking skills.",
+            tip: "雅思口說 Part 3 與寫作 Task 2 提分必備詞組！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/><path d="M 20 20 L 28 28 M 28 20 L 20 28" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "lifelong learning",
+            band: "6.5",
+            ipa: "[ˈlaɪf.lɑːŋ ˈlɝː.nɪŋ]",
+            cn: "終身學習",
+            example: "Rapid technological advances require continuous lifelong learning.",
+            tip: "探討現代社會競爭力時的精準同義詞組。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 24 C 12 16, 36 16, 36 24 C 36 32, 12 32, 12 24 Z" fill="none" stroke="#2563eb" stroke-width="3"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec11_2",
+        themeClass: "green-theme",
+        titleCn: "學術體系 (Academic System)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "curriculum",
+            band: "6.5",
+            ipa: "[kəˈrɪk.jə.ləm]",
+            cn: "學校課程體系",
+            example: "The national curriculum was revised to include environmental science.",
+            tip: "注意複數形式可為 curricula。寫作極高頻！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 12 L 38 12 L 38 36 L 10 36 Z" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/><line x1="16" y1="20" x2="32" y2="20" stroke="#15803d" stroke-width="2"/></svg>`
+          },
+          {
+            word: "literacy rate",
+            band: "6.5",
+            ipa: "[ˈlɪt̬.ɚ.ə.si reɪt]",
+            cn: "識字率 / 文化普及率",
+            example: "Investments in primary education significantly boosted the literacy rate.",
+            tip: "寫作 Task 1 圖表分析常用統計詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 36 L 18 24 L 26 30 L 38 14" fill="none" stroke="#16a34a" stroke-width="3"/></svg>`
+          },
+          {
+            word: "vocational training",
+            band: "6.5",
+            ipa: "[voʊˈkeɪ.ʃən.əl ˈtreɪ.nɪŋ]",
+            cn: "職業技能培訓",
+            example: "Vocational training prepares students for specialized technical careers.",
+            tip: "與 academic education (學術教育) 形成對比。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="16" width="28" height="20" rx="3" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "academic achievement",
+            band: "6.5",
+            ipa: "[ˌæk.əˈdem.ɪk əˈtʃiːv.mənt]",
+            cn: "學術成就 / 學業表現",
+            example: "Parental involvement strongly correlates with high academic achievement.",
+            tip: "常用於寫作論述學生表現。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="20" r="10" fill="#fde68a" stroke="#b45309" stroke-width="2.5"/><path d="M 18 30 L 14 42 L 24 36 L 34 42 L 30 30" fill="#fde68a" stroke="#b45309" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec11_3",
+        themeClass: "purple-theme",
+        titleCn: "評量與測驗 (Assessment & Testing)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "continuous assessment",
+            band: "6.5",
+            ipa: "[kənˈtɪn.ju.əs əˈses.mənt]",
+            cn: "平時持續性評量",
+            example: "Final marks are based on continuous assessment throughout the semester.",
+            tip: "指不單靠一次期末考，而是綜合平時表現打分。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="4" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><path d="M 18 24 L 22 28 L 30 18" stroke="#7e22ce" stroke-width="3" fill="none"/></svg>`
+          },
+          {
+            word: "standardized test",
+            band: "6.5",
+            ipa: "[ˈstæn.dɚ.daɪzd test]",
+            cn: "標準化測驗",
+            example: "IELTS is a globally recognized standardized test for English proficiency.",
+            tip: "描述雅思、TOEFL 等全球統一考試。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="8" width="24" height="32" rx="2" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "diploma",
+            band: "5.0",
+            ipa: "[dɪˈploʊ.mə]",
+            cn: "文憑 / 畢業證書",
+            example: "She received her diploma in business administration after graduation.",
+            tip: "聽力 Section 1 學生諮詢常用詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="32" height="20" rx="3" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec11_4",
+        themeClass: "orange-theme",
+        titleCn: "教育公平 (Educational Equity)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "educational subsidy",
+            band: "7.5+",
+            ipa: "[ˌedʒ.əˈkeɪ.ʃən.əl ˈsʌb.sə.di]",
+            cn: "教育津貼 / 助學金",
+            example: "Government educational subsidies ensure low-income students attend college.",
+            tip: "探討政府財政支出與社會福祉的高階詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#ffedd5" stroke="#c2410c" stroke-width="2.5"/><text x="24" y="29" font-size="16" font-weight="bold" fill="#c2410c" text-anchor="middle">$</text></svg>`
+          },
+          {
+            word: "inclusive education",
+            band: "7.5+",
+            ipa: "[ɪnˈkluː.sɪv ˌedʒ.əˈkeɪ.ʃən]",
+            cn: "融合教育 / 包容性教育",
+            example: "Inclusive education accommodates students with diverse learning needs.",
+            tip: "現代教育政策寫作熱門主題。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="18" cy="24" r="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2"/><circle cx="30" cy="24" r="10" fill="#fde68a" stroke="#d97706" stroke-width="2"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-12": {
+    id: "unit-12",
+    number: 12,
+    titleEn: "Media & Communication",
+    titleCn: "媒 體 與 傳 播",
+    badgeText: "Unit 12 Media & Communication 大眾傳播圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 Task 2 熱門題型",
+      content: "大眾媒體與社群網路是寫作高頻常客！注意 censorship (審查)、propaganda (宣傳) 與 algorithm (演算法) 的搭配使用！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <path d="M 100 120 L 100 50 M 80 70 C 90 55, 110 55, 120 70 M 65 90 C 85 70, 115 70, 135 90" fill="none" stroke="#ea580c" stroke-width="4" stroke-linecap="round"/>
+          <rect x="75" y="115" width="50" height="30" rx="4" fill="#fed7aa" stroke="#c2410c" stroke-width="3"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec12_1",
+        themeClass: "orange-theme",
+        titleCn: "新聞與廣播 (News & Broadcasting)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "journalism",
+            band: "6.5",
+            ipa: "[ˈdʒɝː.nə.lɪz.əm]",
+            cn: "新聞業 / 新聞工作",
+            example: "Ethical journalism prioritizes objective facts over sensational headlines.",
+            tip: "描繪新聞媒體道德與責任的關鍵詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="10" width="28" height="28" rx="3" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/><line x1="16" y1="18" x2="32" y2="18" stroke="#ea580c" stroke-width="2"/></svg>`
+          },
+          {
+            word: "investigative report",
+            band: "7.5+",
+            ipa: "[ɪnˈves.tə.ɡə.t̬ɪv rɪˈpɔːrt]",
+            cn: "調查性報導",
+            example: "The investigative report uncovered financial misconduct within the firm.",
+            tip: "閱讀 Section 2 媒體專題高階片語。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="20" cy="20" r="10" fill="none" stroke="#ea580c" stroke-width="2.5"/><line x1="28" y1="28" x2="38" y2="38" stroke="#ea580c" stroke-width="3"/></svg>`
+          },
+          {
+            word: "broadcasting",
+            band: "6.5",
+            ipa: "[ˈbrɑːd.kæs.tɪŋ]",
+            cn: "電視廣播 / 播送",
+            example: "Public broadcasting networks rely on state subsidies and listener donations.",
+            tip: "聽力 Section 2 媒體機構介紹常考名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 36 L 24 12 L 36 36 Z" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec12_2",
+        themeClass: "blue-theme",
+        titleCn: "數位與社群 (Digital & Social Media)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "viral content",
+            band: "6.5",
+            ipa: "[ˈvaɪ.rəl ˈkɑːn.tent]",
+            cn: "瘋傳的網路內容",
+            example: "Short video clips can quickly become viral content across global platforms.",
+            tip: "描述現代網路流行現象的通俗表達。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 14 34 Q 24 10 34 34 Z" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "cyberbullying",
+            band: "6.5",
+            ipa: "[ˈsaɪ.bɚˌbʊl.i.ɪŋ]",
+            cn: "網路霸凌",
+            example: "Schools implement anti-cyberbullying policies to protect students online.",
+            tip: "探討網路負面影響時寫作高頻考詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec12_3",
+        themeClass: "purple-theme",
+        titleCn: "媒體倫理 (Media Ethics & Bias)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "censorship",
+            band: "7.5+",
+            ipa: "[ˈsen.sɚ.ʃɪp]",
+            cn: "審查制度 / 內容過濾",
+            example: "Strict internet censorship restricts free exchange of political ideas.",
+            tip: "討論言論自由與媒體管制的高階核心詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="20" rx="3" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><line x1="10" y1="14" x2="38" y2="34" stroke="#dc2626" stroke-width="3"/></svg>`
+          },
+          {
+            word: "propaganda",
+            band: "7.5+",
+            ipa: "[ˌprɑː.pəˈɡæn.də]",
+            cn: "政治宣傳 / 偏見宣傳",
+            example: "Wartime media was heavily influenced by state-sponsored propaganda.",
+            tip: "閱讀 Section 3 政治與歷史題型極常見。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 16 L 36 10 L 36 34 L 12 28 Z" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "misinformation",
+            band: "7.5+",
+            ipa: "[ˌmɪs.ɪn.fɚˈmeɪ.ʃən]",
+            cn: "假新聞 / 錯誤資訊",
+            example: "Social media platforms struggle to combat the spread of misinformation.",
+            tip: "當代媒體議題最新極高頻詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 8 L 40 38 L 8 38 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/><text x="24" y="32" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">!</text></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec12_4",
+        themeClass: "green-theme",
+        titleCn: "廣告行銷 (Advertising & Marketing)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "target audience",
+            band: "6.5",
+            ipa: "[ˈtɑːr.ɡɪt ˈɑː.di.əns]",
+            cn: "目標受眾 / 目標客群",
+            example: "Marketing campaigns are tailored specifically to appeal to the target audience.",
+            tip: "商業與廣告寫作常用固定搭配。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/><circle cx="24" cy="24" r="8" fill="#15803d"/></svg>`
+          },
+          {
+            word: "sponsorship",
+            band: "6.5",
+            ipa: "[ˈspɑːn.sɚ.ʃɪp]",
+            cn: "贊助 / 贊助金",
+            example: "The international sports tournament secured lucrative corporate sponsorship.",
+            tip: "聽力 Section 2 賽事或展覽舉辦常考名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="16" width="28" height="20" rx="3" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-13": {
+    id: "unit-13",
+    number: 13,
+    titleEn: "Law, Crime & Society",
+    titleCn: "法 律 與 社 會",
+    badgeText: "Unit 13 Law, Crime & Society 法律治安圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 Task 2 犯罪題型",
+      content: "Crime & Punishment 是 Task 2 經典大題！注意 rehabilitation (改造性復建)、juvenile delinquency (青少年犯罪) 與 deterrence (威懾力) 的精準論述！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <line x1="100" y1="30" x2="100" y2="130" stroke="#1e293b" stroke-width="5"/>
+          <line x1="50" y1="50" x2="150" y2="50" stroke="#1e293b" stroke-width="4"/>
+          <path d="M 50 50 L 35 90 L 65 90 Z M 150 50 L 135 90 L 165 90 Z" fill="#94a3b8" stroke="#1e293b" stroke-width="2"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec13_1",
+        themeClass: "purple-theme",
+        titleCn: "法律體系 (Legal System)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "legislation",
+            band: "7.5+",
+            ipa: "[ˌledʒ.əˈsleɪ.ʃən]",
+            cn: "法律制定 / 立法",
+            example: "The parliament enacted strict environmental protection legislation.",
+            tip: "正式寫作 Task 2 替代 laws 的高階學術詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="8" width="28" height="32" rx="3" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><line x1="16" y1="16" x2="32" y2="16" stroke="#7e22ce" stroke-width="2"/></svg>`
+          },
+          {
+            word: "verdict",
+            band: "7.5+",
+            ipa: "[ˈvɝː.dɪkt]",
+            cn: "法庭判決 / 裁決",
+            example: "The jury reached a unanimous guilty verdict after long deliberation.",
+            tip: "閱讀 Section 2 法庭專題高階詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 34 L 32 14 L 38 20 L 18 40 Z" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "attorney",
+            band: "6.5",
+            ipa: "[əˈtɝː.ni]",
+            cn: "律師 / 訴訟代理人",
+            example: "The defendant consulted with his defense attorney before trial.",
+            tip: "美式常用（等同於英式的 barrister / solicitor）。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="16" width="24" height="24" rx="3" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec13_2",
+        themeClass: "orange-theme",
+        titleCn: "犯罪類型 (Crime Types)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "juvenile delinquency",
+            band: "7.5+",
+            ipa: "[ˈdʒuː.və.nəl dɪˈlɪŋ.kwən.si]",
+            cn: "青少年犯罪 / 少年違法",
+            example: "Community youth centers aim to reduce rates of juvenile delinquency.",
+            tip: "寫作 Task 2 青少年犯罪題型專用高端詞組！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "fraud",
+            band: "6.5",
+            ipa: "[frɑːd]",
+            cn: "詐欺 / 騙局",
+            example: "Online financial fraud has surged with rising e-commerce transactions.",
+            tip: "金融犯罪與網路安全常見名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="20" rx="3" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "white-collar crime",
+            band: "7.5+",
+            ipa: "[waɪt ˈkɑː.lɚ kraɪm]",
+            cn: "白領階級犯罪 (高智商經濟犯罪)",
+            example: "White-collar crime includes embezzlement, bribery, and insider trading.",
+            tip: "寫作與閱讀探討商業罪案高階片語。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 16 L 24 8 L 36 16 L 36 38 L 12 38 Z" fill="#ffffff" stroke="#1e293b" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec13_3",
+        themeClass: "blue-theme",
+        titleCn: "司法懲處 (Justice & Punishment)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "rehabilitation",
+            band: "7.5+",
+            ipa: "[ˌriː.həˌbɪl.əˈteɪ.ʃən]",
+            cn: "罪犯感化改造 / 復建",
+            example: "Prisons should prioritize education and rehabilitation over mere punishment.",
+            tip: "寫作 Task 2 辯論「懲罰 vs 改造罪犯」時最高分的論點詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 14 24 A 10 10 0 0 1 34 24" fill="none" stroke="#2563eb" stroke-width="3"/></svg>`
+          },
+          {
+            word: "deterrence",
+            band: "7.5+",
+            ipa: "[dɪˈtɝː.əns]",
+            cn: "威嚇作用 / 遏止力",
+            example: "Stiffer penalties serve as a powerful deterrence against serious crime.",
+            tip: "探討法律嚴懲效果時的高階學術詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="14" y="14" width="20" height="20" rx="3" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "community service",
+            band: "5.0",
+            ipa: "[kəˈmjuː.nə.t̬i ˈsɝː.vɪs]",
+            cn: "社區服務 (非監禁刑罰)",
+            example: "Minor offenders are often sentenced to unpaid community service.",
+            tip: "雅思寫作常用輕罪替代刑罰名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 10 24 L 24 10 L 38 24 L 30 24 L 30 38 L 18 38 L 18 24 Z" fill="#bfdbfe" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec13_4",
+        themeClass: "green-theme",
+        titleCn: "社會治安 (Public Safety & Surveillance)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "surveillance",
+            band: "7.5+",
+            ipa: "[sɚˈveɪ.ləns]",
+            cn: "監視 / 監控系統",
+            example: "CCTV surveillance cameras reduce street crime in metropolitan areas.",
+            tip: "科技與隱私寫作議題核心單字！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="20" r="8" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/><path d="M 10 36 C 10 28, 38 28, 38 36" fill="none" stroke="#15803d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "law enforcement",
+            band: "6.5",
+            ipa: "[lɑː ɪnˈfɔːrs.mənt]",
+            cn: "執法單位 / 警察機關",
+            example: "Law enforcement agencies cooperate globally to combat drug trafficking.",
+            tip: "描述警察與執法機關的正式表達。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 8 L 38 16 L 38 32 L 24 40 L 10 32 L 10 16 Z" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-14": {
+    id: "unit-14",
+    number: 14,
+    titleEn: "Culture, Art & History",
+    titleCn: "文 化 與 歷 史",
+    badgeText: "Unit 14 Culture, Art & History 文化藝術圖鑑",
+    stickyNote: {
+      title: "📌 雅思閱讀 Section 3 常客",
+      content: "考古學與文化遺產保護是閱讀高分段考題！注意 artifact (歷史文物)、multiculturalism (多元文化) 與 preservation (保存)！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <path d="M 20 50 L 100 20 L 180 50 Z" fill="#f59e0b" stroke="#78350f" stroke-width="4"/>
+          <rect x="35" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="75" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="115" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="155" y="50" width="15" height="70" fill="#fef3c7" stroke="#78350f" stroke-width="3"/>
+          <rect x="25" y="120" width="150" height="15" rx="2" fill="#d97706" stroke="#78350f" stroke-width="3"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec14_1",
+        themeClass: "orange-theme",
+        titleCn: "歷史與遺跡 (History & Artifacts)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "archeology",
+            band: "7.5+",
+            ipa: "[ˌɑːr.kiˈɑː.lə.dʒi]",
+            cn: "考古學",
+            example: "Archeology uncovers ancient civilizations through excavated material remains.",
+            tip: "閱讀 Section 3 歷史文化專題極高頻名詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 36 L 24 12 L 36 36 Z" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "historical artifact",
+            band: "6.5",
+            ipa: "[hɪˈstɔːr.ɪ.kəl ˈɑːr.t̬ə.fækt]",
+            cn: "歷史文物 / 手工藝古物",
+            example: "The museum displays priceless historical artifacts from ancient Egypt.",
+            tip: "博物館與展覽主題常考專有名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><ellipse cx="24" cy="24" rx="14" ry="10" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "heritage site",
+            band: "6.5",
+            ipa: "[ˈher.ɪ.t̬ɪdʒ saɪt]",
+            cn: "文化遺產遺址",
+            example: "UNESCO designates protected status to endangered heritage sites.",
+            tip: "常與 UNESCO, World Heritage 搭配。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="14" width="28" height="22" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec14_2",
+        themeClass: "purple-theme",
+        titleCn: "藝術與美學 (Fine Arts & Aesthetics)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "aesthetic",
+            band: "7.5+",
+            ipa: "[esˈθet.ɪk]",
+            cn: "美學的 / 藝術美感的",
+            example: "Modern architecture harmonizes structural utility with aesthetic value.",
+            tip: "藝術、建築與設計議題高階形容詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="16" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "masterpiece",
+            band: "6.5",
+            ipa: "[ˈmæs.tɚ.piːs]",
+            cn: "傑作 / 代表作",
+            example: "Leonardo da Vinci's Mona Lisa remains an iconic Renaissance masterpiece.",
+            tip: "描述頂尖藝術作品的標準詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="10" width="24" height="28" rx="2" fill="#ddd6fe" stroke="#7e22ce" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec14_3",
+        themeClass: "blue-theme",
+        titleCn: "文化認同 (Cultural Identity)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "multiculturalism",
+            band: "7.5+",
+            ipa: "[ˌmʌl.tiˈkʌl.tʃɚ.əl.ɪz.əm]",
+            cn: "多元文化主義",
+            example: "Global cities thrive on diversity fostered by active multiculturalism.",
+            tip: "寫作 Task 2 探討全球化與文化融合時的高分詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="18" cy="20" r="8" fill="#93c5fd"/><circle cx="30" cy="20" r="8" fill="#bfdbfe"/><circle cx="24" cy="30" r="8" fill="#60a5fa"/></svg>`
+          },
+          {
+            word: "indigenous",
+            band: "7.5+",
+            ipa: "[ɪnˈdɪdʒ.ə.nəs]",
+            cn: "土著的 / 本地原住民的",
+            example: "Preserving indigenous languages protects unique traditional ecological knowledge.",
+            tip: "閱讀 Section 2/3 人文地理專題高頻詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 24 10 L 34 38 L 14 38 Z" fill="#dbeafe" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec14_4",
+        themeClass: "green-theme",
+        titleCn: "文化保存 (Preservation & Folklore)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "restoration",
+            band: "7.5+",
+            ipa: "[ˌres.təˈreɪ.ʃən]",
+            cn: "古蹟修復 / 藝術品還原",
+            example: "Meticulous restoration saved the medieval cathedral's stained glass windows.",
+            tip: "古物文物保護主題常見名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="12" y="14" width="24" height="24" rx="4" fill="#bbf7d0" stroke="#15803d" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "folklore",
+            band: "6.5",
+            ipa: "[ˈfoʊk.lɔːr]",
+            cn: "民間傳說 / 民俗文化",
+            example: "Traditional folklore conveys ancestral wisdom and moral values.",
+            tip: "人文與傳統文化描繪名詞。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><path d="M 12 24 Q 24 12 36 24 Q 24 36 12 24 Z" fill="#86efac" stroke="#15803d" stroke-width="2.5"/></svg>`
+          }
+        ]
+      }
+    ]
+  },
+  "unit-15": {
+    id: "unit-15",
+    number: 15,
+    titleEn: "Transportation & Planning",
+    titleCn: "交 通 與 都 市 規 劃",
+    badgeText: "Unit 15 Transportation & Urban Planning 交通都市圖鑑",
+    stickyNote: {
+      title: "📌 雅思寫作 & 閱讀高頻題",
+      content: "Urbanization (都市化) 與 traffic congestion (交通壅塞) 是寫作常見考題！注意 infrastructure (基礎設施)、commuter (通勤者) 與 congestion charging (擁堵費) 的表達！"
+    },
+    centerSvg: `
+      <div class="house-illustration">
+        <svg viewBox="0 0 200 160" width="190" height="152">
+          <rect x="20" y="80" width="160" height="40" rx="8" fill="#3b82f6" stroke="#1e3a8a" stroke-width="4"/>
+          <rect x="35" y="90" width="30" height="20" rx="2" fill="#ffffff"/>
+          <rect x="85" y="90" width="30" height="20" rx="2" fill="#ffffff"/>
+          <rect x="135" y="90" width="30" height="20" rx="2" fill="#ffffff"/>
+          <line x1="10" y1="125" x2="190" y2="125" stroke="#1e293b" stroke-width="4"/>
+        </svg>
+      </div>
+    `,
+    quadrants: [
+      {
+        id: "sec15_1",
+        themeClass: "blue-theme",
+        titleCn: "大眾運輸 (Public Transit)",
+        color: "#2563eb",
+        words: [
+          {
+            word: "commuter",
+            band: "6.5",
+            ipa: "[kəˈmjuː.t̬ɚ]",
+            cn: "每日通勤者",
+            example: "Thousands of daily commuters rely on the suburban rail network.",
+            tip: "描述都市上下班人潮的高頻考詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="18" r="8" fill="#60a5fa" stroke="#1e3a8a" stroke-width="2.5"/><path d="M 12 38 C 12 28, 36 28, 36 38" fill="none" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          },
+          {
+            word: "high-speed rail",
+            band: "6.5",
+            ipa: "[haɪ spiːd reɪl]",
+            cn: "高速鐵路 (高鐵)",
+            example: "High-speed rail drastically cuts travel time between major regional hubs.",
+            tip: "現代交通升級寫作常考詞組。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="16" width="32" height="16" rx="4" fill="#93c5fd" stroke="#1e3a8a" stroke-width="2.5"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec15_2",
+        themeClass: "orange-theme",
+        titleCn: "交通壅塞 (Traffic Congestion)",
+        color: "#ea580c",
+        words: [
+          {
+            word: "traffic congestion",
+            band: "6.5",
+            ipa: "[ˈtræf.ɪk kənˈdʒes.tʃən]",
+            cn: "交通車流壅塞",
+            example: "Promoting public transport relieves severe urban traffic congestion.",
+            tip: "寫作 Task 2 城市問題核心表達！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="14" y="10" width="20" height="28" rx="4" fill="#fed7aa" stroke="#ea580c" stroke-width="2.5"/><circle cx="24" cy="17" r="3" fill="#dc2626"/><circle cx="24" cy="24" r="3" fill="#f59e0b"/><circle cx="24" cy="31" r="3" fill="#16a34a"/></svg>`
+          },
+          {
+            word: "congestion charging",
+            band: "7.5+",
+            ipa: "[kənˈdʒes.tʃən ˈtʃɑːr.dʒɪŋ]",
+            cn: "市區進城交通擁堵費",
+            example: "London introduced congestion charging to reduce central city car emissions.",
+            tip: "都市治理寫作 Task 2 高分對策詞彙！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="24" r="14" fill="#ffedd5" stroke="#ea580c" stroke-width="2.5"/><text x="24" y="29" font-size="14" font-weight="bold" fill="#ea580c" text-anchor="middle">£</text></svg>`
+          },
+          {
+            word: "pedestrian zone",
+            band: "6.5",
+            ipa: "[pəˈdes.tri.ən zoʊn]",
+            cn: "行人徒步區",
+            example: "Transforming main streets into pedestrian zones boosts retail foot traffic.",
+            tip: "都市更新與環保規劃常用表達。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="24" cy="14" r="5" fill="#ea580c"/><path d="M 18 24 L 30 24 M 24 24 L 24 38" stroke="#ea580c" stroke-width="3"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec15_3",
+        themeClass: "purple-theme",
+        titleCn: "都市基礎建設 (Urban Infrastructure)",
+        color: "#9333ea",
+        words: [
+          {
+            word: "infrastructure",
+            band: "7.5+",
+            ipa: "[ˈɪn.frəˌstrʌk.tʃɚ]",
+            cn: "國家/都市基礎建設",
+            example: "Economic growth relies on heavy investment in transport infrastructure.",
+            tip: "雅思寫作與閱讀出現率極高的高階必背詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="20" width="28" height="18" rx="2" fill="#f3e8ff" stroke="#7e22ce" stroke-width="2.5"/><path d="M 14 20 L 24 8 L 34 20" stroke="#7e22ce" stroke-width="2.5" fill="none"/></svg>`
+          },
+          {
+            word: "metropolis",
+            band: "7.5+",
+            ipa: "[məˈtrɑː.pəl.ɪs]",
+            cn: "國際大都會 / 首府城市",
+            example: "Tokyo is a bustling metropolis combining ancient shrines with skyscrapers.",
+            tip: "寫作 Task 2 替代 big city 的高級詞彙。",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="8" y="14" width="12" height="24" fill="#ddd6fe"/><rect x="22" y="8" width="18" height="30" fill="#e9d5ff" stroke="#7e22ce" stroke-width="2"/></svg>`
+          }
+        ]
+      },
+      {
+        id: "sec15_4",
+        themeClass: "green-theme",
+        titleCn: "永續智慧城市 (Smart & Green Cities)",
+        color: "#16a34a",
+        words: [
+          {
+            word: "urbanization",
+            band: "7.5+",
+            ipa: "[ˌɝː.bən.əˈzeɪ.ʃən]",
+            cn: "都市化進程",
+            example: "Rapid urbanization drives demand for sustainable housing and clean energy.",
+            tip: "社會學與地理閱讀專題核心詞！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><rect x="10" y="16" width="12" height="22" fill="#bbf7d0" stroke="#15803d" stroke-width="2"/><rect x="24" y="10" width="14" height="28" fill="#86efac" stroke="#15803d" stroke-width="2"/></svg>`
+          },
+          {
+            word: "sustainable mobility",
+            band: "7.5+",
+            ipa: "[səˈsteɪ.nə.bəl moʊˈbɪl.ə.t̬i]",
+            cn: "永續綠色交通運輸",
+            example: "Electric buses and bicycle sharing schemes promote sustainable mobility.",
+            tip: "現代都市政策與減碳寫作最高分表達！",
+            icon: `<svg class="custom-icon" viewBox="0 0 48 48"><circle cx="16" cy="30" r="6" fill="none" stroke="#15803d" stroke-width="2.5"/><circle cx="32" cy="30" r="6" fill="none" stroke="#15803d" stroke-width="2.5"/><path d="M 16 30 L 24 18 L 32 30" stroke="#15803d" stroke-width="2.5" fill="none"/></svg>`
           }
         ]
       }
