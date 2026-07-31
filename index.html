@@ -8,6 +8,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Quicksand:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
   <!-- Background Floating Decor -->
@@ -24,9 +25,13 @@
       <!-- Left Column: Navigation Controls & Sticky Note Tips -->
       <div class="top-bar-left">
         <div class="top-bar-nav">
-          <div class="brand">
-            <span class="brand-badge" id="brandBadge">IELTS Mindmap</span>
-            <h1 class="page-title" id="pageTitle">Unit 1 Accommodation 住宿單字圖鑑</h1>
+          <div class="brand-row">
+            <div class="brand">
+              <span class="brand-badge" id="brandBadge">IELTS Mindmap</span>
+              <h1 class="page-title" id="pageTitle">Unit 1 Accommodation 住宿單字圖鑑</h1>
+            </div>
+            <!-- User Profile Bar (Logged in user profile / Google login button) -->
+            <div class="user-profile-bar" id="userProfileBar"></div>
           </div>
 
           <div class="controls-group">
@@ -66,6 +71,20 @@
               <button class="band-btn band-btn-5" data-band="5.0">🟢 5.0</button>
               <button class="band-btn band-btn-6" data-band="6.5">🟡 6.5</button>
               <button class="band-btn band-btn-7" data-band="7.5+">🟣 7.5+</button>
+            </div>
+
+            <!-- Learned Status Filter -->
+            <div class="status-filter-group" title="依記憶狀態篩選單字">
+              <span class="status-filter-label">🧠 狀態:</span>
+              <button class="status-btn active" data-status="all">全部</button>
+              <button class="status-btn status-btn-learned" data-status="learned" id="filterLearnedBtn">
+                <span class="btn-text">已背完 ✅</span>
+                <span class="lock-tag" id="learnedLockTag">🔒</span>
+              </button>
+              <button class="status-btn status-btn-unlearned" data-status="unlearned" id="filterUnlearnedBtn">
+                <span class="btn-text">未背完 ⏳</span>
+                <span class="lock-tag" id="unlearnedLockTag">🔒</span>
+              </button>
             </div>
 
             <!-- Speech Speed Switcher -->
@@ -173,6 +192,31 @@
           <div class="detail-section highlight-box">
             <h4>💡 雅思考點與常考提示 (IELTS Tip)</h4>
             <p id="modalTip">美式英語常用，英式多用 flat。聽力常考填空！</p>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button id="modalLearnToggleBtn" class="modal-learn-btn">
+            <span class="learn-icon">⬜</span>
+            <span class="learn-text">標記為已背過</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Login Prompt Modal for Visitor Gated Features -->
+    <div id="loginPromptModal" class="word-modal-overlay" style="display: none;">
+      <div class="word-modal-card login-prompt-card">
+        <button id="closeLoginModalBtn" class="close-modal-btn">✕</button>
+        <div class="login-prompt-header">
+          <div class="login-prompt-icon">🔐</div>
+          <h2>登入解鎖單字記憶追蹤</h2>
+          <p>登入 Google 帳號，即可標記背熟單字、過濾複習進度，學習效率翻倍！</p>
+        </div>
+        <div class="login-prompt-body">
+          <div id="gsiPromptContainer" class="gsi-container"></div>
+          <div class="demo-login-box">
+            <div class="divider"><span>或使用快速體驗</span></div>
+            <button id="btnDemoLogin" class="demo-login-btn">🚀 測試帳號一鍵登入 (Demo User)</button>
           </div>
         </div>
       </div>

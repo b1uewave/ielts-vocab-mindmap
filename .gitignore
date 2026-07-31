@@ -17,3 +17,9 @@ yarn-error.log*
 # Temporary files
 *.tmp
 *.log
+
+# Sensitive API Credentials
+*client_secret*.json
+credentials.json
+*.json.secret
+

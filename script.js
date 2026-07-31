@@ -1,15 +1,20 @@
 /* ==========================================================================
    IELTS Vocab Mindmap - JavaScript Controller
-   Dynamic Multi-Unit Support, Bezier Mind-Map Engine, TTS & Dictation Quiz
+   Dynamic Multi-Unit Support, Bezier Mind-Map Engine, TTS, Auth & Dictation Quiz
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   // Global State
   let currentUnitId = 'unit-1';
   let currentBandFilter = 'all';
+  let currentStatusFilter = 'all'; // 'all', 'learned', 'unlearned'
   let currentQuadrantView = 'all'; // 'all' or specific quadrant id
   let speechRate = 1.0;
   let synth = window.speechSynthesis;
+
+  // User Auth & Memory Tracking State
+  let currentUser = JSON.parse(localStorage.getItem('ielts_vocab_user')) || null;
+  let currentModalWord = null;
 
   // Dictation Quiz State
   let quizScope = 'current'; // 'current' or 'all'
@@ -30,6 +35,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const searchInput = document.getElementById('searchInput');
   const clearSearchBtn = document.getElementById('clearSearch');
   const bandBtns = document.querySelectorAll('.band-btn');
+  const statusBtns = document.querySelectorAll('.status-btn');
+  const learnedLockTag = document.getElementById('learnedLockTag');
+  const unlearnedLockTag = document.getElementById('unlearnedLockTag');
   const modalBandBadge = document.getElementById('modalBandBadge');
   const toggleFlashcardsBtn = document.getElementById('toggleFlashcards');
   const btnDictationQuiz = document.getElementById('btnDictationQuiz');
@@ -39,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const audioToast = document.getElementById('audioToast');
   const toastText = document.getElementById('toastText');
   const speedBtns = document.querySelectorAll('.speed-btn');
+  const userProfileBar = document.getElementById('userProfileBar');
 
   // Word Modal Elements
   const wordModal = document.getElementById('wordModal');
@@ -51,6 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalIcon = document.getElementById('modalIcon');
   const modalAudioBtn = document.getElementById('modalAudioBtn');
   const modalExampleAudioBtn = document.getElementById('modalExampleAudioBtn');
+  const modalLearnToggleBtn = document.getElementById('modalLearnToggleBtn');
+
+  // Login Prompt Modal Elements
+  const loginPromptModal = document.getElementById('loginPromptModal');
+  const closeLoginModalBtn = document.getElementById('closeLoginModalBtn');
+  const btnDemoLogin = document.getElementById('btnDemoLogin');
 
   // Quiz Panel Elements
   const playQuizAudioBtn = document.getElementById('playQuizAudioBtn');
@@ -62,6 +77,132 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizStreakEl = document.getElementById('quizStreak');
   const quizHintText = document.getElementById('quizHintText');
   const scopeBtns = document.querySelectorAll('.scope-btn');
+
+  /* ------------------------------------------------------------------------
+     0. User Authentication & Learned Words Helpers
+     ------------------------------------------------------------------------ */
+  function getLearnedSet() {
+    if (!currentUser || !currentUser.id) return new Set();
+    const key = `ielts_learned_${currentUser.id}`;
+    const raw = localStorage.getItem(key);
+    if (!raw) return new Set();
+    try {
+      return new Set(JSON.parse(raw));
+    } catch (e) {
+      return new Set();
+    }
+  }
+
+  function saveLearnedSet(learnedSet) {
+    if (!currentUser || !currentUser.id) return;
+    const key = `ielts_learned_${currentUser.id}`;
+    localStorage.setItem(key, JSON.stringify(Array.from(learnedSet)));
+  }
+
+  function isWordLearned(word) {
+    if (!currentUser || !word) return false;
+    const set = getLearnedSet();
+    return set.has(word.trim().toLowerCase());
+  }
+
+  function toggleWordLearned(word) {
+    if (!currentUser) {
+      openLoginPromptModal();
+      return false;
+    }
+    const wordKey = word.trim().toLowerCase();
+    const set = getLearnedSet();
+    let isNowLearned = false;
+    if (set.has(wordKey)) {
+      set.delete(wordKey);
+      isNowLearned = false;
+    } else {
+      set.add(wordKey);
+      isNowLearned = true;
+    }
+    saveLearnedSet(set);
+    updateUserProfileBar();
+    renderUnit(currentUnitId);
+    return isNowLearned;
+  }
+
+  function getTotalWordsCount() {
+    let count = 0;
+    if (!window.unitsData) return count;
+    Object.keys(window.unitsData).forEach(uKey => {
+      const u = window.unitsData[uKey];
+      if (u && u.quadrants) {
+        u.quadrants.forEach(q => {
+          count += (q.words ? q.words.length : 0);
+        });
+      }
+    });
+    return count;
+  }
+
+  function updateUserProfileBar() {
+    if (!userProfileBar) return;
+
+    if (currentUser) {
+      const learnedCount = getLearnedSet().size;
+      const totalCount = getTotalWordsCount();
+      const pct = totalCount > 0 ? Math.round((learnedCount / totalCount) * 100) : 0;
+      const avatarHtml = currentUser.picture
+        ? `<img src="${currentUser.picture}" class="user-avatar" alt="${escapeHtml(currentUser.name)}">`
+        : `<div class="user-avatar-fallback">${escapeHtml((currentUser.name || 'U').charAt(0).toUpperCase())}</div>`;
+
+      userProfileBar.innerHTML = `
+        <div class="user-logged-in-box">
+          ${avatarHtml}
+          <div class="user-info">
+            <span class="user-name">${escapeHtml(currentUser.name)}</span>
+          </div>
+          <span class="user-progress-badge" title="全題庫記憶進度">✅ ${learnedCount}/${totalCount} (${pct}%)</span>
+          <button class="btn-logout" id="btnLogout" title="登出帳號">🚪 登出</button>
+        </div>
+      `;
+
+      const btnLogout = document.getElementById('btnLogout');
+      if (btnLogout) {
+        btnLogout.addEventListener('click', () => {
+          currentUser = null;
+          localStorage.removeItem('ielts_vocab_user');
+          updateUserProfileBar();
+          renderUnit(currentUnitId);
+        });
+      }
+    } else {
+      userProfileBar.innerHTML = `
+        <div class="user-badge-guest">
+          <span>👤 訪客模式</span>
+          <button class="btn-google-login" id="headerGoogleLoginBtn" title="點擊進行 Google 登入">
+            <span>🔑 登入</span>
+          </button>
+        </div>
+      `;
+
+      const headerGoogleLoginBtn = document.getElementById('headerGoogleLoginBtn');
+      if (headerGoogleLoginBtn) {
+        headerGoogleLoginBtn.addEventListener('click', () => {
+          openLoginPromptModal();
+        });
+      }
+    }
+
+    updateStatusFilterLocks();
+  }
+
+  function updateStatusFilterLocks() {
+    if (learnedLockTag && unlearnedLockTag) {
+      if (currentUser) {
+        learnedLockTag.style.display = 'none';
+        unlearnedLockTag.style.display = 'none';
+      } else {
+        learnedLockTag.style.display = 'inline';
+        unlearnedLockTag.style.display = 'inline';
+      }
+    }
+  }
 
   /* ------------------------------------------------------------------------
      1. Dynamic Unit Rendering Engine
@@ -120,8 +261,9 @@ document.addEventListener('DOMContentLoaded', () => {
         let cardsHtml = top9Words.map(w => {
           const bandVal = w.band || '6.5';
           const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
+          const learnedClass = isWordLearned(w.word) ? 'is-learned' : '';
           return `
-            <div class="vocab-card" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
+            <div class="vocab-card ${learnedClass}" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
               <span class="band-badge ${bandClass}">${escapeHtml(bandVal)}</span>
               <div class="card-inner">
                 <div class="card-icon-wrapper">${w.icon}</div>
@@ -193,8 +335,9 @@ document.addEventListener('DOMContentLoaded', () => {
             ${qWords.map(w => {
               const bandVal = w.band || '6.5';
               const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
+              const learnedClass = isWordLearned(w.word) ? 'is-learned' : '';
               return `
-                <div class="vocab-card" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
+                <div class="vocab-card ${learnedClass}" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
                   <span class="band-badge ${bandClass}">${escapeHtml(bandVal)}</span>
                   <div class="card-inner">
                     <div class="card-icon-wrapper">${w.icon}</div>
@@ -229,7 +372,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // 4. Bind Card Event Listeners
     bindCardEvents();
 
-    // 5. Apply Active Filters (Search + Band)
+    // 5. Apply Active Filters (Search + Band + Status)
     applyFilters();
   }
 
@@ -237,8 +380,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!str) return '';
     return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
-
-
 
   /* ------------------------------------------------------------------------
      3. Text-To-Speech (Audio Pronunciation)
@@ -278,7 +419,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     4. Card Interactions: Modal & Pronunciation
+     4. Card Interactions: Modal & Pronunciation & Learned Toggle
      ------------------------------------------------------------------------ */
   function bindCardEvents() {
     const vocabCards = document.querySelectorAll('.vocab-card');
@@ -314,6 +455,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const tip = card.getAttribute('data-tip') || '';
     const iconSvg = card.querySelector('.custom-icon');
 
+    currentModalWord = word;
+
     modalWordEn.textContent = word;
     modalWordIpa.textContent = ipa;
     modalWordCn.textContent = cn;
@@ -332,8 +475,48 @@ document.addEventListener('DOMContentLoaded', () => {
     modalAudioBtn.onclick = () => speakWord(word);
     modalExampleAudioBtn.onclick = () => speakWord(example);
 
+    updateModalLearnBtn();
+
     speakWord(word, card);
     wordModal.style.display = 'flex';
+  }
+
+  function updateModalLearnBtn() {
+    if (!modalLearnToggleBtn || !currentModalWord) return;
+    if (!currentUser) {
+      modalLearnToggleBtn.className = 'modal-learn-btn is-guest';
+      modalLearnToggleBtn.innerHTML = `
+        <span class="learn-icon">🔒</span>
+        <span class="learn-text">標記為已背過 (需登入)</span>
+      `;
+    } else {
+      const learned = isWordLearned(currentModalWord);
+      if (learned) {
+        modalLearnToggleBtn.className = 'modal-learn-btn is-learned';
+        modalLearnToggleBtn.innerHTML = `
+          <span class="learn-icon">✅</span>
+          <span class="learn-text">已背起來 (點擊取消標記)</span>
+        `;
+      } else {
+        modalLearnToggleBtn.className = 'modal-learn-btn';
+        modalLearnToggleBtn.innerHTML = `
+          <span class="learn-icon">⬜</span>
+          <span class="learn-text">標記為已背過 (綠底標示)</span>
+        `;
+      }
+    }
+  }
+
+  if (modalLearnToggleBtn) {
+    modalLearnToggleBtn.addEventListener('click', () => {
+      if (!currentModalWord) return;
+      if (!currentUser) {
+        openLoginPromptModal();
+        return;
+      }
+      toggleWordLearned(currentModalWord);
+      updateModalLearnBtn();
+    });
   }
 
   closeModalBtn.addEventListener('click', () => {
@@ -347,7 +530,124 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-     5. Dictation / Spelling Quiz Mode
+     5. Login Prompt Modal & Google Auth Integration
+     ------------------------------------------------------------------------ */
+  function openLoginPromptModal() {
+    if (loginPromptModal) {
+      loginPromptModal.style.display = 'flex';
+      renderGoogleSignInButton();
+    }
+  }
+
+  function closeLoginPromptModal() {
+    if (loginPromptModal) {
+      loginPromptModal.style.display = 'none';
+    }
+  }
+
+  if (closeLoginModalBtn) {
+    closeLoginModalBtn.addEventListener('click', closeLoginPromptModal);
+  }
+
+  if (loginPromptModal) {
+    loginPromptModal.addEventListener('click', (e) => {
+      if (e.target === loginPromptModal) {
+        closeLoginPromptModal();
+      }
+    });
+  }
+
+  if (btnDemoLogin) {
+    btnDemoLogin.addEventListener('click', () => {
+      currentUser = {
+        id: 'demo_user_ielts_01',
+        name: 'Alex (測試用戶)',
+        email: 'alex.test@ieltsmindmap.com',
+        picture: ''
+      };
+      localStorage.setItem('ielts_vocab_user', JSON.stringify(currentUser));
+      updateUserProfileBar();
+      closeLoginPromptModal();
+      renderUnit(currentUnitId);
+    });
+  }
+
+  window.handleGoogleSignInResponse = function(response) {
+    if (response && response.credential) {
+      const payload = parseJwt(response.credential);
+      if (payload) {
+        currentUser = {
+          id: payload.sub,
+          name: payload.name || payload.email,
+          email: payload.email,
+          picture: payload.picture || ''
+        };
+        localStorage.setItem('ielts_vocab_user', JSON.stringify(currentUser));
+        updateUserProfileBar();
+        closeLoginPromptModal();
+        renderUnit(currentUnitId);
+      }
+    }
+  };
+
+  function parseJwt(token) {
+    try {
+      const base64Url = token.split('.')[1];
+      const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+      const jsonPayload = decodeURIComponent(atob(base64).split('').map(c => {
+        return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+      }).join(''));
+      return JSON.parse(jsonPayload);
+    } catch (e) {
+      return null;
+    }
+  }
+
+  // Google OAuth Configuration
+  const GOOGLE_CLIENT_ID = '492622968470-ui05h0hun2a894bfk0lbv8e4ldmthpvp.apps.googleusercontent.com';
+
+  function renderGoogleSignInButton() {
+    const gsiContainer = document.getElementById('gsiPromptContainer');
+    if (!gsiContainer) return;
+
+    const isConfigured = GOOGLE_CLIENT_ID &&
+                         !GOOGLE_CLIENT_ID.includes('YOUR_GOOGLE_CLIENT_ID') &&
+                         !GOOGLE_CLIENT_ID.includes('965432109876');
+
+    if (isConfigured && window.google && google.accounts && google.accounts.id) {
+      gsiContainer.innerHTML = '';
+      try {
+        google.accounts.id.initialize({
+          client_id: GOOGLE_CLIENT_ID,
+          callback: window.handleGoogleSignInResponse
+        });
+        google.accounts.id.renderButton(gsiContainer, {
+          theme: 'outline',
+          size: 'large',
+          width: 280,
+          text: 'signin_with',
+          shape: 'pill'
+        });
+      } catch (e) {
+        console.warn('Google Auth render warning:', e);
+        renderGoogleNotice(gsiContainer);
+      }
+    } else {
+      renderGoogleNotice(gsiContainer);
+    }
+  }
+
+  function renderGoogleNotice(container) {
+    container.innerHTML = `
+      <div style="background:#eff6ff; border:1.5px solid #bfdbfe; border-radius:12px; padding:12px 14px; text-align:left; font-size:12px; color:#1e40af; line-height:1.5; margin-bottom:12px;">
+        <strong>💡 提示：</strong> 尚未填入您的 Google OAuth Client ID。
+        <br><span style="color:#3b82f6;">您可以在 <code>script.js</code> 第 7 行填入 Client ID 即可正式啟用。目前您可以直接點擊下方「測試帳號一鍵登入」立刻體驗完整功能！</span>
+      </div>
+    `;
+  }
+
+  /* ------------------------------------------------------------------------
+     6. Dictation / Spelling Quiz Mode
      ------------------------------------------------------------------------ */
   btnDictationQuiz.addEventListener('click', () => {
     if (dictationQuizPanel.style.display === 'none' || !dictationQuizPanel.style.display) {
@@ -460,10 +760,9 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------------
-     6. Speed Toggle, Unit Switcher & Search Filter
+     7. Speed Toggle, Unit Switcher & Filter Handling
      ------------------------------------------------------------------------ */
   unitSelect.addEventListener('change', (e) => {
-    currentSubUnitTab = 'overview';
     renderUnit(e.target.value);
   });
 
@@ -480,11 +779,21 @@ document.addEventListener('DOMContentLoaded', () => {
       bandBtns.forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
       currentBandFilter = btn.getAttribute('data-band');
-      if (currentSubUnitTab === 'overview') {
-        renderUnit(currentUnitId);
-      } else {
-        applyFilters();
+      applyFilters();
+    });
+  });
+
+  statusBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const status = btn.getAttribute('data-status');
+      if (status !== 'all' && !currentUser) {
+        openLoginPromptModal();
+        return;
       }
+      statusBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentStatusFilter = status;
+      applyFilters();
     });
   });
 
@@ -497,11 +806,15 @@ document.addEventListener('DOMContentLoaded', () => {
       const cn = card.getAttribute('data-cn').toLowerCase();
       const ipa = (card.getAttribute('data-ipa') || '').toLowerCase();
       const band = card.getAttribute('data-band') || '6.5';
+      const isLearned = card.classList.contains('is-learned');
 
       const matchesSearch = !query || word.includes(query) || cn.includes(query) || ipa.includes(query);
       const matchesBand = (currentBandFilter === 'all') || (band === currentBandFilter);
+      const matchesStatus = (currentStatusFilter === 'all') ||
+                            (currentStatusFilter === 'learned' && isLearned) ||
+                            (currentStatusFilter === 'unlearned' && !isLearned);
 
-      if (!matchesSearch) {
+      if (!matchesSearch || !matchesStatus) {
         card.style.display = 'none';
         card.classList.remove('dimmed');
       } else {
@@ -535,6 +848,7 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleFlashcardsBtn.style.borderColor = isModeActive ? '#f59e0b' : '#cbd5e1';
   });
 
-  // Initialize with Unit 1
+  // Initialize App
+  updateUserProfileBar();
   renderUnit(currentUnitId);
 });
