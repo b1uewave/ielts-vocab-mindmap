@@ -557,12 +557,24 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  function getTimestampString() {
+    const now = new Date();
+    const YYYY = now.getFullYear();
+    const MM = String(now.getMonth() + 1).padStart(2, '0');
+    const DD = String(now.getDate()).padStart(2, '0');
+    const HH = String(now.getHours()).padStart(2, '0');
+    const mm = String(now.getMinutes()).padStart(2, '0');
+    const SS = String(now.getSeconds()).padStart(2, '0');
+    return `${YYYY}${MM}${DD}${HH}${mm}${SS}`;
+  }
+
   if (btnDemoLogin) {
     btnDemoLogin.addEventListener('click', () => {
+      const ts = getTimestampString();
       currentUser = {
-        id: 'demo_user_ielts_01',
-        name: 'Alex (測試用戶)',
-        email: 'alex.test@ieltsmindmap.com',
+        id: `demo_${ts}`,
+        name: `Alex (測試用戶 ${ts.slice(-6)})`,
+        email: `demo_${ts}@ieltsmindmap.com`,
         picture: ''
       };
       localStorage.setItem('ielts_vocab_user', JSON.stringify(currentUser));
