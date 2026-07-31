@@ -532,10 +532,27 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
      5. Login Prompt Modal & Google Auth Integration
      ------------------------------------------------------------------------ */
+  const btnResetDemoUser = document.getElementById('btnResetDemoUser');
+
   function openLoginPromptModal() {
     if (loginPromptModal) {
       loginPromptModal.style.display = 'flex';
       renderGoogleSignInButton();
+
+      const lastDemo = localStorage.getItem('ielts_vocab_last_demo_user');
+      if (lastDemo && btnDemoLogin && btnResetDemoUser) {
+        try {
+          const parsed = JSON.parse(lastDemo);
+          btnDemoLogin.textContent = `🚀 繼續使用測試帳號 (${parsed.name})`;
+          btnResetDemoUser.style.display = 'inline-block';
+        } catch (e) {
+          btnDemoLogin.textContent = '🚀 測試帳號一鍵登入 (Demo User)';
+          btnResetDemoUser.style.display = 'none';
+        }
+      } else if (btnDemoLogin && btnResetDemoUser) {
+        btnDemoLogin.textContent = '🚀 測試帳號一鍵登入 (Demo User)';
+        btnResetDemoUser.style.display = 'none';
+      }
     }
   }
 
@@ -568,15 +585,40 @@ document.addEventListener('DOMContentLoaded', () => {
     return `${YYYY}${MM}${DD}${HH}${mm}${SS}`;
   }
 
+  function createNewDemoUser() {
+    const ts = getTimestampString();
+    const newUser = {
+      id: `demo_${ts}`,
+      name: `Alex (測試用戶 ${ts.slice(-4)})`,
+      email: `demo_${ts}@ieltsmindmap.com`,
+      picture: ''
+    };
+    localStorage.setItem('ielts_vocab_last_demo_user', JSON.stringify(newUser));
+    return newUser;
+  }
+
   if (btnDemoLogin) {
     btnDemoLogin.addEventListener('click', () => {
-      const ts = getTimestampString();
-      currentUser = {
-        id: `demo_${ts}`,
-        name: `Alex (測試用戶 ${ts.slice(-6)})`,
-        email: `demo_${ts}@ieltsmindmap.com`,
-        picture: ''
-      };
+      const lastDemo = localStorage.getItem('ielts_vocab_last_demo_user');
+      if (lastDemo) {
+        try {
+          currentUser = JSON.parse(lastDemo);
+        } catch (e) {
+          currentUser = createNewDemoUser();
+        }
+      } else {
+        currentUser = createNewDemoUser();
+      }
+      localStorage.setItem('ielts_vocab_user', JSON.stringify(currentUser));
+      updateUserProfileBar();
+      closeLoginPromptModal();
+      renderUnit(currentUnitId);
+    });
+  }
+
+  if (btnResetDemoUser) {
+    btnResetDemoUser.addEventListener('click', () => {
+      currentUser = createNewDemoUser();
       localStorage.setItem('ielts_vocab_user', JSON.stringify(currentUser));
       updateUserProfileBar();
       closeLoginPromptModal();
