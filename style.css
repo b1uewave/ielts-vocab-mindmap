@@ -107,20 +107,49 @@ body {
   z-index: 1;
 }
 
-/* --- Top Bar --- */
+/* --- Top Bar Header --- */
 .top-bar {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  padding: 20px 26px;
+  border-radius: 26px;
+  box-shadow: var(--shadow-sm);
+  border: 2.5px solid #e2e8f0;
+  margin-bottom: 24px;
+}
+
+/* Left Column: Nav Controls + Sticky Note Tips */
+.top-bar-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  flex: 1;
+}
+
+.top-bar-nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
-  padding: 12px 24px;
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
-  border: 2px solid #e2e8f0;
-  margin-bottom: 20px;
   flex-wrap: wrap;
+}
+
+/* Right Column: Hero Graphic Card */
+.top-bar-right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-graphic-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 .brand {
@@ -499,52 +528,44 @@ body {
   border: 1px solid #fca5a5;
 }
 
-/* --- Mind Map Canvas Wrapper --- */
+/* --- Mind Map / Unit Content Wrapper --- */
 .mindmap-wrapper {
   position: relative;
-  min-height: 860px;
-}
-
-/* SVG Connectors Canvas */
-.svg-connectors {
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
 }
 
-/* Center Hub Node */
-.center-hub {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 5;
+/* --- Top Bar Hero (Illustration + Sticky Note Tips inside Header) --- */
+.top-bar-hero {
   display: flex;
-  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 24px;
+  padding-top: 6px;
+}
+
+.hero-graphic-card {
+  display: flex;
   align-items: center;
-  pointer-events: auto;
+  gap: 28px;
+  flex: 1;
 }
 
 .cloud-title-box {
   background: #ffffff;
   border: 3.5px solid #2c3e50;
-  border-radius: 40px;
-  padding: 14px 28px;
+  border-radius: 30px;
+  padding: 14px 24px;
   text-align: center;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   position: relative;
-  margin-bottom: -15px;
   z-index: 2;
+  white-space: nowrap;
   animation: floatHub 5s ease-in-out infinite alternate;
 }
 
 @keyframes floatHub {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-8px); }
+  100% { transform: translateY(-6px); }
 }
 
 .cloud-title-box h2 {
@@ -568,8 +589,15 @@ body {
   letter-spacing: 4px;
 }
 
+.hero-svg-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .house-illustration {
-  filter: drop-shadow(0 12px 20px rgba(0,0,0,0.12));
+  filter: drop-shadow(0 10px 18px rgba(0,0,0,0.12));
 }
 
 .house-svg {
@@ -577,7 +605,7 @@ body {
 }
 
 .backpack-icon {
-  margin-top: -12px;
+  margin-top: -10px;
   filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
   transition: transform 0.3s ease;
   cursor: pointer;
@@ -585,6 +613,42 @@ body {
 
 .backpack-icon:hover {
   transform: scale(1.15) rotate(-5deg);
+}
+
+/* --- Sticky Note inside Top Bar Right Column --- */
+.hero-sticky-note {
+  position: relative;
+  width: 100%;
+  background: #fef9c3;
+  border: 2px solid #fde047;
+  border-radius: 16px;
+  padding: 12px 20px 12px 42px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-sticky-note .pin {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  font-size: 18px;
+}
+
+.hero-sticky-note .note-title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 700;
+  color: #854d0e;
+  margin-bottom: 2px;
+}
+
+.hero-sticky-note .note-content {
+  font-size: 13px;
+  color: #713f12;
+  line-height: 1.45;
 }
 
 /* --- Quadrants Grid Layout --- */
@@ -807,43 +871,6 @@ body.flashcard-mode .vocab-card.flipped .word-cn::after {
   100% { transform: scale(1.04); }
 }
 
-/* --- Sticky Note (小貼士) --- */
-.sticky-note {
-  position: absolute;
-  bottom: 24px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 280px;
-  background: #fef9c3;
-  border: 2px solid #fde047;
-  border-radius: 12px;
-  padding: 14px 18px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  z-index: 6;
-}
-
-.sticky-note .pin {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 18px;
-}
-
-.note-title {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 700;
-  color: #854d0e;
-  margin-bottom: 4px;
-}
-
-.note-content {
-  font-size: 13px;
-  color: #713f12;
-  line-height: 1.4;
-}
-
 /* --- Audio Toast --- */
 .audio-toast {
   position: fixed;
@@ -1057,34 +1084,29 @@ body.flashcard-mode .vocab-card.flipped .word-cn::after {
 .highlight-box h4 { color: #854d0e; margin-bottom: 4px; }
 .highlight-box p { color: #713f12; font-weight: 500; font-size: 14px; }
 
-/* --- Grid View Layout Override --- */
-.mindmap-wrapper.grid-view .quadrants-grid {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-.mindmap-wrapper.grid-view .center-hub,
-.mindmap-wrapper.grid-view .svg-connectors,
-.mindmap-wrapper.grid-view .sticky-note {
-  display: none !important;
-}
-
-/* --- Responsive Media Queries --- */
+/* --- Grid View & Responsive Overrides --- */
 @media (max-width: 1200px) {
   .cards-wrapper.grid-layout {
     grid-template-columns: repeat(3, 1fr);
   }
   .quadrants-grid {
-    gap: 24px;
+    gap: 28px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .top-bar {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 20px;
+  }
+  .top-bar-right {
+    justify-content: center;
+    margin-bottom: 4px;
   }
 }
 
 @media (max-width: 992px) {
-  .mindmap-wrapper .center-hub,
-  .mindmap-wrapper .svg-connectors,
-  .mindmap-wrapper .sticky-note {
-    display: none !important;
-  }
   .quadrants-grid {
     grid-template-columns: 1fr;
   }
@@ -1094,14 +1116,161 @@ body.flashcard-mode .vocab-card.flipped .word-cn::after {
 }
 
 @media (max-width: 640px) {
-  .cards-wrapper.grid-layout {
-    grid-template-columns: repeat(2, 1fr);
+  .hero-graphic-card {
+    flex-direction: column;
+    gap: 12px;
   }
-  .top-bar {
+  .top-bar-nav {
     flex-direction: column;
     align-items: stretch;
+  }
+  .cards-wrapper.grid-layout {
+    grid-template-columns: repeat(2, 1fr);
   }
   .search-box input {
     width: 100%;
   }
 }
+
+/* ==========================================================================
+   IELTS Band Score Badge & Filter Styling
+   ========================================================================== */
+.band-filter-group {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #f8fafc;
+  padding: 4px 10px;
+  border-radius: 14px;
+  border: 1.5px solid #cbd5e1;
+}
+
+.band-filter-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #475569;
+  font-family: var(--font-heading);
+  white-space: nowrap;
+}
+
+.band-btn {
+  background: #ffffff;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: var(--font-heading);
+  color: #64748b;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.band-btn:hover {
+  border-color: #94a3b8;
+  color: #1e293b;
+}
+
+.band-btn.active {
+  background: #1e293b;
+  color: #ffffff;
+  border-color: #1e293b;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.2);
+}
+
+.band-btn.band-btn-5.active {
+  background: #16a34a;
+  border-color: #16a34a;
+}
+
+.band-btn.band-btn-6.active {
+  background: #d97706;
+  border-color: #d97706;
+}
+
+.band-btn.band-btn-7.active {
+  background: #9333ea;
+  border-color: #9333ea;
+}
+
+/* Vocab Card Band Badge */
+.band-badge {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  font-family: var(--font-heading);
+  font-size: 10px;
+  font-weight: 800;
+  padding: 2px 6px;
+  border-radius: 8px;
+  letter-spacing: 0.2px;
+  line-height: 1.2;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  z-index: 2;
+}
+
+.band-badge.band-5 {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.band-badge.band-6 {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1px solid #fde68a;
+}
+
+.band-badge.band-7 {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border: 1px solid #d8b4fe;
+}
+
+/* Dimmed Card State when Filtering */
+.vocab-card.dimmed {
+  opacity: 0.25;
+  filter: grayscale(60%);
+  transform: scale(0.96);
+}
+
+.vocab-card.dimmed:hover {
+  opacity: 0.8;
+  filter: grayscale(0%);
+  transform: translateY(-2px);
+}
+
+/* Modal Band Tag */
+.modal-title-top-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.modal-band-tag {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 2px 9px;
+  border-radius: 8px;
+  display: inline-block;
+}
+
+.modal-band-tag.band-5 {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1.5px solid #86efac;
+}
+
+.modal-band-tag.band-6 {
+  background: #fef3c7;
+  color: #b45309;
+  border: 1.5px solid #fde68a;
+}
+
+.modal-band-tag.band-7 {
+  background: #f3e8ff;
+  color: #7e22ce;
+  border: 1.5px solid #d8b4fe;
+}
+

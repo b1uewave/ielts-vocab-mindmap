@@ -59,6 +59,7 @@ window.unitsData = {
         words: [
           {
             word: "apartment",
+            band: "5.0",
             ipa: "[əˈpɑːrt.mənt]",
             cn: "公寓",
             example: "I'm looking for a two-bedroom apartment near the university.",
@@ -67,6 +68,7 @@ window.unitsData = {
           },
           {
             word: "flat",
+            band: "5.0",
             ipa: "[flæt]",
             cn: "公寓 (英式)",
             example: "She rented a small flat in central London.",
@@ -75,6 +77,7 @@ window.unitsData = {
           },
           {
             word: "studio",
+            band: "6.5",
             ipa: "[ˈstjuː.di.oʊ]",
             cn: "單間套房",
             example: "A studio apartment includes a bedroom and kitchen in one open room.",
@@ -83,6 +86,7 @@ window.unitsData = {
           },
           {
             word: "dormitory",
+            band: "6.5",
             ipa: "[ˈdɔːr.mə.tɔːr.i]",
             cn: "宿舍",
             example: "On-campus dormitory rooms are usually shared by two students.",
@@ -91,6 +95,7 @@ window.unitsData = {
           },
           {
             word: "twin room",
+            band: "5.0",
             ipa: "[twɪn ruːm]",
             cn: "雙床房",
             example: "We booked a twin room with two separate single beds.",
@@ -99,6 +104,7 @@ window.unitsData = {
           },
           {
             word: "single room",
+            band: "5.0",
             ipa: "[ˈsɪŋ.ɡəl ruːm]",
             cn: "單人房",
             example: "The single room includes a single bed and a study desk.",
@@ -107,6 +113,7 @@ window.unitsData = {
           },
           {
             word: "double room",
+            band: "5.0",
             ipa: "[ˈdʌb.əl ruːm]",
             cn: "雙人房",
             example: "A double room comes with one large double bed.",
@@ -115,6 +122,7 @@ window.unitsData = {
           },
           {
             word: "shared room",
+            band: "5.0",
             ipa: "[ʃerd ruːm]",
             cn: "合住房",
             example: "A shared room helps reduce monthly rent for students.",
@@ -123,6 +131,7 @@ window.unitsData = {
           },
           {
             word: "ensuite room",
+            band: "6.5",
             ipa: "[ɑːn ˈswiːt ruːm]",
             cn: "獨立衛浴套房",
             example: "The bedroom has an ensuite room with private shower.",
@@ -131,6 +140,7 @@ window.unitsData = {
           },
           {
             word: "furnished",
+            band: "6.5",
             ipa: "[ˈfɜːr.nɪʃt]",
             cn: "配傢俱的",
             example: "The apartment comes fully furnished with a bed, table, and sofa.",
@@ -139,6 +149,7 @@ window.unitsData = {
           },
           {
             word: "unfurnished",
+            band: "6.5",
             ipa: "[ʌnˈfɜːr.nɪʃt]",
             cn: "空房 (無傢俱)",
             example: "An unfurnished room gives you the freedom to buy your own furniture.",
@@ -155,6 +166,7 @@ window.unitsData = {
         words: [
           {
             word: "kitchen",
+            band: "5.0",
             ipa: "[ˈkɪtʃ.ən]",
             cn: "廚房",
             example: "The shared kitchen is equipped with a stove and oven.",
@@ -163,6 +175,7 @@ window.unitsData = {
           },
           {
             word: "bathroom",
+            band: "5.0",
             ipa: "[ˈbæθ.ruːm]",
             cn: "浴室",
             example: "The house has two shared bathrooms and one ensuite.",
@@ -171,6 +184,7 @@ window.unitsData = {
           },
           {
             word: "balcony",
+            band: "5.0",
             ipa: "[ˈbæl.kə.ni]",
             cn: "陽台",
             example: "You can dry your clothes on the sunny balcony.",
@@ -179,6 +193,7 @@ window.unitsData = {
           },
           {
             word: "garden",
+            band: "5.0",
             ipa: "[ˈɡɑːr.dən]",
             cn: "花園",
             example: "The bungalow includes a small front garden.",
@@ -187,6 +202,7 @@ window.unitsData = {
           },
           {
             word: "garage",
+            band: "5.0",
             ipa: "[ɡəˈrɑːʒ]",
             cn: "車庫",
             example: "There is a garage attached to the house for car parking.",
@@ -195,6 +211,7 @@ window.unitsData = {
           },
           {
             word: "washing machine",
+            band: "5.0",
             ipa: "[ˈwɑː.ʃɪŋ məˈʃiːn]",
             cn: "洗衣機",
             example: "A coin-operated washing machine is in the laundry room.",
@@ -203,6 +220,7 @@ window.unitsData = {
           },
           {
             word: "microwave",
+            band: "5.0",
             ipa: "[ˈmaɪ.krə.weɪv]",
             cn: "微波爐",
             example: "Heat your frozen dinner in the kitchen microwave.",
@@ -211,6 +229,7 @@ window.unitsData = {
           },
           {
             word: "refrigerator",
+            band: "5.0",
             ipa: "[rɪˈfrɪdʒ.ə.reɪ.t̬ɚ]",
             cn: "冰箱",
             example: "Keep milk and vegetables fresh inside the refrigerator.",
@@ -219,6 +238,7 @@ window.unitsData = {
           },
           {
             word: "heater",
+            band: "5.0",
             ipa: "[ˈhiː.t̬ɚ]",
             cn: "暖氣",
             example: "Turn on the electric heater during cold winter nights.",
@@ -227,6 +247,7 @@ window.unitsData = {
           },
           {
             word: "air conditioning",
+            band: "5.0",
             ipa: "[er kənˈdɪʃ.ən.ɪŋ]",
             cn: "空調",
             example: "Central air conditioning keeps the house cool.",
@@ -243,6 +264,7 @@ window.unitsData = {
         words: [
           {
             word: "rent",
+            band: "5.0",
             ipa: "[rent]",
             cn: "房租",
             example: "How much is the weekly rent for this double room?",
@@ -251,6 +273,7 @@ window.unitsData = {
           },
           {
             word: "deposit",
+            band: "5.0",
             ipa: "[dɪˈpɑː.zɪt]",
             cn: "押金",
             example: "You need to pay one month's rent as a deposit.",
@@ -259,6 +282,7 @@ window.unitsData = {
           },
           {
             word: "landlord",
+            band: "6.5",
             ipa: "[ˈlænd.lɔːrd]",
             cn: "房東",
             example: "The landlord agreed to fix the broken shower today.",
@@ -267,6 +291,7 @@ window.unitsData = {
           },
           {
             word: "tenant",
+            band: "6.5",
             ipa: "[ˈten.ənt]",
             cn: "租客",
             example: "The new tenant will move in next Monday.",
@@ -275,6 +300,7 @@ window.unitsData = {
           },
           {
             word: "lease",
+            band: "6.5",
             ipa: "[liːs]",
             cn: "租約",
             example: "We signed a 12-month lease for the apartment.",
@@ -283,6 +309,7 @@ window.unitsData = {
           },
           {
             word: "contract",
+            band: "6.5",
             ipa: "[ˈkɑːn.trækt]",
             cn: "合同",
             example: "Please check all terms before signing the contract.",
@@ -291,6 +318,7 @@ window.unitsData = {
           },
           {
             word: "utility bills",
+            band: "6.5",
             ipa: "[juːˈtɪl.ə.t̬i bɪlz]",
             cn: "水電費帳單",
             example: "Are utility bills included in the monthly rent?",
@@ -299,6 +327,7 @@ window.unitsData = {
           },
           {
             word: "electricity",
+            band: "5.0",
             ipa: "[ɪˌlekˈtrɪs.ə.t̬i]",
             cn: "電費",
             example: "Electricity is charged separately every month.",
@@ -307,6 +336,7 @@ window.unitsData = {
           },
           {
             word: "gas",
+            band: "5.0",
             ipa: "[ɡæs]",
             cn: "燃氣費",
             example: "Gas bill is usually lower during summer.",
@@ -315,6 +345,7 @@ window.unitsData = {
           },
           {
             word: "internet",
+            band: "5.0",
             ipa: "[ˈɪn.t̬ɚ.net]",
             cn: "網絡費",
             example: "Free high-speed wireless internet is available.",
@@ -331,6 +362,7 @@ window.unitsData = {
         words: [
           {
             word: "vacancy",
+            band: "6.5",
             ipa: "[ˈveɪ.kən.si]",
             cn: "空房; 空缺",
             example: "The student lodge currently has no vacancy.",
@@ -339,6 +371,7 @@ window.unitsData = {
           },
           {
             word: "available",
+            band: "5.0",
             ipa: "[əˈveɪ.lə.bəl]",
             cn: "可用的; 有空的",
             example: "The double room will be available from September 1st.",
@@ -347,6 +380,7 @@ window.unitsData = {
           },
           {
             word: "move in",
+            band: "5.0",
             ipa: "[muːv ɪn]",
             cn: "入住; 搬入",
             example: "You can move in as soon as the contract is signed.",
@@ -355,6 +389,7 @@ window.unitsData = {
           },
           {
             word: "notice",
+            band: "6.5",
             ipa: "[ˈnoʊ.t̬ɪs]",
             cn: "通知; 告知",
             example: "Tenants must give one month's notice before moving out.",
@@ -363,6 +398,7 @@ window.unitsData = {
           },
           {
             word: "monthly payment",
+            band: "5.0",
             ipa: "[ˈmʌn.θli peɪ.mənt]",
             cn: "月付款",
             example: "The monthly payment is due on the first day of each month.",
@@ -371,6 +407,7 @@ window.unitsData = {
           },
           {
             word: "weekly rent",
+            band: "5.0",
             ipa: "[ˈwiː.kli rent]",
             cn: "周租金",
             example: "Weekly rent is £120 excluding gas and electricity.",
@@ -428,6 +465,7 @@ window.unitsData = {
         words: [
           {
             word: "due date",
+            band: "5.0",
             ipa: "[djuː deɪt]",
             cn: "到期日",
             example: "The book is past its due date, so I must pay a fine.",
@@ -436,6 +474,7 @@ window.unitsData = {
           },
           {
             word: "recall",
+            band: "6.5",
             ipa: "[rɪˈkɔːl]",
             cn: "召回圖書",
             example: "The library sent an email to recall the borrowed textbook.",
@@ -444,6 +483,7 @@ window.unitsData = {
           },
           {
             word: "journal",
+            band: "6.5",
             ipa: "[ˈdʒɜːr.nəl]",
             cn: "學術期刊",
             example: "You can find peer-reviewed articles in academic journals.",
@@ -452,6 +492,7 @@ window.unitsData = {
           },
           {
             word: "catalogue",
+            band: "6.5",
             ipa: "[ˈkæt.əl.ɑːɡ]",
             cn: "圖書目錄",
             example: "Search the online catalogue to locate the shelf number.",
@@ -460,6 +501,7 @@ window.unitsData = {
           },
           {
             word: "loan period",
+            band: "6.5",
             ipa: "[loʊn ˈpɪr.i.əd]",
             cn: "借閱期限",
             example: "The standard loan period for undergraduates is two weeks.",
@@ -468,6 +510,7 @@ window.unitsData = {
           },
           {
             word: "reference book",
+            band: "5.0",
             ipa: "[ˈref.ɚ.əns bʊk]",
             cn: "參考書 (不外借)",
             example: "Reference books can only be read inside the reading room.",
@@ -484,6 +527,7 @@ window.unitsData = {
         words: [
           {
             word: "assignment",
+            band: "5.0",
             ipa: "[əˈsaɪn.mənt]",
             cn: "課堂作業",
             example: "Submit your written assignment before midnight on Friday.",
@@ -492,6 +536,7 @@ window.unitsData = {
           },
           {
             word: "lecture",
+            band: "5.0",
             ipa: "[ˈlek.tʃɚ]",
             cn: "大學大課/講座",
             example: "Professor Smith will give a lecture on climate statistics.",
@@ -500,6 +545,7 @@ window.unitsData = {
           },
           {
             word: "seminar",
+            band: "6.5",
             ipa: "[ˈsem.ə.nɑːr]",
             cn: "研討會/小組討論",
             example: "We discussed our research findings during today's seminar.",
@@ -508,6 +554,7 @@ window.unitsData = {
           },
           {
             word: "tutorial",
+            band: "6.5",
             ipa: "[tuːˈtɔːr.i.əl]",
             cn: "導師輔導課",
             example: "Book an individual tutorial with your personal tutor.",
@@ -516,6 +563,7 @@ window.unitsData = {
           },
           {
             word: "dissertation",
+            band: "7.5+",
             ipa: "[ˌdɪs.ɚˈteɪ.ʃən]",
             cn: "學位論文",
             example: "Master's students must hand in a 10,000-word dissertation.",
@@ -524,6 +572,7 @@ window.unitsData = {
           },
           {
             word: "prerequisite",
+            band: "7.5+",
             ipa: "[ˌpriːˈrek.wə.zɪt]",
             cn: "先修課程/前提",
             example: "Basic algebra is a prerequisite for advanced calculus.",
@@ -540,6 +589,7 @@ window.unitsData = {
         words: [
           {
             word: "plagiarism",
+            band: "7.5+",
             ipa: "[ˈpleɪ.dʒɚ.ɪ.zəm]",
             cn: "抄襲/剽竊",
             example: "Turnitin software is used to check papers for plagiarism.",
@@ -548,6 +598,7 @@ window.unitsData = {
           },
           {
             word: "feedback",
+            band: "5.0",
             ipa: "[ˈfiːd.bæk]",
             cn: "回饋/批改意見",
             example: "The tutor gave detailed feedback on my draft essay.",
@@ -556,6 +607,7 @@ window.unitsData = {
           },
           {
             word: "deadline",
+            band: "5.0",
             ipa: "[ˈded.laɪn]",
             cn: "最後截止日期",
             example: "The deadline for scholarship applications is May 1st.",
@@ -564,6 +616,7 @@ window.unitsData = {
           },
           {
             word: "grade",
+            band: "5.0",
             ipa: "[ɡreɪd]",
             cn: "成績/等第",
             example: "She achieved an A grade in environmental science.",
@@ -572,6 +625,7 @@ window.unitsData = {
           },
           {
             word: "transcript",
+            band: "6.5",
             ipa: "[ˈtræn.skrɪpt]",
             cn: "成績單",
             example: "Official academic transcripts are required for master's admission.",
@@ -588,6 +642,7 @@ window.unitsData = {
         words: [
           {
             word: "campus",
+            band: "5.0",
             ipa: "[ˈkæm.pəs]",
             cn: "大學校區",
             example: "Free shuttle buses run between the north and south campus.",
@@ -596,6 +651,7 @@ window.unitsData = {
           },
           {
             word: "laboratory",
+            band: "6.5",
             ipa: "[ˈlæb.rə.tɔːr.i]",
             cn: "實驗室",
             example: "Safety goggles must be worn in the chemistry laboratory.",
@@ -604,6 +660,7 @@ window.unitsData = {
           },
           {
             word: "canteen",
+            band: "5.0",
             ipa: "[kænˈtiːn]",
             cn: "學生餐廳",
             example: "The campus canteen serves affordable lunch for students.",
@@ -612,6 +669,7 @@ window.unitsData = {
           },
           {
             word: "registration",
+            band: "6.5",
             ipa: "[ˌredʒ.əˈstreɪ.ʃən]",
             cn: "報到註冊",
             example: "Complete your online registration before attending classes.",
@@ -667,6 +725,7 @@ window.unitsData = {
         words: [
           {
             word: "itinerary",
+            band: "6.5",
             ipa: "[aɪˈtɪn.ə.rer.i]",
             cn: "旅遊行程表",
             example: "The travel agent gave us a detailed daily itinerary.",
@@ -675,6 +734,7 @@ window.unitsData = {
           },
           {
             word: "shuttle bus",
+            band: "5.0",
             ipa: "[ˈʃʌt̬.əl bʌs]",
             cn: "接駁巴士",
             example: "A free shuttle bus operates between the hotel and airport.",
@@ -683,6 +743,7 @@ window.unitsData = {
           },
           {
             word: "departure",
+            band: "5.0",
             ipa: "[dɪˈpɑːr.tʃɚ]",
             cn: "出發/起飛",
             example: "Please check the departure board for your flight status.",
@@ -691,6 +752,7 @@ window.unitsData = {
           },
           {
             word: "destination",
+            band: "5.0",
             ipa: "[ˌdes.təˈneɪ.ʃən]",
             cn: "目的地",
             example: "Our final travel destination is Kyoto, Japan.",
@@ -699,6 +761,7 @@ window.unitsData = {
           },
           {
             word: "delayed",
+            band: "5.0",
             ipa: "[dɪˈleɪd]",
             cn: "誤點/延誤",
             example: "The train was delayed for 30 minutes due to bad weather.",
@@ -715,6 +778,7 @@ window.unitsData = {
         words: [
           {
             word: "reservation",
+            band: "6.5",
             ipa: "[ˌrez.ɚˈveɪ.ʃən]",
             cn: "預訂/訂位",
             example: "I would like to make a reservation for a twin room.",
@@ -723,6 +787,7 @@ window.unitsData = {
           },
           {
             word: "confirmation",
+            band: "6.5",
             ipa: "[ˌkɑːn.fɚˈmeɪ.ʃən]",
             cn: "確認函/確認碼",
             example: "Please show your confirmation email at the check-in desk.",
@@ -731,6 +796,7 @@ window.unitsData = {
           },
           {
             word: "non-refundable",
+            band: "6.5",
             ipa: "[nɑːn rɪˈfʌn.də.bəl]",
             cn: "不可退款的",
             example: "Budget flight tickets are usually non-refundable.",
@@ -739,6 +805,7 @@ window.unitsData = {
           },
           {
             word: "check-in",
+            band: "5.0",
             ipa: "[tʃek ɪn]",
             cn: "辦理入住/登機",
             example: "Hotel check-in starts at 3:00 PM.",
@@ -755,6 +822,7 @@ window.unitsData = {
         words: [
           {
             word: "guided tour",
+            band: "6.5",
             ipa: "[ˈɡaɪ.dɪd tʊr]",
             cn: "有導覽的行程",
             example: "Join a guided tour to learn about the ancient castle.",
@@ -763,6 +831,7 @@ window.unitsData = {
           },
           {
             word: "souvenir",
+            band: "5.0",
             ipa: "[ˌsuː.vəˈnɪr]",
             cn: "紀念品",
             example: "I bought a wooden handicraft as a souvenir.",
@@ -771,6 +840,7 @@ window.unitsData = {
           },
           {
             word: "attraction",
+            band: "5.0",
             ipa: "[əˈtræk.ʃən]",
             cn: "觀光景點",
             example: "The Eiffel Tower is a popular tourist attraction.",
@@ -779,6 +849,7 @@ window.unitsData = {
           },
           {
             word: "admission fee",
+            band: "5.0",
             ipa: "[ədˈmɪʃ.ən fiː]",
             cn: "門票費用",
             example: "Students get a 50% discount on the museum admission fee.",
@@ -795,6 +866,7 @@ window.unitsData = {
         words: [
           {
             word: "insurance",
+            band: "6.5",
             ipa: "[ɪnˈʃʊr.əns]",
             cn: "旅遊保險",
             example: "It is strongly recommended to buy travel insurance.",
@@ -803,6 +875,7 @@ window.unitsData = {
           },
           {
             word: "currency",
+            band: "6.5",
             ipa: "[ˈkɝː.ən.si]",
             cn: "貨幣/外幣",
             example: "You can exchange foreign currency at the bank counter.",
@@ -811,6 +884,7 @@ window.unitsData = {
           },
           {
             word: "passport",
+            band: "5.0",
             ipa: "[ˈpæs.pɔːrt]",
             cn: "護照",
             example: "Ensure your passport is valid for at least 6 months.",
@@ -858,6 +932,7 @@ window.unitsData = {
         words: [
           {
             word: "appointment",
+            band: "6.5",
             ipa: "[əˈpɔɪnt.mənt]",
             cn: "看診預約",
             example: "I need to book an appointment with the doctor for tomorrow.",
@@ -866,6 +941,7 @@ window.unitsData = {
           },
           {
             word: "prescription",
+            band: "6.5",
             ipa: "[prɪˈskrɪp.ʃən]",
             cn: "處方箋",
             example: "Take this prescription to the pharmacy to pick up your medicine.",
@@ -874,6 +950,7 @@ window.unitsData = {
           },
           {
             word: "practitioner",
+            band: "6.5",
             ipa: "[prækˈtɪʃ.ən.ɚ]",
             cn: "執業醫師 (GP)",
             example: "A General Practitioner (GP) handles everyday health issues.",
@@ -882,6 +959,7 @@ window.unitsData = {
           },
           {
             word: "pharmacy",
+            band: "6.5",
             ipa: "[ˈfɑːr.mə.si]",
             cn: "藥局/藥房",
             example: "The hospital pharmacy is open 24 hours a day.",
@@ -898,6 +976,7 @@ window.unitsData = {
         words: [
           {
             word: "symptom",
+            band: "6.5",
             ipa: "[ˈsɪmp.təm]",
             cn: "病狀/症狀",
             example: "Fever and cough are common symptoms of the flu.",
@@ -906,6 +985,7 @@ window.unitsData = {
           },
           {
             word: "headache",
+            band: "5.0",
             ipa: "[ˈhed.eɪk]",
             cn: "頭痛",
             example: "She took an aspirin to relieve her severe headache.",
@@ -914,6 +994,7 @@ window.unitsData = {
           },
           {
             word: "allergy",
+            band: "6.5",
             ipa: "[ˈæl.ɚ.dʒi]",
             cn: "過敏症",
             example: "He has a severe allergy to peanuts and seafood.",
@@ -922,6 +1003,7 @@ window.unitsData = {
           },
           {
             word: "infection",
+            band: "6.5",
             ipa: "[ɪnˈfek.ʃən]",
             cn: "細菌感染",
             example: "Antibiotics are prescribed to treat bacterial infections.",
@@ -938,6 +1020,7 @@ window.unitsData = {
         words: [
           {
             word: "vaccination",
+            band: "7.5+",
             ipa: "[ˌvæk.səˈneɪ.ʃən]",
             cn: "疫苗接種",
             example: "Students are required to show proof of vaccination.",
@@ -946,6 +1029,7 @@ window.unitsData = {
           },
           {
             word: "painkiller",
+            band: "6.5",
             ipa: "[ˈpeɪnˌkɪl.ɚ]",
             cn: "止痛藥",
             example: "The dentist gave him painkillers after extracting his tooth.",
@@ -954,6 +1038,7 @@ window.unitsData = {
           },
           {
             word: "treatment",
+            band: "6.5",
             ipa: "[ˈtriːt.mənt]",
             cn: "治療方案",
             example: "The hospital offers medical treatment for heart disease.",
@@ -970,6 +1055,7 @@ window.unitsData = {
         words: [
           {
             word: "insurance claim",
+            band: "7.5+",
             ipa: "[ɪnˈʃʊr.əns kleɪm]",
             cn: "保險理賠申報",
             example: "Submit your medical receipts for an insurance claim.",
@@ -978,6 +1064,7 @@ window.unitsData = {
           },
           {
             word: "emergency",
+            band: "5.0",
             ipa: "[ɪˈmɝː.dʒən.si]",
             cn: "緊急狀況",
             example: "Call 999 for ambulance service in a life-threatening emergency.",
@@ -1034,6 +1121,7 @@ window.unitsData = {
         words: [
           {
             word: "resume",
+            band: "6.5",
             ipa: "[ˈrez.ə.meɪ]",
             cn: "履歷表",
             example: "Send your updated resume and cover letter by email.",
@@ -1042,6 +1130,7 @@ window.unitsData = {
           },
           {
             word: "interview",
+            band: "5.0",
             ipa: "[ˈɪn.t̬ɚ.vjuː]",
             cn: "求職面試",
             example: "She was invited for a second-round job interview.",
@@ -1050,6 +1139,7 @@ window.unitsData = {
           },
           {
             word: "applicant",
+            band: "6.5",
             ipa: "[ˈæp.lɪ.kənt]",
             cn: "求職申請者",
             example: "Over 100 applicants applied for the marketing position.",
@@ -1058,6 +1148,7 @@ window.unitsData = {
           },
           {
             word: "reference",
+            band: "6.5",
             ipa: "[ˈref.ɚ.əns]",
             cn: "推薦信/推薦人",
             example: "Please provide two professional references from past employers.",
@@ -1074,6 +1165,7 @@ window.unitsData = {
         words: [
           {
             word: "part-time",
+            band: "5.0",
             ipa: "[pɑːrt taɪm]",
             cn: "兼職的",
             example: "Many university students work part-time in cafes.",
@@ -1082,6 +1174,7 @@ window.unitsData = {
           },
           {
             word: "flexible hours",
+            band: "6.5",
             ipa: "[ˈfleks.ə.bəl aʊər z]",
             cn: "彈性工作時間",
             example: "The company offers flexible hours for working parents.",
@@ -1090,6 +1183,7 @@ window.unitsData = {
           },
           {
             word: "internship",
+            band: "6.5",
             ipa: "[ˈɪn.tɝːn.ʃɪp]",
             cn: "企業實習",
             example: "He completed a paid summer internship at an accounting firm.",
@@ -1106,6 +1200,7 @@ window.unitsData = {
         words: [
           {
             word: "minimum wage",
+            band: "6.5",
             ipa: "[ˈmɪn.ə.məm weɪdʒ]",
             cn: "法定最低工資",
             example: "The national minimum wage was raised to £10.42 per hour.",
@@ -1114,6 +1209,7 @@ window.unitsData = {
           },
           {
             word: "hourly rate",
+            band: "5.0",
             ipa: "[ˈaʊər.li reɪt]",
             cn: "時薪標準",
             example: "What is the hourly rate for weekend night shifts?",
@@ -1122,6 +1218,7 @@ window.unitsData = {
           },
           {
             word: "bonus",
+            band: "6.5",
             ipa: "[ˈboʊ.nəs]",
             cn: "年終/績效獎金",
             example: "Employees receive an annual performance bonus at Christmas.",
@@ -1138,6 +1235,7 @@ window.unitsData = {
         words: [
           {
             word: "qualification",
+            band: "6.5",
             ipa: "[ˌkwɑː.lə.fəˈkeɪ.ʃən]",
             cn: "任職資格/學歷",
             example: "Relevant teaching qualifications are required for this role.",
@@ -1146,6 +1244,7 @@ window.unitsData = {
           },
           {
             word: "promotion",
+            band: "6.5",
             ipa: "[prəˈmoʊ.ʃən]",
             cn: "升遷/晉升",
             example: "She earned a promotion to senior manager after two years.",
@@ -1193,6 +1292,7 @@ window.unitsData = {
         words: [
           {
             word: "climate change",
+            band: "6.5",
             ipa: "[ˈklaɪ.mət tʃeɪndʒ]",
             cn: "氣候變遷",
             example: "Global efforts are needed to combat severe climate change.",
@@ -1201,6 +1301,7 @@ window.unitsData = {
           },
           {
             word: "global warming",
+            band: "6.5",
             ipa: "[ˈɡloʊ.bəl ˈwɔːr.mɪŋ]",
             cn: "全球暖化",
             example: "Rising ocean temperatures are caused by global warming.",
@@ -1209,6 +1310,7 @@ window.unitsData = {
           },
           {
             word: "drought",
+            band: "5.0",
             ipa: "[draʊt]",
             cn: "旱災/乾旱",
             example: "Severe drought destroyed crops across the agricultural region.",
@@ -1217,6 +1319,7 @@ window.unitsData = {
           },
           {
             word: "flood",
+            band: "5.0",
             ipa: "[flʌd]",
             cn: "水災/洪水",
             example: "Heavy rainfall caused flooding along the river bank.",
@@ -1233,6 +1336,7 @@ window.unitsData = {
         words: [
           {
             word: "biodiversity",
+            band: "7.5+",
             ipa: "[ˌbaɪ.oʊ.daɪˈvɝː.sə.t̬i]",
             cn: "生物多樣性",
             example: "Rainforests are famous for their rich biodiversity.",
@@ -1241,6 +1345,7 @@ window.unitsData = {
           },
           {
             word: "habitat",
+            band: "6.5",
             ipa: "[ˈhæb.ə.tæt]",
             cn: "野生動植物棲息地",
             example: "Deforestation threatens the natural habitat of wild tigers.",
@@ -1249,6 +1354,7 @@ window.unitsData = {
           },
           {
             word: "endangered species",
+            band: "6.5",
             ipa: "[ɪnˈdeɪn.dʒɚd ˈspiː.ʃiːz]",
             cn: "瀕危物種",
             example: "The giant panda is one of the world's protected endangered species.",
@@ -1257,6 +1363,7 @@ window.unitsData = {
           },
           {
             word: "ecosystem",
+            band: "7.5+",
             ipa: "[ˈiː.koʊˌsɪs.təm]",
             cn: "生態系統",
             example: "Coral reefs provide vital marine ecosystems.",
@@ -1273,6 +1380,7 @@ window.unitsData = {
         words: [
           {
             word: "renewable energy",
+            band: "6.5",
             ipa: "[rɪˈnuː.ə.bəl ˈen.ɚ.dʒi]",
             cn: "可再生能源",
             example: "Wind and solar power are forms of renewable energy.",
@@ -1281,6 +1389,7 @@ window.unitsData = {
           },
           {
             word: "sustainability",
+            band: "6.5",
             ipa: "[səˌsteɪ.nəˈbɪl.ə.t̬i]",
             cn: "永續發展/可持續性",
             example: "The university promotes environmental sustainability.",
@@ -1289,6 +1398,7 @@ window.unitsData = {
           },
           {
             word: "recycling",
+            band: "5.0",
             ipa: "[ˌriːˈsaɪ.klɪŋ]",
             cn: "資源回收",
             example: "Place plastic bottles inside the green recycling bin.",
@@ -1305,6 +1415,7 @@ window.unitsData = {
         words: [
           {
             word: "pollution",
+            band: "5.0",
             ipa: "[pəˈluː.ʃən]",
             cn: "環境污染",
             example: "Air pollution in major cities poses health risks.",
@@ -1313,6 +1424,7 @@ window.unitsData = {
           },
           {
             word: "carbon footprint",
+            band: "6.5",
             ipa: "[ˈkɑːr.bən ˈfʊt.prɪnt]",
             cn: "碳足跡",
             example: "Taking public transport reduces your personal carbon footprint.",
@@ -1366,6 +1478,7 @@ window.unitsData = {
         words: [
           {
             word: "bank account",
+            band: "5.0",
             ipa: "[bæŋk əˈkaʊnt]",
             cn: "銀行帳戶",
             example: "International students must open a local bank account.",
@@ -1374,6 +1487,7 @@ window.unitsData = {
           },
           {
             word: "interest rate",
+            band: "6.5",
             ipa: "[ˈɪn.trɪst reɪt]",
             cn: "銀行利率",
             example: "The savings account offers a 4% annual interest rate.",
@@ -1382,6 +1496,7 @@ window.unitsData = {
           },
           {
             word: "branch",
+            band: "5.0",
             ipa: "[bræntʃ]",
             cn: "銀行分行",
             example: "You can visit the local branch near the train station.",
@@ -1390,6 +1505,7 @@ window.unitsData = {
           },
           {
             word: "transfer",
+            band: "5.0",
             ipa: "[trænsˈfɝː]",
             cn: "轉帳/匯款",
             example: "I will transfer the tuition fee via mobile banking.",
@@ -1406,6 +1522,7 @@ window.unitsData = {
         words: [
           {
             word: "parcel",
+            band: "5.0",
             ipa: "[ˈpɑːr.səl]",
             cn: "郵寄包裹",
             example: "The postman delivered a large parcel to my doorstep.",
@@ -1414,6 +1531,7 @@ window.unitsData = {
           },
           {
             word: "postage",
+            band: "5.0",
             ipa: "[ˈpoʊ.stɪdʒ]",
             cn: "郵資費用",
             example: "How much is the postage for sending a letter to Australia?",
@@ -1422,6 +1540,7 @@ window.unitsData = {
           },
           {
             word: "registered mail",
+            band: "6.5",
             ipa: "[ˈredʒ.ə.stɚd meɪl]",
             cn: "掛號信件",
             example: "Important documents should be sent by registered mail.",
@@ -1438,6 +1557,7 @@ window.unitsData = {
         words: [
           {
             word: "receipt",
+            band: "5.0",
             ipa: "[rɪˈsiːt]",
             cn: "收據/發票",
             example: "Keep your receipt in case you want to exchange the item.",
@@ -1446,6 +1566,7 @@ window.unitsData = {
           },
           {
             word: "refund",
+            band: "5.0",
             ipa: "[ˈriː.fʌnd]",
             cn: "退款",
             example: "The store gave me a full refund for the defective phone.",
@@ -1454,6 +1575,7 @@ window.unitsData = {
           },
           {
             word: "discount",
+            band: "5.0",
             ipa: "[ˈdɪs.kaʊnt]",
             cn: "折扣優惠",
             example: "Students receive a 10% discount with a valid ID card.",
@@ -1470,6 +1592,7 @@ window.unitsData = {
         words: [
           {
             word: "credit card",
+            band: "5.0",
             ipa: "[ˈkred.ɪt kɑːrd]",
             cn: "信用卡",
             example: "You can pay by cash or credit card.",
@@ -1478,6 +1601,7 @@ window.unitsData = {
           },
           {
             word: "identification",
+            band: "6.5",
             ipa: "[aɪˌden.t̬ə.fəˈkeɪ.ʃən]",
             cn: "身份證明 (ID)",
             example: "Please bring official identification to open a bank account.",
@@ -1526,6 +1650,7 @@ window.unitsData = {
         words: [
           {
             word: "menu",
+            band: "5.0",
             ipa: "[ˈmen.juː]",
             cn: "菜單",
             example: "May I see the lunch menu and drink list, please?",
@@ -1534,6 +1659,7 @@ window.unitsData = {
           },
           {
             word: "main course",
+            band: "5.0",
             ipa: "[meɪn kɔːrs]",
             cn: "餐點主菜",
             example: "For the main course, I would like the grilled salmon.",
@@ -1542,6 +1668,7 @@ window.unitsData = {
           },
           {
             word: "dessert",
+            band: "5.0",
             ipa: "[dɪˈzɝːt]",
             cn: "餐後甜點",
             example: "Chocolate cake is my favorite dessert.",
@@ -1550,6 +1677,7 @@ window.unitsData = {
           },
           {
             word: "beverage",
+            band: "5.0",
             ipa: "[ˈbev.ɚ.ɪdʒ]",
             cn: "飲料/飲品",
             example: "Hot and cold beverages are served with the meal.",
@@ -1566,6 +1694,7 @@ window.unitsData = {
         words: [
           {
             word: "vegetarian",
+            band: "5.0",
             ipa: "[ˌvedʒ.əˈter.i.ən]",
             cn: "素食的/素食者",
             example: "The restaurant has a variety of vegetarian options.",
@@ -1574,6 +1703,7 @@ window.unitsData = {
           },
           {
             word: "vegan",
+            band: "6.5",
             ipa: "[ˈviː.ɡən]",
             cn: "純素主義者",
             example: "A vegan diet excludes all meat, dairy, and eggs.",
@@ -1582,6 +1712,7 @@ window.unitsData = {
           },
           {
             word: "seafood",
+            band: "5.0",
             ipa: "[ˈsiː.fuːd]",
             cn: "海鮮食材",
             example: "Fresh seafood is delivered daily from the harbor.",
@@ -1598,6 +1729,7 @@ window.unitsData = {
         words: [
           {
             word: "ingredient",
+            band: "6.5",
             ipa: "[ɪnˈɡriː.di.ənt]",
             cn: "烹飪食材",
             example: "All dishes are cooked with fresh organic ingredients.",
@@ -1606,6 +1738,7 @@ window.unitsData = {
           },
           {
             word: "nutrition",
+            band: "6.5",
             ipa: "[nuːˈtrɪʃ.ən]",
             cn: "營養價值",
             example: "Proper nutrition is essential for student health.",
@@ -1622,6 +1755,7 @@ window.unitsData = {
         words: [
           {
             word: "takeaway",
+            band: "5.0",
             ipa: "[ˈteɪk.ə.weɪ]",
             cn: "外帶餐點",
             example: "We ordered a Chinese takeaway for dinner.",
@@ -1630,6 +1764,7 @@ window.unitsData = {
           },
           {
             word: "buffet",
+            band: "6.5",
             ipa: "[bəˈfeɪ]",
             cn: "自助餐",
             example: "The hotel offers an all-you-can-eat breakfast buffet.",
@@ -1679,6 +1814,7 @@ window.unitsData = {
         words: [
           {
             word: "exhibition",
+            band: "6.5",
             ipa: "[ˌek.səˈbɪʃ.ən]",
             cn: "博物館展覽",
             example: "The art gallery is hosting an exhibition of modern photography.",
@@ -1687,6 +1823,7 @@ window.unitsData = {
           },
           {
             word: "gallery",
+            band: "5.0",
             ipa: "[ˈɡæl.ɚ.i]",
             cn: "美術館/畫廊",
             example: "Local artists display their paintings in the national gallery.",
@@ -1695,6 +1832,7 @@ window.unitsData = {
           },
           {
             word: "performance",
+            band: "5.0",
             ipa: "[pɚˈfɔːr.məns]",
             cn: "舞台演出/表演",
             example: "The evening theater performance starts at 7:30 PM.",
@@ -1711,6 +1849,7 @@ window.unitsData = {
         words: [
           {
             word: "gymnasium",
+            band: "5.0",
             ipa: "[dʒɪmˈneɪ.zi.əm]",
             cn: "體育館/健身房",
             example: "The campus gymnasium includes a basketball court and swimming pool.",
@@ -1719,6 +1858,7 @@ window.unitsData = {
           },
           {
             word: "membership",
+            band: "5.0",
             ipa: "[ˈmem.bɚ.ʃɪp]",
             cn: "會員資格",
             example: "Annual gym membership includes access to all fitness classes.",
@@ -1727,6 +1867,7 @@ window.unitsData = {
           },
           {
             word: "tournament",
+            band: "6.5",
             ipa: "[ˈtʊr.nə.mənt]",
             cn: "錦標賽/聯賽",
             example: "Our university tennis team won the national tournament.",
@@ -1743,6 +1884,7 @@ window.unitsData = {
         words: [
           {
             word: "festival",
+            band: "5.0",
             ipa: "[ˈfes.tə.vəl]",
             cn: "慶典/音樂節",
             example: "Thousands of visitors attended the summer music festival.",
@@ -1751,6 +1893,7 @@ window.unitsData = {
           },
           {
             word: "recreation",
+            band: "6.5",
             ipa: "[ˌrek.riˈeɪ.ʃən]",
             cn: "娛樂休閒活動",
             example: "The park offers various recreation facilities for families.",
@@ -1767,6 +1910,7 @@ window.unitsData = {
         words: [
           {
             word: "instructor",
+            band: "6.5",
             ipa: "[ɪnˈstrʌk.tɚ]",
             cn: "專業教練/指導員",
             example: "Book a lesson with a certified skiing instructor.",
@@ -1818,6 +1962,7 @@ window.unitsData = {
         words: [
           {
             word: "artificial intelligence",
+            band: "7.5+",
             ipa: "[ˌɑːr.t̬əˈfɪʃ.əl ɪnˈtel.ə.dʒəns]",
             cn: "人工智慧 (AI)",
             example: "Artificial intelligence is transforming modern healthcare.",
@@ -1826,6 +1971,7 @@ window.unitsData = {
           },
           {
             word: "database",
+            band: "6.5",
             ipa: "[ˈdeɪ.t̬ə.beɪs]",
             cn: "數據資料庫",
             example: "Researchers store all experimental results in a central database.",
@@ -1834,6 +1980,7 @@ window.unitsData = {
           },
           {
             word: "cybersecurity",
+            band: "7.5+",
             ipa: "[ˌsaɪ.bɚ.səˈkjʊr.ə.t̬i]",
             cn: "資訊網路安全",
             example: "Companies invest heavily in cybersecurity to prevent data breaches.",
@@ -1850,6 +1997,7 @@ window.unitsData = {
         words: [
           {
             word: "experiment",
+            band: "5.0",
             ipa: "[ɪkˈsper.ə.mənt]",
             cn: "科學實驗",
             example: "Scientists conducted a series of laboratory experiments.",
@@ -1858,6 +2006,7 @@ window.unitsData = {
           },
           {
             word: "hypothesis",
+            band: "7.5+",
             ipa: "[haɪˈpɑː.θə.sɪs]",
             cn: "科學假設",
             example: "The research data supported our initial hypothesis.",
@@ -1866,6 +2015,7 @@ window.unitsData = {
           },
           {
             word: "innovation",
+            band: "6.5",
             ipa: "[ˌɪn.əˈveɪ.ʃən]",
             cn: "科技創新",
             example: "Technological innovation drives economic growth.",
@@ -1882,6 +2032,7 @@ window.unitsData = {
         words: [
           {
             word: "automation",
+            band: "6.5",
             ipa: "[ˌɑː.t̬əˈmeɪ.ʃən]",
             cn: "自動化技術",
             example: "Factory automation increases manufacturing efficiency.",
@@ -1890,6 +2041,7 @@ window.unitsData = {
           },
           {
             word: "robotics",
+            band: "7.5+",
             ipa: "[roʊˈbɑː.t̬ɪks]",
             cn: "機器人學",
             example: "Robotics engineering is a popular field of study.",
@@ -1906,6 +2058,7 @@ window.unitsData = {
         words: [
           {
             word: "algorithm",
+            band: "7.5+",
             ipa: "[ˈæl.ɡə.rɪ.ðəm]",
             cn: "演算法",
             example: "Search engines rely on complex algorithms to rank results.",
