@@ -1,37 +1,144 @@
 /* ==========================================================================
-   Unit 1 Accommodation Interactive Mind Map - JavaScript Logic
+   IELTS Vocab Mindmap - JavaScript Controller
+   Dynamic Multi-Unit Support, Bezier Mind-Map Engine, TTS & Dictation Quiz
    ========================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
   // Global State
+  let currentUnitId = 'unit-1';
   let speechRate = 1.0;
   let synth = window.speechSynthesis;
-  let currentUtterance = null;
+
+  // Dictation Quiz State
+  let quizScope = 'current'; // 'current' or 'all'
+  let currentQuizWord = null;
+  let quizScore = 0;
+  let quizStreak = 0;
+
+  // Theme color dictionary for dynamic SVG connectors
+  let currentThemeColors = {};
 
   // DOM Elements
+  const unitSelect = document.getElementById('unitSelect');
+  const brandBadge = document.getElementById('brandBadge');
+  const pageTitle = document.getElementById('pageTitle');
   const svgConnectors = document.getElementById('svgConnectors');
   const centerHub = document.getElementById('centerHub');
+  const quadrantsGrid = document.getElementById('quadrantsGrid');
   const searchInput = document.getElementById('searchInput');
   const clearSearchBtn = document.getElementById('clearSearch');
   const toggleFlashcardsBtn = document.getElementById('toggleFlashcards');
+  const btnDictationQuiz = document.getElementById('btnDictationQuiz');
+  const dictationQuizPanel = document.getElementById('dictationQuizPanel');
+  const closeQuizBtn = document.getElementById('closeQuizBtn');
   const btnMindmapView = document.getElementById('btnMindmapView');
   const btnGridView = document.getElementById('btnGridView');
   const mindmapWrapper = document.getElementById('mindmapWrapper');
   const audioToast = document.getElementById('audioToast');
   const toastText = document.getElementById('toastText');
   const speedBtns = document.querySelectorAll('.speed-btn');
-  const vocabCards = document.querySelectorAll('.vocab-card');
+  const noteTitle = document.getElementById('noteTitle');
+  const noteContent = document.getElementById('noteContent');
 
-  // Theme color dictionary for SVG connectors
-  const themeColors = {
-    sectionRoomTypes: '#3b82f6', // Blue
-    sectionFacilities: '#22c55e', // Green
-    sectionRent: '#8b5cf6',       // Purple
-    sectionHighFreq: '#f97316'    // Orange
-  };
+  // Word Modal Elements
+  const wordModal = document.getElementById('wordModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+  const modalWordEn = document.getElementById('modalWordEn');
+  const modalWordIpa = document.getElementById('modalWordIpa');
+  const modalWordCn = document.getElementById('modalWordCn');
+  const modalExample = document.getElementById('modalExample');
+  const modalTip = document.getElementById('modalTip');
+  const modalIcon = document.getElementById('modalIcon');
+  const modalAudioBtn = document.getElementById('modalAudioBtn');
+  const modalExampleAudioBtn = document.getElementById('modalExampleAudioBtn');
+
+  // Quiz Panel Elements
+  const playQuizAudioBtn = document.getElementById('playQuizAudioBtn');
+  const quizInput = document.getElementById('quizInput');
+  const quizForm = document.getElementById('quizForm');
+  const giveUpQuizBtn = document.getElementById('giveUpQuizBtn');
+  const quizFeedback = document.getElementById('quizFeedback');
+  const quizScoreEl = document.getElementById('quizScore');
+  const quizStreakEl = document.getElementById('quizStreak');
+  const quizHintText = document.getElementById('quizHintText');
+  const scopeBtns = document.querySelectorAll('.scope-btn');
 
   /* ------------------------------------------------------------------------
-     1. Draw SVG Connecting Mind-Map Branches
+     1. Dynamic Unit Rendering Engine
+     ------------------------------------------------------------------------ */
+  function renderUnit(unitId) {
+    const unit = window.unitsData[unitId];
+    if (!unit) return;
+
+    currentUnitId = unitId;
+
+    // 1. Update Header Information
+    brandBadge.textContent = `IELTS Mindmap • Unit ${unit.number}`;
+    pageTitle.textContent = unit.badgeText;
+
+    // 2. Build Theme Colors Map for connectors
+    currentThemeColors = {};
+    unit.quadrants.forEach(q => {
+      currentThemeColors[q.id] = q.color;
+    });
+
+    // 3. Render Center Hub
+    centerHub.innerHTML = `
+      <div class="cloud-title-box">
+        <h2>Unit ${unit.number}<br><span class="en-title">${unit.titleEn}</span><br><span class="cn-title">${unit.titleCn}</span></h2>
+      </div>
+      ${unit.centerSvg}
+    `;
+
+    // 4. Render Sticky Note
+    if (unit.stickyNote) {
+      noteTitle.textContent = unit.stickyNote.title;
+      noteContent.textContent = unit.stickyNote.content;
+    }
+
+    // 5. Render Quadrants Grid & Cards
+    quadrantsGrid.innerHTML = unit.quadrants.map(q => `
+      <section class="quadrant ${q.themeClass}" id="${q.id}">
+        <div class="quadrant-header-pill">
+          <span class="pill-text">${q.titleCn}</span>
+          <span class="count-tag">${q.words.length} 詞</span>
+        </div>
+        <div class="cards-wrapper grid-layout">
+          ${q.words.map(w => `
+            <div class="vocab-card" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
+              <div class="card-inner">
+                <div class="card-icon-wrapper">${w.icon}</div>
+                <div class="card-body">
+                  <div class="word-en">${escapeHtml(w.word)}</div>
+                  <div class="word-ipa">${escapeHtml(w.ipa)}</div>
+                  <div class="word-cn">${escapeHtml(w.cn)}</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+          `).join('')}
+        </div>
+      </section>
+    `).join('');
+
+    // 6. Bind Card Event Listeners
+    bindCardEvents();
+
+    // 7. Reset Search Filter & Redraw Connectors
+    if (searchInput.value.trim().length > 0) {
+      filterCards(searchInput.value.trim().toLowerCase());
+    } else {
+      setTimeout(drawConnectors, 50);
+    }
+  }
+
+  function escapeHtml(str) {
+    if (!str) return '';
+    return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+  }
+
+  /* ------------------------------------------------------------------------
+     2. SVG Connecting Lines Engine
      ------------------------------------------------------------------------ */
   function drawConnectors() {
     if (!svgConnectors || window.innerWidth <= 992 || mindmapWrapper.classList.contains('grid-view')) {
@@ -42,143 +149,294 @@ document.addEventListener('DOMContentLoaded', () => {
     const wrapperRect = mindmapWrapper.getBoundingClientRect();
     const hubRect = centerHub.getBoundingClientRect();
 
-    // Center point of the Hub
+    if (!hubRect.width || !hubRect.height) return;
+
+    // Center anchor point (under cloud title box)
     const hubX = hubRect.left + hubRect.width / 2 - wrapperRect.left;
     const hubY = hubRect.top + hubRect.height / 3 - wrapperRect.top;
 
     let svgContent = '';
-
-    // Draw branch for each of the 4 quadrant sections
     const sections = document.querySelectorAll('.quadrant');
-    sections.forEach((sec) => {
-      const secId = sec.id;
-      const secRect = sec.getBoundingClientRect();
-      const color = themeColors[secId] || '#94a3b8';
 
-      let targetX, targetY;
+    sections.forEach((sec, idx) => {
+      if (sec.style.display === 'none') return;
+
+      const secId = sec.id;
+      const pill = sec.querySelector('.quadrant-header-pill');
+      if (!pill) return;
+
+      const pillRect = pill.getBoundingClientRect();
+      const color = currentThemeColors[secId] || '#94a3b8';
+
+      // Target point at the capsule header pill
+      const targetX = pillRect.left + pillRect.width / 2 - wrapperRect.left;
+      const targetY = pillRect.top + pillRect.height / 2 - wrapperRect.top;
+
       let controlX1, controlY1, controlX2, controlY2;
 
-      // Determine anchor point based on position relative to hub
-      if (secId === 'sectionRoomTypes') {
+      // Position logic based on 4 quadrant slots
+      if (idx === 0) {
         // Top Left
-        targetX = secRect.right - wrapperRect.left - 20;
-        targetY = secRect.bottom - wrapperRect.top - 30;
-        controlX1 = hubX - 120;
-        controlY1 = hubY;
-        controlX2 = targetX + 80;
-        controlY2 = targetY + 60;
-      } else if (secId === 'sectionFacilities') {
+        controlX1 = hubX - 140;
+        controlY1 = hubY - 20;
+        controlX2 = targetX + 60;
+        controlY2 = targetY + 80;
+      } else if (idx === 1) {
         // Top Right
-        targetX = secRect.left - wrapperRect.left + 20;
-        targetY = secRect.bottom - wrapperRect.top - 30;
-        controlX1 = hubX + 120;
-        controlY1 = hubY;
-        controlX2 = targetX - 80;
-        controlY2 = targetY + 60;
-      } else if (secId === 'sectionRent') {
+        controlX1 = hubX + 140;
+        controlY1 = hubY - 20;
+        controlX2 = targetX - 60;
+        controlY2 = targetY + 80;
+      } else if (idx === 2) {
         // Bottom Left
-        targetX = secRect.right - wrapperRect.left - 20;
-        targetY = secRect.top - wrapperRect.top + 30;
-        controlX1 = hubX - 120;
-        controlY1 = hubY + 40;
-        controlX2 = targetX + 80;
-        controlY2 = targetY - 60;
-      } else if (secId === 'sectionHighFreq') {
+        controlX1 = hubX - 140;
+        controlY1 = hubY + 60;
+        controlX2 = targetX + 60;
+        controlY2 = targetY - 80;
+      } else {
         // Bottom Right
-        targetX = secRect.left - wrapperRect.left + 20;
-        targetY = secRect.top - wrapperRect.top + 30;
-        controlX1 = hubX + 120;
-        controlY1 = hubY + 40;
-        controlX2 = targetX - 80;
-        controlY2 = targetY - 60;
+        controlX1 = hubX + 140;
+        controlY1 = hubY + 60;
+        controlX2 = targetX - 60;
+        controlY2 = targetY - 80;
       }
 
-      // Draw SVG Bezier Curve with double stroke effect
+      // Organic Bezier Mind-Map Branch Curves
       svgContent += `
         <path d="M ${hubX} ${hubY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${targetX} ${targetY}"
-              fill="none" stroke="${color}" stroke-width="8" stroke-linecap="round" opacity="0.3" />
+              fill="none" stroke="${color}" stroke-width="9" stroke-linecap="round" opacity="0.25" />
         <path d="M ${hubX} ${hubY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${targetX} ${targetY}"
-              fill="none" stroke="${color}" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 4" />
-        <circle cx="${targetX}" cy="${targetY}" r="6" fill="${color}" />
+              fill="none" stroke="${color}" stroke-width="4.5" stroke-linecap="round" />
+        <circle cx="${targetX}" cy="${targetY}" r="6" fill="${color}" stroke="#ffffff" stroke-width="2" />
       `;
     });
 
-    // Add Center Node Connection Anchor Dot
-    svgContent += `<circle cx="${hubX}" cy="${hubY}" r="8" fill="#1e293b" />`;
+    // Center Node Anchor Dot
+    svgContent += `<circle cx="${hubX}" cy="${hubY}" r="8" fill="#1e293b" stroke="#ffffff" stroke-width="2" />`;
 
     svgConnectors.innerHTML = svgContent;
   }
 
-  // Initial draw and dynamic resize listener
-  drawConnectors();
-  window.addEventListener('resize', debounce(drawConnectors, 100));
-
   /* ------------------------------------------------------------------------
-     2. Text-To-Speech (Audio Pronunciation)
+     3. Text-To-Speech (Audio Pronunciation)
      ------------------------------------------------------------------------ */
-  function speakWord(word, cardElement) {
+  function speakWord(text, cardElement = null) {
     if (!synth) {
       alert('您的瀏覽器不支援語音合成功能');
       return;
     }
 
-    // Cancel current speech if active
     if (synth.speaking) {
       synth.cancel();
       document.querySelectorAll('.vocab-card.speaking').forEach(c => c.classList.remove('speaking'));
     }
 
-    const utterance = new SpeechSynthesisUtterance(word);
+    const utterance = new SpeechSynthesisUtterance(text);
     utterance.lang = 'en-US';
     utterance.rate = speechRate;
-    utterance.pitch = 1.0;
 
-    // Toast and Animation State
     utterance.onstart = () => {
-      cardElement.classList.add('speaking');
-      toastText.textContent = `朗讀中: "${word}"`;
+      if (cardElement) cardElement.classList.add('speaking');
+      toastText.textContent = `朗讀中: "${text}"`;
       audioToast.classList.add('show');
     };
 
     utterance.onend = () => {
-      cardElement.classList.remove('speaking');
+      if (cardElement) cardElement.classList.remove('speaking');
       audioToast.classList.remove('show');
     };
 
     utterance.onerror = () => {
-      cardElement.classList.remove('speaking');
+      if (cardElement) cardElement.classList.remove('speaking');
       audioToast.classList.remove('show');
     };
 
-    currentUtterance = utterance;
     synth.speak(utterance);
   }
 
-  // Bind Card Click Events for Pronunciation
-  vocabCards.forEach(card => {
-    card.addEventListener('click', (e) => {
-      const word = card.getAttribute('data-word');
-      
-      // If in flashcard mode, click toggles flip to reveal Chinese
-      if (document.body.classList.contains('flashcard-mode')) {
-        card.classList.toggle('flipped');
-      }
+  /* ------------------------------------------------------------------------
+     4. Card Interactions: Modal & Pronunciation
+     ------------------------------------------------------------------------ */
+  function bindCardEvents() {
+    const vocabCards = document.querySelectorAll('.vocab-card');
+    vocabCards.forEach(card => {
+      card.addEventListener('click', (e) => {
+        // If audio button specifically clicked
+        if (e.target.closest('.audio-btn')) {
+          e.stopPropagation();
+          const word = card.getAttribute('data-word');
+          speakWord(word, card);
+          return;
+        }
 
-      speakWord(word, card);
-    });
+        // If in flashcard mode, click toggles flip
+        if (document.body.classList.contains('flashcard-mode')) {
+          card.classList.toggle('flipped');
+          speakWord(card.getAttribute('data-word'), card);
+          return;
+        }
 
-    // Dedicated Audio Button click stops propagation
-    const audioBtn = card.querySelector('.audio-btn');
-    if (audioBtn) {
-      audioBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const word = card.getAttribute('data-word');
-        speakWord(word, card);
+        // Default: Open Word Detail Modal
+        openWordModal(card);
       });
+    });
+  }
+
+  function openWordModal(card) {
+    const word = card.getAttribute('data-word');
+    const ipa = card.getAttribute('data-ipa') || '';
+    const cn = card.getAttribute('data-cn') || '';
+    const example = card.getAttribute('data-example') || '';
+    const tip = card.getAttribute('data-tip') || '';
+    const iconSvg = card.querySelector('.custom-icon');
+
+    modalWordEn.textContent = word;
+    modalWordIpa.textContent = ipa;
+    modalWordCn.textContent = cn;
+    modalExample.textContent = example;
+    modalTip.textContent = tip;
+
+    if (iconSvg) {
+      modalIcon.innerHTML = iconSvg.outerHTML;
+    }
+
+    modalAudioBtn.onclick = () => speakWord(word);
+    modalExampleAudioBtn.onclick = () => speakWord(example);
+
+    speakWord(word, card);
+    wordModal.style.display = 'flex';
+  }
+
+  closeModalBtn.addEventListener('click', () => {
+    wordModal.style.display = 'none';
+  });
+
+  wordModal.addEventListener('click', (e) => {
+    if (e.target === wordModal) {
+      wordModal.style.display = 'none';
     }
   });
 
-  // Speed Selector Buttons
+  /* ------------------------------------------------------------------------
+     5. Dictation / Spelling Quiz Mode
+     ------------------------------------------------------------------------ */
+  btnDictationQuiz.addEventListener('click', () => {
+    if (dictationQuizPanel.style.display === 'none' || !dictationQuizPanel.style.display) {
+      dictationQuizPanel.style.display = 'block';
+      startNextQuizQuestion();
+    } else {
+      dictationQuizPanel.style.display = 'none';
+    }
+  });
+
+  closeQuizBtn.addEventListener('click', () => {
+    dictationQuizPanel.style.display = 'none';
+  });
+
+  scopeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      scopeBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      quizScope = btn.getAttribute('data-scope');
+      startNextQuizQuestion();
+    });
+  });
+
+  function startNextQuizQuestion() {
+    let candidateCards = [];
+
+    if (quizScope === 'current') {
+      candidateCards = Array.from(document.querySelectorAll('.vocab-card'));
+    } else {
+      // All units
+      const allWords = [];
+      Object.keys(window.unitsData).forEach(uKey => {
+        const u = window.unitsData[uKey];
+        u.quadrants.forEach(q => {
+          q.words.forEach(w => {
+            allWords.push({ word: w.word, category: `${u.titleEn} - ${q.titleCn}` });
+          });
+        });
+      });
+
+      if (allWords.length > 0) {
+        const randomItem = allWords[Math.floor(Math.random() * allWords.length)];
+        currentQuizWord = randomItem.word;
+        quizHintText.textContent = `類別：${randomItem.category} | 字母數：${currentQuizWord.length} 字`;
+        quizInput.value = '';
+        quizFeedback.style.display = 'none';
+        quizInput.focus();
+        setTimeout(() => speakWord(currentQuizWord), 300);
+        return;
+      }
+    }
+
+    if (candidateCards.length === 0) return;
+
+    const randomCard = candidateCards[Math.floor(Math.random() * candidateCards.length)];
+    currentQuizWord = randomCard.getAttribute('data-word');
+    const sectionPill = randomCard.closest('.quadrant').querySelector('.pill-text');
+    const sectionName = sectionPill ? sectionPill.textContent : '';
+
+    quizHintText.textContent = `類別：${sectionName} | 字母數：${currentQuizWord.length} 字`;
+    quizInput.value = '';
+    quizFeedback.style.display = 'none';
+    quizInput.focus();
+
+    setTimeout(() => speakWord(currentQuizWord), 300);
+  }
+
+  playQuizAudioBtn.addEventListener('click', () => {
+    if (currentQuizWord) {
+      speakWord(currentQuizWord);
+    }
+  });
+
+  quizForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    if (!currentQuizWord) return;
+
+    const userInput = quizInput.value.trim().toLowerCase();
+    const targetWord = currentQuizWord.trim().toLowerCase();
+
+    if (userInput === targetWord) {
+      quizScore += 10;
+      quizStreak += 1;
+      quizScoreEl.textContent = quizScore;
+      quizStreakEl.textContent = quizStreak;
+
+      quizFeedback.className = 'quiz-feedback success';
+      quizFeedback.textContent = `🎉 太棒了！拼寫正確：${currentQuizWord}`;
+      quizFeedback.style.display = 'inline-block';
+
+      setTimeout(startNextQuizQuestion, 1400);
+    } else {
+      quizStreak = 0;
+      quizStreakEl.textContent = quizStreak;
+
+      quizFeedback.className = 'quiz-feedback error';
+      quizFeedback.textContent = `❌ 拼寫有誤，請重試！（已重播語音）`;
+      quizFeedback.style.display = 'inline-block';
+
+      speakWord(currentQuizWord);
+    }
+  });
+
+  giveUpQuizBtn.addEventListener('click', () => {
+    if (!currentQuizWord) return;
+    quizFeedback.className = 'quiz-feedback error';
+    quizFeedback.textContent = `💡 正確拼寫是：${currentQuizWord}`;
+    quizFeedback.style.display = 'inline-block';
+    quizInput.value = currentQuizWord;
+  });
+
+  /* ------------------------------------------------------------------------
+     6. Speed Toggle, Unit Switcher & Search Filter
+     ------------------------------------------------------------------------ */
+  unitSelect.addEventListener('change', (e) => {
+    renderUnit(e.target.value);
+  });
+
   speedBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       speedBtns.forEach(b => b.classList.remove('active'));
@@ -187,58 +445,37 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ------------------------------------------------------------------------
-     3. Search & Instant Filter
-     ------------------------------------------------------------------------ */
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.trim().toLowerCase();
-    
-    if (query.length > 0) {
-      clearSearchBtn.style.display = 'block';
-    } else {
-      clearSearchBtn.style.display = 'none';
-    }
-
+  function filterCards(query) {
+    const vocabCards = document.querySelectorAll('.vocab-card');
     vocabCards.forEach(card => {
-      const wordEn = card.getAttribute('data-word').toLowerCase();
-      const wordCn = card.getAttribute('data-cn').toLowerCase();
+      const word = card.getAttribute('data-word').toLowerCase();
+      const cn = card.getAttribute('data-cn').toLowerCase();
+      const ipa = (card.getAttribute('data-ipa') || '').toLowerCase();
 
-      if (query === '') {
-        card.classList.remove('dimmed', 'highlight');
-      } else if (wordEn.includes(query) || wordCn.includes(query)) {
-        card.classList.remove('dimmed');
-        card.classList.add('highlight');
+      if (word.includes(query) || cn.includes(query) || ipa.includes(query)) {
+        card.style.display = 'flex';
       } else {
-        card.classList.remove('highlight');
-        card.classList.add('dimmed');
+        card.style.display = 'none';
       }
     });
+
+    drawConnectors();
+  }
+
+  searchInput.addEventListener('input', (e) => {
+    const query = e.target.value.trim().toLowerCase();
+    clearSearchBtn.style.display = query.length > 0 ? 'block' : 'none';
+    filterCards(query);
   });
 
   clearSearchBtn.addEventListener('click', () => {
     searchInput.value = '';
     clearSearchBtn.style.display = 'none';
-    vocabCards.forEach(card => card.classList.remove('dimmed', 'highlight'));
-    searchInput.focus();
+    filterCards('');
   });
 
   /* ------------------------------------------------------------------------
-     4. Flashcard Quiz Mode Toggle
-     ------------------------------------------------------------------------ */
-  toggleFlashcardsBtn.addEventListener('click', () => {
-    document.body.classList.toggle('flashcard-mode');
-    toggleFlashcardsBtn.classList.toggle('active');
-    
-    if (document.body.classList.contains('flashcard-mode')) {
-      toggleFlashcardsBtn.querySelector('.label').textContent = '顯示中文 (結束背單字)';
-    } else {
-      toggleFlashcardsBtn.querySelector('.label').textContent = '遮蔽中文 (背單字)';
-      vocabCards.forEach(c => c.classList.remove('flipped'));
-    }
-  });
-
-  /* ------------------------------------------------------------------------
-     5. View Mode Switching (Mindmap / Grid)
+     7. View Mode Switcher (Mindmap vs Grid)
      ------------------------------------------------------------------------ */
   btnMindmapView.addEventListener('click', () => {
     btnMindmapView.classList.add('active');
@@ -254,14 +491,29 @@ document.addEventListener('DOMContentLoaded', () => {
     drawConnectors();
   });
 
-  /* ------------------------------------------------------------------------
-     Utility: Debounce function for performance
-     ------------------------------------------------------------------------ */
+  toggleFlashcardsBtn.addEventListener('click', () => {
+    document.body.classList.toggle('flashcard-mode');
+    const isModeActive = document.body.classList.contains('flashcard-mode');
+
+    toggleFlashcardsBtn.style.background = isModeActive ? '#fef3c7' : '#ffffff';
+    toggleFlashcardsBtn.style.borderColor = isModeActive ? '#f59e0b' : '#cbd5e1';
+  });
+
+  // Debounce utility for smooth resizing
   function debounce(func, wait) {
     let timeout;
-    return function (...args) {
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
       clearTimeout(timeout);
-      timeout = setTimeout(() => func.apply(this, args), wait);
+      timeout = setTimeout(later, wait);
     };
   }
+
+  window.addEventListener('resize', debounce(drawConnectors, 100));
+
+  // Initialize with Unit 1
+  renderUnit(currentUnitId);
 });
