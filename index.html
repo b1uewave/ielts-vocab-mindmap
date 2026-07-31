@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit 1 Accommodation 住宿 - 互動單字心智圖</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Noto+Sans+TC:wght@400;500;700;900&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Background Floating Decor -->
+  <div class="bg-decor sun-bg">☀️</div>
+  <div class="bg-decor cloud-1">☁️</div>
+  <div class="bg-decor cloud-2">☁️</div>
+
+  <!-- Main Container -->
+  <div class="app-container">
+
+    <!-- Top Navigation & Control Bar -->
+    <header class="top-bar">
+      <div class="brand">
+        <span class="brand-badge">IELTS Vocabulary</span>
+        <h1 class="page-title">Unit 1 Accommodation 住宿心智圖</h1>
+      </div>
+
+      <div class="controls-group">
+        <!-- Search Box -->
+        <div class="search-box">
+          <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="searchInput" placeholder="搜尋單字 (如 rent, 陽台, deposit)..." autocomplete="off">
+          <button id="clearSearch" class="clear-btn" title="清除搜尋" style="display:none;">✕</button>
+        </div>
+
+        <!-- Speech Speed Switcher -->
+        <div class="speed-toggle" title="朗讀語速">
+          <button class="speed-btn active" data-speed="1.0">⚡ 正常</button>
+          <button class="speed-btn" data-speed="0.75">🐢 慢速</button>
+        </div>
+
+        <!-- Flashcard Quiz Mode Toggle -->
+        <button id="toggleFlashcards" class="action-btn">
+          <span class="icon">👁️</span>
+          <span class="label">遮蔽中文 (背單字)</span>
+        </button>
+
+        <!-- View Mode Switch -->
+        <div class="view-switch">
+          <button id="btnMindmapView" class="view-btn active" title="心智圖視圖">🗺️ 心智圖</button>
+          <button id="btnGridView" class="view-btn" title="網格卡片視圖">📱 網格</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Mind Map Canvas Wrapper -->
+    <div class="mindmap-wrapper" id="mindmapWrapper">
+      <!-- SVG Connecting Lines Layer -->
+      <svg id="svgConnectors" class="svg-connectors"></svg>
+
+      <!-- Center Hub Node -->
+      <div class="center-hub" id="centerHub">
+        <div class="cloud-title-box">
+          <h2>Unit 1<br>Accommodation<br><span class="cn-title">住 宿</span></h2>
+        </div>
+        <div class="house-illustration">
+          <!-- Hand-drawn style House SVG -->
+          <svg class="house-svg" viewBox="0 0 200 160" width="180" height="144">
+            <!-- Roof -->
+            <path d="M 20 75 L 100 15 L 180 75 Z" fill="#e74c3c" stroke="#2c3e50" stroke-width="4" stroke-linejoin="round"/>
+            <path d="M 35 62 L 100 16 L 165 62" fill="none" stroke="#f1948a" stroke-width="3"/>
+            <!-- Chimney -->
+            <rect x="135" y="25" width="18" height="30" fill="#c0392b" stroke="#2c3e50" stroke-width="3"/>
+            <circle cx="144" cy="18" r="5" fill="#e5e8e8" opacity="0.8"/>
+            <circle cx="150" cy="10" r="7" fill="#e5e8e8" opacity="0.6"/>
+            <!-- House Body -->
+            <rect x="32" y="73" width="136" height="75" rx="4" fill="#fbeee6" stroke="#2c3e50" stroke-width="4"/>
+            <!-- Windows -->
+            <rect x="48" y="85" width="28" height="28" rx="3" fill="#85c1e9" stroke="#2c3e50" stroke-width="3"/>
+            <line x1="62" y1="85" x2="62" y2="113" stroke="#2c3e50" stroke-width="2"/>
+            <line x1="48" y1="99" x2="76" y2="99" stroke="#2c3e50" stroke-width="2"/>
+
+            <rect x="124" y="85" width="28" height="28" rx="3" fill="#85c1e9" stroke="#2c3e50" stroke-width="3"/>
+            <line x1="138" y1="85" x2="138" y2="113" stroke="#2c3e50" stroke-width="2"/>
+            <line x1="124" y1="99" x2="152" y2="99" stroke="#2c3e50" stroke-width="2"/>
+            <!-- Door -->
+            <rect x="86" y="95" width="28" height="53" rx="2" fill="#af601a" stroke="#2c3e50" stroke-width="3"/>
+            <circle cx="108" cy="122" r="2.5" fill="#f4d03f"/>
+            <!-- Grass Base -->
+            <path d="M 5 148 Q 50 142 100 148 T 195 148 L 195 158 L 5 158 Z" fill="#2ecc71" stroke="#27ae60" stroke-width="3"/>
+            <!-- Tree on right -->
+            <rect x="165" y="105" width="10" height="40" fill="#784212" stroke="#2c3e50" stroke-width="2.5"/>
+            <circle cx="170" cy="92" r="22" fill="#27ae60" stroke="#2c3e50" stroke-width="3"/>
+            <circle cx="160" cy="85" r="14" fill="#2ecc71"/>
+            <!-- Welcome Sign -->
+            <g transform="translate(68, 125)">
+              <rect x="0" y="0" width="64" height="20" rx="4" fill="#f5cba7" stroke="#6e2c00" stroke-width="2.5"/>
+              <text x="32" y="14" font-family="'Fredoka', sans-serif" font-weight="600" font-size="11" fill="#6e2c00" text-anchor="middle">Welcome</text>
+            </g>
+          </svg>
+        </div>
+
+        <!-- Backpack graphic near house bottom -->
+        <div class="backpack-icon" title="IELTS 聽力常考背包場景">
+          <svg viewBox="0 0 60 65" width="46" height="50">
+            <path d="M 15 25 C 15 10, 45 10, 45 25 L 48 55 C 48 60, 42 62, 30 62 C 18 62, 12 60, 12 55 Z" fill="#27ae60" stroke="#1e8449" stroke-width="3"/>
+            <path d="M 22 25 L 38 25 L 38 42 L 22 42 Z" fill="#2ecc71" stroke="#1e8449" stroke-width="2.5" rx="3"/>
+            <circle cx="30" cy="33" r="3" fill="#f4d03f"/>
+            <path d="M 20 12 Q 30 4 40 12" fill="none" stroke="#1e8449" stroke-width="3.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+      </div>
+
+      <!-- Mind Map Quadrants Container -->
+      <div class="quadrants-grid">
+
+        <!-- 1. TOP LEFT: 房型 (Room Types) - Blue Theme -->
+        <section class="quadrant blue-theme" id="sectionRoomTypes" data-anchor-side="left-top">
+          <div class="quadrant-header">
+            <span class="quadrant-title">房型 (Room Types)</span>
+            <span class="count-badge">11 詞</span>
+          </div>
+          <div class="cards-wrapper grid-layout">
+            
+            <div class="vocab-card" data-word="apartment" data-cn="公寓">
+              <div class="card-inner">
+                <div class="card-icon">🏢</div>
+                <div class="card-body">
+                  <div class="word-en">apartment</div>
+                  <div class="word-cn">公寓</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="flat" data-cn="公寓 (英式)">
+              <div class="card-inner">
+                <div class="card-icon">🏬</div>
+                <div class="card-body">
+                  <div class="word-en">flat</div>
+                  <div class="word-cn">公寓 (英式)</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="studio" data-cn="单间">
+              <div class="card-inner">
+                <div class="card-icon">🛋️</div>
+                <div class="card-body">
+                  <div class="word-en">studio</div>
+                  <div class="word-cn">單間</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="dormitory" data-cn="宿舍">
+              <div class="card-inner">
+                <div class="card-icon">🛏️</div>
+                <div class="card-body">
+                  <div class="word-en">dormitory</div>
+                  <div class="word-cn">宿舍</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="twin room" data-cn="双床房">
+              <div class="card-inner">
+                <div class="card-icon">🛋️🛋️</div>
+                <div class="card-body">
+                  <div class="word-en">twin room</div>
+                  <div class="word-cn">雙床房</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="single room" data-cn="单人房">
+              <div class="card-inner">
+                <div class="card-icon">🚪</div>
+                <div class="card-body">
+                  <div class="word-en">single room</div>
+                  <div class="word-cn">單人房</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="double room" data-cn="双人房">
+              <div class="card-inner">
+                <div class="card-icon">🛏️</div>
+                <div class="card-body">
+                  <div class="word-en">double room</div>
+                  <div class="word-cn">雙人房</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="shared room" data-cn="合住房">
+              <div class="card-inner">
+                <div class="card-icon">👥</div>
+                <div class="card-body">
+                  <div class="word-en">shared room</div>
+                  <div class="word-cn">合住房</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="ensuite room" data-cn="独立卫浴">
+              <div class="card-inner">
+                <div class="card-icon">🚿</div>
+                <div class="card-body">
+                  <div class="word-en">ensuite room</div>
+                  <div class="word-cn">獨立衛浴</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="furnished" data-cn="配家具">
+              <div class="card-inner">
+                <div class="card-icon">🪑</div>
+                <div class="card-body">
+                  <div class="word-en">furnished</div>
+                  <div class="word-cn">配傢俱</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="unfurnished" data-cn="空房">
+              <div class="card-inner">
+                <div class="card-icon">🖼️</div>
+                <div class="card-body">
+                  <div class="word-en">unfurnished</div>
+                  <div class="word-cn">空房 (無家具)</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 2. TOP RIGHT: 房屋设施 (Facilities) - Green Theme -->
+        <section class="quadrant green-theme" id="sectionFacilities" data-anchor-side="right-top">
+          <div class="quadrant-header">
+            <span class="quadrant-title">房屋设施 (Facilities)</span>
+            <span class="count-badge">10 詞</span>
+          </div>
+          <div class="cards-wrapper grid-layout">
+            
+            <div class="vocab-card" data-word="kitchen" data-cn="厨房">
+              <div class="card-inner">
+                <div class="card-icon">🍳</div>
+                <div class="card-body">
+                  <div class="word-en">kitchen</div>
+                  <div class="word-cn">廚房</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="bathroom" data-cn="浴室">
+              <div class="card-inner">
+                <div class="card-icon">🛁</div>
+                <div class="card-body">
+                  <div class="word-en">bathroom</div>
+                  <div class="word-cn">浴室</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="balcony" data-cn="阳台">
+              <div class="card-inner">
+                <div class="card-icon">🪴</div>
+                <div class="card-body">
+                  <div class="word-en">balcony</div>
+                  <div class="word-cn">陽台</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="garden" data-cn="花园">
+              <div class="card-inner">
+                <div class="card-icon">🏡</div>
+                <div class="card-body">
+                  <div class="word-en">garden</div>
+                  <div class="word-cn">花園</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="garage" data-cn="车库">
+              <div class="card-inner">
+                <div class="card-icon">🚗</div>
+                <div class="card-body">
+                  <div class="word-en">garage</div>
+                  <div class="word-cn">車庫</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="washing machine" data-cn="洗衣机">
+              <div class="card-inner">
+                <div class="card-icon">🧺</div>
+                <div class="card-body">
+                  <div class="word-en">washing machine</div>
+                  <div class="word-cn">洗衣機</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="microwave" data-cn="微波炉">
+              <div class="card-inner">
+                <div class="card-icon">🍿</div>
+                <div class="card-body">
+                  <div class="word-en">microwave</div>
+                  <div class="word-cn">微波爐</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="refrigerator" data-cn="冰箱">
+              <div class="card-inner">
+                <div class="card-icon">🧊</div>
+                <div class="card-body">
+                  <div class="word-en">refrigerator</div>
+                  <div class="word-cn">冰箱</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="heater" data-cn="暖气">
+              <div class="card-inner">
+                <div class="card-icon">🔥</div>
+                <div class="card-body">
+                  <div class="word-en">heater</div>
+                  <div class="word-cn">暖氣</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="air conditioning" data-cn="空调">
+              <div class="card-inner">
+                <div class="card-icon">❄️</div>
+                <div class="card-body">
+                  <div class="word-en">air conditioning</div>
+                  <div class="word-cn">空調</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 3. BOTTOM LEFT: 房租相关 (Rent-related) - Purple Theme -->
+        <section class="quadrant purple-theme" id="sectionRent" data-anchor-side="left-bottom">
+          <div class="quadrant-header">
+            <span class="quadrant-title">房租相关 (Rent-related)</span>
+            <span class="count-badge">10 詞</span>
+          </div>
+          <div class="cards-wrapper grid-layout">
+            
+            <div class="vocab-card" data-word="rent" data-cn="房租">
+              <div class="card-inner">
+                <div class="card-icon">💵</div>
+                <div class="card-body">
+                  <div class="word-en">rent</div>
+                  <div class="word-cn">房租</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="deposit" data-cn="押金">
+              <div class="card-inner">
+                <div class="card-icon">💰</div>
+                <div class="card-body">
+                  <div class="word-en">deposit</div>
+                  <div class="word-cn">押金</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="landlord" data-cn="房东">
+              <div class="card-inner">
+                <div class="card-icon">👨‍💼</div>
+                <div class="card-body">
+                  <div class="word-en">landlord</div>
+                  <div class="word-cn">房東</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="tenant" data-cn="租客">
+              <div class="card-inner">
+                <div class="card-icon">🙋‍♂️</div>
+                <div class="card-body">
+                  <div class="word-en">tenant</div>
+                  <div class="word-cn">租客</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="lease" data-cn="租约">
+              <div class="card-inner">
+                <div class="card-icon">📑</div>
+                <div class="card-body">
+                  <div class="word-en">lease</div>
+                  <div class="word-cn">租約</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="contract" data-cn="合同">
+              <div class="card-inner">
+                <div class="card-icon">📋</div>
+                <div class="card-body">
+                  <div class="word-en">contract</div>
+                  <div class="word-cn">合同</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="utility bills" data-cn="水电费账单">
+              <div class="card-inner">
+                <div class="card-icon">🧾</div>
+                <div class="card-body">
+                  <div class="word-en">utility bills</div>
+                  <div class="word-cn">水電費帳單</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="electricity" data-cn="电费">
+              <div class="card-inner">
+                <div class="card-icon">⚡</div>
+                <div class="card-body">
+                  <div class="word-en">electricity</div>
+                  <div class="word-cn">電費</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="gas" data-cn="燃气费">
+              <div class="card-inner">
+                <div class="card-icon">🔥</div>
+                <div class="card-body">
+                  <div class="word-en">gas</div>
+                  <div class="word-cn">瓦斯/燃氣費</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="internet" data-cn="网络费">
+              <div class="card-inner">
+                <div class="card-icon">📶</div>
+                <div class="card-body">
+                  <div class="word-en">internet</div>
+                  <div class="word-cn">網路費</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 4. BOTTOM RIGHT: 高频答案词 (High-frequency Phrases) - Orange Theme -->
+        <section class="quadrant orange-theme" id="sectionHighFreq" data-anchor-side="right-bottom">
+          <div class="quadrant-header">
+            <span class="quadrant-title">高频答案词 (High-frequency Phrases)</span>
+            <span class="count-badge">8 詞</span>
+          </div>
+          <div class="cards-wrapper grid-layout">
+            
+            <div class="vocab-card" data-word="vacancy" data-cn="空房; 空缺">
+              <div class="card-inner">
+                <div class="card-icon badge-vacant">VACANT</div>
+                <div class="card-body">
+                  <div class="word-en">vacancy</div>
+                  <div class="word-cn">空房; 空缺</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="available" data-cn="可用的; 有空的">
+              <div class="card-inner">
+                <div class="card-icon badge-check">✅</div>
+                <div class="card-body">
+                  <div class="word-en">available</div>
+                  <div class="word-cn">可用的; 有空的</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="move in" data-cn="入住; 搬入">
+              <div class="card-inner">
+                <div class="card-icon">📦</div>
+                <div class="card-body">
+                  <div class="word-en">move in</div>
+                  <div class="word-cn">入住; 搬入</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="notice" data-cn="通知; 告知">
+              <div class="card-inner">
+                <div class="card-icon">✉️</div>
+                <div class="card-body">
+                  <div class="word-en">notice</div>
+                  <div class="word-cn">通知; 告知</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="monthly payment" data-cn="月付款">
+              <div class="card-inner">
+                <div class="card-icon">📅🪙</div>
+                <div class="card-body">
+                  <div class="word-en">monthly payment</div>
+                  <div class="word-cn">月付款</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="weekly rent" data-cn="周租金">
+              <div class="card-inner">
+                <div class="card-icon">🗓️7</div>
+                <div class="card-body">
+                  <div class="word-en">weekly rent</div>
+                  <div class="word-cn">週租金</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="shared facilities" data-cn="共用设施">
+              <div class="card-inner">
+                <div class="card-icon">🤝</div>
+                <div class="card-body">
+                  <div class="word-en">shared facilities</div>
+                  <div class="word-cn">共用設施</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+            <div class="vocab-card" data-word="contract" data-cn="合同; 签约">
+              <div class="card-inner">
+                <div class="card-icon">✍️</div>
+                <div class="card-body">
+                  <div class="word-en">contract</div>
+                  <div class="word-cn">合同; 簽約</div>
+                </div>
+                <button class="audio-btn" title="朗讀">🔊</button>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+      </div> <!-- End Quadrants Grid -->
+
+      <!-- Center Sticky Note (小贴士) -->
+      <div class="sticky-note" id="stickyNote">
+        <div class="pin">📌</div>
+        <div class="note-title">💡 小貼士 (Tips)</div>
+        <div class="note-content">
+          聽力中常考住宿場景，注意<strong>數字</strong>、<strong>拼寫</strong>和<strong>同義替換</strong>哦！😊
+        </div>
+      </div>
+
+    </div> <!-- End Mindmap Wrapper -->
+
+    <!-- Audio Toast / Speaking Indicator -->
+    <div id="audioToast" class="audio-toast">
+      <span class="speaking-animation"><span></span><span></span><span></span></span>
+      <span id="toastText">Speaking...</span>
+    </div>
+
+  </div> <!-- End App Container -->
+
+  <script src="script.js"></script>
+</body>
+</html>
