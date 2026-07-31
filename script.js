@@ -6,6 +6,7 @@
 document.addEventListener('DOMContentLoaded', () => {
   // Global State
   let currentUnitId = 'unit-1';
+  let currentBandFilter = 'all';
   let speechRate = 1.0;
   let synth = window.speechSynthesis;
 
@@ -22,23 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
   const unitSelect = document.getElementById('unitSelect');
   const brandBadge = document.getElementById('brandBadge');
   const pageTitle = document.getElementById('pageTitle');
-  const svgConnectors = document.getElementById('svgConnectors');
-  const centerHub = document.getElementById('centerHub');
+  const topBarGraphic = document.getElementById('topBarGraphic');
+  const topBarStickyNote = document.getElementById('topBarStickyNote');
   const quadrantsGrid = document.getElementById('quadrantsGrid');
   const searchInput = document.getElementById('searchInput');
   const clearSearchBtn = document.getElementById('clearSearch');
+  const bandBtns = document.querySelectorAll('.band-btn');
+  const modalBandBadge = document.getElementById('modalBandBadge');
   const toggleFlashcardsBtn = document.getElementById('toggleFlashcards');
   const btnDictationQuiz = document.getElementById('btnDictationQuiz');
   const dictationQuizPanel = document.getElementById('dictationQuizPanel');
   const closeQuizBtn = document.getElementById('closeQuizBtn');
-  const btnMindmapView = document.getElementById('btnMindmapView');
-  const btnGridView = document.getElementById('btnGridView');
   const mindmapWrapper = document.getElementById('mindmapWrapper');
   const audioToast = document.getElementById('audioToast');
   const toastText = document.getElementById('toastText');
   const speedBtns = document.querySelectorAll('.speed-btn');
-  const noteTitle = document.getElementById('noteTitle');
-  const noteContent = document.getElementById('noteContent');
 
   // Word Modal Elements
   const wordModal = document.getElementById('wordModal');
@@ -76,27 +75,27 @@ document.addEventListener('DOMContentLoaded', () => {
     brandBadge.textContent = `IELTS Mindmap • Unit ${unit.number}`;
     pageTitle.textContent = unit.badgeText;
 
-    // 2. Build Theme Colors Map for connectors
-    currentThemeColors = {};
-    unit.quadrants.forEach(q => {
-      currentThemeColors[q.id] = q.color;
-    });
-
-    // 3. Render Center Hub
-    centerHub.innerHTML = `
-      <div class="cloud-title-box">
-        <h2>Unit ${unit.number}<br><span class="en-title">${unit.titleEn}</span><br><span class="cn-title">${unit.titleCn}</span></h2>
-      </div>
-      ${unit.centerSvg}
-    `;
-
-    // 4. Render Sticky Note
-    if (unit.stickyNote) {
-      noteTitle.textContent = unit.stickyNote.title;
-      noteContent.textContent = unit.stickyNote.content;
+    // 2. Render Top Bar Unit Hero (Illustration & Sticky Note)
+    if (topBarGraphic) {
+      topBarGraphic.innerHTML = `
+        <div class="cloud-title-box">
+          <h2>Unit ${unit.number}<br><span class="en-title">${escapeHtml(unit.titleEn)}</span><br><span class="cn-title">${escapeHtml(unit.titleCn)}</span></h2>
+        </div>
+        <div class="hero-svg-wrapper">
+          ${unit.centerSvg}
+        </div>
+      `;
     }
 
-    // 5. Render Quadrants Grid & Cards
+    if (topBarStickyNote) {
+      topBarStickyNote.innerHTML = unit.stickyNote ? `
+        <div class="pin">📌</div>
+        <div class="note-title">${escapeHtml(unit.stickyNote.title)}</div>
+        <div class="note-content">${escapeHtml(unit.stickyNote.content)}</div>
+      ` : '';
+    }
+
+    // 3. Render Quadrants Grid & Cards
     quadrantsGrid.innerHTML = unit.quadrants.map(q => `
       <section class="quadrant ${q.themeClass}" id="${q.id}">
         <div class="quadrant-header-pill">
@@ -104,8 +103,12 @@ document.addEventListener('DOMContentLoaded', () => {
           <span class="count-tag">${q.words.length} 詞</span>
         </div>
         <div class="cards-wrapper grid-layout">
-          ${q.words.map(w => `
-            <div class="vocab-card" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
+          ${q.words.map(w => {
+            const bandVal = w.band || '6.5';
+            const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
+            return `
+            <div class="vocab-card" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
+              <span class="band-badge ${bandClass}">${escapeHtml(bandVal)}</span>
               <div class="card-inner">
                 <div class="card-icon-wrapper">${w.icon}</div>
                 <div class="card-body">
@@ -116,20 +119,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 <button class="audio-btn" title="朗讀">🔊</button>
               </div>
             </div>
-          `).join('')}
+          `;
+          }).join('')}
         </div>
       </section>
     `).join('');
 
-    // 6. Bind Card Event Listeners
+    // 4. Bind Card Event Listeners
     bindCardEvents();
 
-    // 7. Reset Search Filter & Redraw Connectors
-    if (searchInput.value.trim().length > 0) {
-      filterCards(searchInput.value.trim().toLowerCase());
-    } else {
-      setTimeout(drawConnectors, 50);
-    }
+    // 5. Apply Active Filters (Search + Band)
+    applyFilters();
   }
 
   function escapeHtml(str) {
@@ -137,85 +137,7 @@ document.addEventListener('DOMContentLoaded', () => {
     return str.replace(/"/g, '&quot;').replace(/'/g, '&#39;');
   }
 
-  /* ------------------------------------------------------------------------
-     2. SVG Connecting Lines Engine
-     ------------------------------------------------------------------------ */
-  function drawConnectors() {
-    if (!svgConnectors || window.innerWidth <= 992 || mindmapWrapper.classList.contains('grid-view')) {
-      if (svgConnectors) svgConnectors.innerHTML = '';
-      return;
-    }
 
-    const wrapperRect = mindmapWrapper.getBoundingClientRect();
-    const hubRect = centerHub.getBoundingClientRect();
-
-    if (!hubRect.width || !hubRect.height) return;
-
-    // Center anchor point (under cloud title box)
-    const hubX = hubRect.left + hubRect.width / 2 - wrapperRect.left;
-    const hubY = hubRect.top + hubRect.height / 3 - wrapperRect.top;
-
-    let svgContent = '';
-    const sections = document.querySelectorAll('.quadrant');
-
-    sections.forEach((sec, idx) => {
-      if (sec.style.display === 'none') return;
-
-      const secId = sec.id;
-      const pill = sec.querySelector('.quadrant-header-pill');
-      if (!pill) return;
-
-      const pillRect = pill.getBoundingClientRect();
-      const color = currentThemeColors[secId] || '#94a3b8';
-
-      // Target point at the capsule header pill
-      const targetX = pillRect.left + pillRect.width / 2 - wrapperRect.left;
-      const targetY = pillRect.top + pillRect.height / 2 - wrapperRect.top;
-
-      let controlX1, controlY1, controlX2, controlY2;
-
-      // Position logic based on 4 quadrant slots
-      if (idx === 0) {
-        // Top Left
-        controlX1 = hubX - 140;
-        controlY1 = hubY - 20;
-        controlX2 = targetX + 60;
-        controlY2 = targetY + 80;
-      } else if (idx === 1) {
-        // Top Right
-        controlX1 = hubX + 140;
-        controlY1 = hubY - 20;
-        controlX2 = targetX - 60;
-        controlY2 = targetY + 80;
-      } else if (idx === 2) {
-        // Bottom Left
-        controlX1 = hubX - 140;
-        controlY1 = hubY + 60;
-        controlX2 = targetX + 60;
-        controlY2 = targetY - 80;
-      } else {
-        // Bottom Right
-        controlX1 = hubX + 140;
-        controlY1 = hubY + 60;
-        controlX2 = targetX - 60;
-        controlY2 = targetY - 80;
-      }
-
-      // Organic Bezier Mind-Map Branch Curves
-      svgContent += `
-        <path d="M ${hubX} ${hubY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${targetX} ${targetY}"
-              fill="none" stroke="${color}" stroke-width="9" stroke-linecap="round" opacity="0.25" />
-        <path d="M ${hubX} ${hubY} C ${controlX1} ${controlY1}, ${controlX2} ${controlY2}, ${targetX} ${targetY}"
-              fill="none" stroke="${color}" stroke-width="4.5" stroke-linecap="round" />
-        <circle cx="${targetX}" cy="${targetY}" r="6" fill="${color}" stroke="#ffffff" stroke-width="2" />
-      `;
-    });
-
-    // Center Node Anchor Dot
-    svgContent += `<circle cx="${hubX}" cy="${hubY}" r="8" fill="#1e293b" stroke="#ffffff" stroke-width="2" />`;
-
-    svgConnectors.innerHTML = svgContent;
-  }
 
   /* ------------------------------------------------------------------------
      3. Text-To-Speech (Audio Pronunciation)
@@ -286,6 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const word = card.getAttribute('data-word');
     const ipa = card.getAttribute('data-ipa') || '';
     const cn = card.getAttribute('data-cn') || '';
+    const band = card.getAttribute('data-band') || '6.5';
     const example = card.getAttribute('data-example') || '';
     const tip = card.getAttribute('data-tip') || '';
     const iconSvg = card.querySelector('.custom-icon');
@@ -295,6 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
     modalWordCn.textContent = cn;
     modalExample.textContent = example;
     modalTip.textContent = tip;
+
+    if (modalBandBadge) {
+      modalBandBadge.textContent = band;
+      modalBandBadge.className = `modal-band-tag ${band === '5.0' ? 'band-5' : band === '7.5+' ? 'band-7' : 'band-6'}`;
+    }
 
     if (iconSvg) {
       modalIcon.innerHTML = iconSvg.outerHTML;
@@ -445,50 +373,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  function filterCards(query) {
+  bandBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      bandBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      currentBandFilter = btn.getAttribute('data-band');
+      applyFilters();
+    });
+  });
+
+  function applyFilters() {
+    const query = searchInput.value.trim().toLowerCase();
     const vocabCards = document.querySelectorAll('.vocab-card');
+
     vocabCards.forEach(card => {
       const word = card.getAttribute('data-word').toLowerCase();
       const cn = card.getAttribute('data-cn').toLowerCase();
       const ipa = (card.getAttribute('data-ipa') || '').toLowerCase();
+      const band = card.getAttribute('data-band') || '6.5';
 
-      if (word.includes(query) || cn.includes(query) || ipa.includes(query)) {
-        card.style.display = 'flex';
-      } else {
+      const matchesSearch = !query || word.includes(query) || cn.includes(query) || ipa.includes(query);
+      const matchesBand = (currentBandFilter === 'all') || (band === currentBandFilter);
+
+      if (!matchesSearch) {
         card.style.display = 'none';
+        card.classList.remove('dimmed');
+      } else {
+        card.style.display = 'flex';
+        if (!matchesBand) {
+          card.classList.add('dimmed');
+        } else {
+          card.classList.remove('dimmed');
+        }
       }
     });
-
-    drawConnectors();
   }
 
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.trim().toLowerCase();
+  searchInput.addEventListener('input', () => {
+    const query = searchInput.value.trim();
     clearSearchBtn.style.display = query.length > 0 ? 'block' : 'none';
-    filterCards(query);
+    applyFilters();
   });
 
   clearSearchBtn.addEventListener('click', () => {
     searchInput.value = '';
     clearSearchBtn.style.display = 'none';
-    filterCards('');
-  });
-
-  /* ------------------------------------------------------------------------
-     7. View Mode Switcher (Mindmap vs Grid)
-     ------------------------------------------------------------------------ */
-  btnMindmapView.addEventListener('click', () => {
-    btnMindmapView.classList.add('active');
-    btnGridView.classList.remove('active');
-    mindmapWrapper.classList.remove('grid-view');
-    drawConnectors();
-  });
-
-  btnGridView.addEventListener('click', () => {
-    btnGridView.classList.add('active');
-    btnMindmapView.classList.remove('active');
-    mindmapWrapper.classList.add('grid-view');
-    drawConnectors();
+    applyFilters();
   });
 
   toggleFlashcardsBtn.addEventListener('click', () => {
@@ -498,21 +428,6 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleFlashcardsBtn.style.background = isModeActive ? '#fef3c7' : '#ffffff';
     toggleFlashcardsBtn.style.borderColor = isModeActive ? '#f59e0b' : '#cbd5e1';
   });
-
-  // Debounce utility for smooth resizing
-  function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-      const later = () => {
-        clearTimeout(timeout);
-        func(...args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  }
-
-  window.addEventListener('resize', debounce(drawConnectors, 100));
 
   // Initialize with Unit 1
   renderUnit(currentUnitId);
