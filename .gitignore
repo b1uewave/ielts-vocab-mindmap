@@ -18,8 +18,15 @@ yarn-error.log*
 *.tmp
 *.log
 
-# Sensitive API Credentials
+# Sensitive API Credentials & Environment Variables
+.env
+.env*.local
+*.env.local
 *client_secret*.json
 credentials.json
 *.json.secret
+*.secret
+supabase_credentials.local.txt
+
+
 

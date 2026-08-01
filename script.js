@@ -81,6 +81,90 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------------
      0. User Authentication & Learned Words Helpers
      ------------------------------------------------------------------------ */
+  /* ------------------------------------------------------------------------
+     0. Supabase (PostgreSQL) Database Integration & Hybrid Sync
+     ------------------------------------------------------------------------ */
+  // Supabase Configuration
+  const SUPABASE_URL = 'https://fcceeisskcgegpbvuzch.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_Ht3BFrEwq9-t8-EPXJPr_g_rIxttZpm';
+
+  let supabase = null;
+  let isSupabaseConfigured = false;
+
+  function initSupabase() {
+    if (window.supabase && window.supabase.createClient) {
+      if (SUPABASE_URL && SUPABASE_ANON_KEY &&
+          !SUPABASE_URL.includes('YOUR_SUPABASE_URL') &&
+          !SUPABASE_ANON_KEY.includes('YOUR_SUPABASE_ANON_KEY')) {
+        try {
+          supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+          isSupabaseConfigured = true;
+        } catch (e) {
+          console.warn('Supabase init warning:', e);
+          isSupabaseConfigured = false;
+        }
+      }
+    }
+  }
+
+  initSupabase();
+
+  async function syncLearnedWordsFromSupabase(userId) {
+    if (!isSupabaseConfigured || !supabase || !userId) return;
+    try {
+      const { data, error } = await supabase
+        .from('user_learned_words')
+        .select('word')
+        .eq('user_id', userId);
+
+      if (error) {
+        console.warn('Supabase fetch error:', error);
+        return;
+      }
+
+      if (data && Array.isArray(data)) {
+        const localSet = getLearnedSet();
+        data.forEach(item => {
+          if (item && item.word) {
+            localSet.add(item.word.trim().toLowerCase());
+          }
+        });
+        saveLearnedSet(localSet);
+        updateUserProfileBar();
+        renderUnit(currentUnitId);
+      }
+    } catch (e) {
+      console.warn('Supabase sync exception:', e);
+    }
+  }
+
+  async function addWordToSupabase(userId, word, unitId = '') {
+    if (!isSupabaseConfigured || !supabase || !userId || !word) return;
+    try {
+      await supabase
+        .from('user_learned_words')
+        .upsert(
+          { user_id: userId, word: word.trim().toLowerCase(), unit_id: unitId },
+          { onConflict: 'user_id,word' }
+        );
+    } catch (e) {
+      console.warn('Supabase insert error:', e);
+    }
+  }
+
+  async function removeWordFromSupabase(userId, word) {
+    if (!isSupabaseConfigured || !supabase || !userId || !word) return;
+    try {
+      await supabase
+        .from('user_learned_words')
+        .delete()
+        .eq('user_id', userId)
+        .eq('word', word.trim().toLowerCase());
+    } catch (e) {
+      console.warn('Supabase delete error:', e);
+    }
+  }
+
   function getLearnedSet() {
     if (!currentUser || !currentUser.id) return new Set();
     const key = `ielts_learned_${currentUser.id}`;
@@ -116,9 +200,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (set.has(wordKey)) {
       set.delete(wordKey);
       isNowLearned = false;
+      if (isSupabaseConfigured) {
+        removeWordFromSupabase(currentUser.id, wordKey);
+      }
     } else {
       set.add(wordKey);
       isNowLearned = true;
+      if (isSupabaseConfigured) {
+        addWordToSupabase(currentUser.id, wordKey, currentUnitId);
+      }
     }
     saveLearnedSet(set);
     updateUserProfileBar();
@@ -151,12 +241,17 @@ document.addEventListener('DOMContentLoaded', () => {
         ? `<img src="${currentUser.picture}" class="user-avatar" alt="${escapeHtml(currentUser.name)}">`
         : `<div class="user-avatar-fallback">${escapeHtml((currentUser.name || 'U').charAt(0).toUpperCase())}</div>`;
 
+      const cloudBadgeHtml = isSupabaseConfigured
+        ? `<span class="cloud-status-badge synced" title="已成功連接 Supabase PostgreSQL 雲端資料庫">☁️ 雲端同步</span>`
+        : `<span class="cloud-status-badge local" title="使用 LocalStorage 本機快取模式">💾 本機快取</span>`;
+
       userProfileBar.innerHTML = `
         <div class="user-logged-in-box">
           ${avatarHtml}
           <div class="user-info">
             <span class="user-name">${escapeHtml(currentUser.name)}</span>
           </div>
+          ${cloudBadgeHtml}
           <span class="user-progress-badge" title="全題庫記憶進度">✅ ${learnedCount}/${totalCount} (${pct}%)</span>
           <button class="btn-logout" id="btnLogout" title="登出帳號">🚪 登出</button>
         </div>
@@ -878,4 +973,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initialize App
   updateUserProfileBar();
   renderUnit(currentUnitId);
+
+  if (currentUser && currentUser.id) {
+    syncLearnedWordsFromSupabase(currentUser.id);
+  }
 });
