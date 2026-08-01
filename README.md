@@ -79,17 +79,17 @@ graph TD
         RLS["Row Level Security"]
     end
 
-    Gemini -->|Dataset Generation & Validation| DataPipeline
-    DataPipeline -->|Structure unitsData.js| State
+    Gemini -->|"Dataset Generation & Validation"| DataPipeline
+    DataPipeline -->|"Structure unitsData.js"| State
 
-    UI -->|User Action / Filter| State
-    State -->|Calculate Node Layout| Engine
-    State -->|Trigger Audio Playback| TTS
-    State -->|Load Quiz Vocabulary| Quiz
+    UI -->|"User Action / Filter"| State
+    State -->|"Calculate Node Layout"| Engine
+    State -->|"Trigger Audio Playback"| TTS
+    State -->|"Load Quiz Vocabulary"| Quiz
     
-    State -->|Progress Change| LocalDB
-    State -->|Hybrid Cloud Sync| SupaClient
-    SupaClient -->|Upsert / Delete / Fetch| PgDB
+    State -->|"Progress Change"| LocalDB
+    State -->|"Hybrid Cloud Sync"| SupaClient
+    SupaClient -->|"Upsert / Delete / Fetch"| PgDB
     PgDB --- RLS
 ```
 
