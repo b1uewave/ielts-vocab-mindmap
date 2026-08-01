@@ -146,7 +146,7 @@ ielts-vocab-mindmap/
 ├── .env.example       # Supabase 密鑰與專案設定樣板
 ├── README.md          # 全英文主說明文件
 ├── README.zh-TW.md    # 繁體中文說明文件
-└── .gitignore         # Git忽略設定
+└── .gitignore         # Git 忽略設定
 ```
 
 ---
@@ -170,20 +170,6 @@ cd ielts-vocab-mindmap
 # 使用瀏覽器開啟 index.html
 open index.html
 ```
-
----
-
-## 🏷️ 發佈與版本規範 (Release Strategy)
-
-本專案遵循 [Semantic Versioning](https://semver.org/) 語意化版本規範。
-
-### 目前版本: `v1.0.0`
-- 使用 Google Gemini 3.6 AI 協同推出 15 大雅思場景單元與精選詞彙。
-- 動態 Bezier 曲線 SVG 心智圖渲染引擎。
-- Web Speech API 語音發音與 `0.75x` / `1.0x` 雙語速。
-- 聽音拼寫特訓與計分連對機制。
-- Supabase PostgreSQL 雲端與本機雙重同步。
-- 託管於 Cloudflare Pages。
 
 ---
 

@@ -173,20 +173,6 @@ open index.html
 
 ---
 
-## 🏷️ Release & Versioning
-
-This project follows [Semantic Versioning](https://semver.org/). 
-
-### Current Release: `v1.0.0`
-- AI-Co-Engineered 15 complete IELTS scenario units using Google Gemini 3.6.
-- Dynamic SVG Bezier mindmap visualization engine.
-- Web Speech API integration with dual speech speed options.
-- Dictation Spelling Quiz with streak counter.
-- Supabase cloud database & hybrid local sync architecture.
-- Deployed on Cloudflare Pages.
-
----
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
