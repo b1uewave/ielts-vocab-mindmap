@@ -11,7 +11,7 @@
 
 🌐 **Live Application**: [https://ielts-vocab-mindmap.pages.dev/](https://ielts-vocab-mindmap.pages.dev/)
 
-**IELTS Vocab Mindmap** is an interactive, visual, and data-driven IELTS & General English scenario vocabulary learning platform. Co-engineered with **Google Gemini 3.6 AI**, the platform combines an AI-curated exam dataset with a dynamic SVG Bezier curve engine, Web Speech API audio synthesis, and a hybrid dual-layer storage sync backed by Supabase PostgreSQL.
+**IELTS Vocab Mindmap** is an interactive, visual, and data-driven IELTS & General English scenario vocabulary learning platform. Co-engineered with **Google Gemini 3.6 AI**, the platform combines an AI-curated exam dataset across 15 scenario units with a dynamic SVG Bezier curve engine, Web Speech API audio synthesis, and a hybrid dual-layer storage sync backed by Supabase PostgreSQL.
 
 ---
 
@@ -19,7 +19,7 @@
 
 This project showcases a **Human-in-the-Loop AI Engineering Workflow**, leveraging cutting-edge LLMs to accelerate development velocity and elevate data quality:
 
-- 🧠 **AI Data Pipeline & Curation**: Utilized **Google Gemini 3.6** to generate, validate, and structure high-frequency IELTS scenario vocabulary datasets (`unitsData.js`), ensuring precise IPA phonetics, contextual exam collocations, and authentic sample sentences.
+- 🧠 **AI Data Pipeline & Curation**: Utilized **Google Gemini 3.6** to generate, validate, and structure 15 high-frequency IELTS scenario vocabulary datasets (`unitsData.js`), ensuring precise IPA phonetics, contextual exam collocations, and authentic sample sentences.
 - ⚡ **AI Co-Engineered Codebase**: Architected in collaboration with Google Antigravity & Gemini 3.6 AI pair programming for rapid prototyping of custom SVG Bezier math engines and cloud storage synchronization.
 - 🔮 **Future AI Integration Roadmap**:
   - [ ] **AI Adaptive Learning Engine**: Dynamic difficulty adjustment based on user spelling quiz performance.
@@ -30,7 +30,7 @@ This project showcases a **Human-in-the-Loop AI Engineering Workflow**, leveragi
 
 ## 🌟 Key Features
 
-- 📚 **10 Complete IELTS Scenario Units (100+ Core Vocabulary Items)**:
+- 📚 **15 Complete IELTS Scenario Units (150+ Core Vocabulary Items)**:
   - **Unit 1: Accommodation** 🏠 Hand-drawn Cottage & Living Environment
   - **Unit 2: Campus Life** 🎓 Academic Life & Graduation Cap
   - **Unit 3: Travel & Tourism** ✈️ Globe & Flight Travel
@@ -41,9 +41,14 @@ This project showcases a **Human-in-the-Loop AI Engineering Workflow**, leveragi
   - **Unit 8: Food & Dining** 🍔 Culinary Plate & Dining Cutlery
   - **Unit 9: Entertainment & Sports** 🎨 Artist Palette & Sports Field
   - **Unit 10: Science & Technology** 🔬 Microscope & AI Semiconductor Chip
+  - **Unit 11: Education & Learning** 📚 Academic Pedagogy & E-Learning
+  - **Unit 12: Media & Communication** 📡 Mass Media, Journalism & Social Networks
+  - **Unit 13: Law, Crime & Society** ⚖️ Justice System, Rehabilitation & Safety
+  - **Unit 14: Culture, Art & History** 🏛️ Archeology, Heritage & Fine Arts
+  - **Unit 15: Transportation & Planning** 🚆 Public Transit, Congestion & Urbanization
 - 🎨 **Dynamic Bezier Curve Mindmap Engine**: Computes smooth SVG quadratic/cubic Bezier curves dynamically between central topic hubs and vocabulary cards.
 - 🔊 **Web Speech API Audio Synthesis**: Native audio pronunciation for individual words and example sentences with `1.0x` standard speed and `0.75x` slow intensive listening mode.
-- ✏️ **Dictation Quiz & Streak System**: Interactive spelling quizzes for single units or all 10 scenario units with real-time scoring and streak counting.
+- ✏️ **Dictation Quiz & Streak System**: Interactive spelling quizzes for single units or all 15 scenario units with real-time scoring and streak counting.
 - ☁️ **Supabase Cloud Sync & Hybrid Storage**: Instant local storage updates backed by background cloud synchronization to Supabase PostgreSQL (`user_learned_words`).
 - 👁️ **Flashcards & Chinese Masking Mode**: One-click toggle to mask Chinese definitions for memory self-testing.
 - 🔍 **Instant Dual-Language Filter & Band Selector**: Real-time filtering by English/Chinese keywords, IPA phonetics, and IELTS Band levels (Band 6.0 ~ 8.5+).
@@ -94,7 +99,7 @@ graph TD
 
 | Layer | Technology / Tools | Details & Responsibilities |
 | :--- | :--- | :--- |
-| **AI Co-Engineering** | Google Gemini 3.6 AI | Dataset curation, phonetics validation, and AI pair programming. |
+| **AI Co-Engineering** | Google Gemini 3.6 AI | Dataset curation across 15 units, phonetics validation, and AI pair programming. |
 | **Frontend Core** | HTML5, Vanilla JavaScript (ES6+), CSS3 | Zero framework dependency; ultra-fast initial page render (<50ms). |
 | **Visualization Engine** | Dynamic SVG & Bezier Curve Math | Real-time coordinate calculation and SVG path rendering (`d="M ... Q ... T ..."`). |
 | **Audio Synthesis** | Web Speech API (`window.speechSynthesis`) | Browser-native TTS pronunciation with customizable speech rate (`0.75x` / `1.0x`). |
@@ -135,7 +140,7 @@ ON public.user_learned_words (user_id);
 ```
 ielts-vocab-mindmap/
 ├── index.html         # Main HTML layout, controls, modals, and panel UI
-├── unitsData.js       # AI-curated 10 Scenario Units dataset (Words, IPA, examples & SVGs)
+├── unitsData.js       # AI-curated 15 Scenario Units dataset (Words, IPA, examples & SVGs)
 ├── script.js          # Controller: Bezier SVG engine, Web Speech TTS, Quiz & Supabase sync
 ├── style.css          # Design system, glassmorphism UI, themes & responsive breakpoints
 ├── .env.example       # Template for Supabase credentials & project configurations
@@ -173,7 +178,7 @@ open index.html
 This project follows [Semantic Versioning](https://semver.org/). 
 
 ### Current Release: `v1.0.0`
-- AI-Co-Engineered 10 complete IELTS scenario units using Google Gemini 3.6.
+- AI-Co-Engineered 15 complete IELTS scenario units using Google Gemini 3.6.
 - Dynamic SVG Bezier mindmap visualization engine.
 - Web Speech API integration with dual speech speed options.
 - Dictation Spelling Quiz with streak counter.

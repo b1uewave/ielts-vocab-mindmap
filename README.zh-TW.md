@@ -11,7 +11,7 @@
 
 🌐 **線上展示網址**: [https://ielts-vocab-mindmap.pages.dev/](https://ielts-vocab-mindmap.pages.dev/)
 
-`ielts-vocab-mindmap` 是一個互動式、視覺化且資料驅動的雅思/英語場景單字心智圖學習平台。本專案採用 **Google Gemini 3.6 AI 人工智慧協同開發 (Human-in-the-Loop AI Engineering)**，將 AI 生成與校對的考題資料庫與動態 Bezier 貝茲曲線 SVG 心智圖渲染引擎、Web Speech API 真人語音朗讀，以及 Supabase PostgreSQL 雲端/本機快取混合同步架構完美結合。
+`ielts-vocab-mindmap` 是一個互動式、視覺化且資料驅動的雅思/英語場景單字心智圖學習平台。本專案採用 **Google Gemini 3.6 AI 人工智慧協同開發 (Human-in-the-Loop AI Engineering)**，將 AI 生成與校對的 15 大場景考題資料庫與動態 Bezier 貝茲曲線 SVG 心智圖渲染引擎、Web Speech API 真人語音朗讀，以及 Supabase PostgreSQL 雲端/本機快取混合同步架構完美結合。
 
 ---
 
@@ -19,7 +19,7 @@
 
 本專案展現現代開發者運用 **AI 工具進行增程開發與資料處理 (Human-in-the-Loop AI Engineering)** 的能力：
 
-- 🧠 **AI 資料處理管線 (AI Data Pipeline)**：使用 **Google Gemini 3.6** 生成、校對並結構化 10 大雅思核心高頻場景詞彙庫 (`unitsData.js`)，確保國際音標 (IPA)、考試常用搭配詞 (Collocations) 與真實擬真考題句型之準確性。
+- 🧠 **AI 資料處理管線 (AI Data Pipeline)**：使用 **Google Gemini 3.6** 生成、校對並結構化 15 大雅思核心高頻場景詞彙庫 (`unitsData.js`)，確保國際音標 (IPA)、考試常用搭配詞 (Collocations) 與真實擬真考題句型之準確性。
 - ⚡ **AI 協同程式碼架構 (AI Co-Engineered Codebase)**：與 Google Antigravity & Gemini 3.6 進行 AI 結對編程 (Pair Programming)，快速產出貝茲曲線數學演算、SVG 節點動態定位與雲端資料庫混合同步邏輯。
 - 🔮 **未來 AI 功能擴展路線圖 (Future Roadmap)**：
   - [ ] **AI 自適應學習引擎**：根據使用者聽音拼寫錯題率，動態調整複習頻率與題目難易度。
@@ -30,7 +30,7 @@
 
 ## 🌟 核心特色 (Features)
 
-- 📚 **10 大雅思核心高頻主題單元 (AI 生成與校對 100+ 精選詞彙與考點句型)**：
+- 📚 **15 大雅思核心高頻主題單元 (AI 生成與校對 150+ 精選詞彙與考點句型)**：
   - **Unit 1: Accommodation** (住宿與居住環境) - 🏠 手繪溫馨小屋
   - **Unit 2: Campus Life** (校園與學術生活) - 🎓 手繪圖書館與畢業帽
   - **Unit 3: Travel & Tourism** (旅遊交通與觀光) - ✈️ 手繪地球儀與飛機
@@ -41,9 +41,14 @@
   - **Unit 8: Food & Dining** (飲食餐廳與點餐) - 🍔 手繪主廚餐盤與刀叉
   - **Unit 9: Entertainment & Sports** (娛樂藝術與運動) - 🎨 手繪調色盤與足球
   - **Unit 10: Science & Technology** (科學實驗與 AI 科技) - 🔬 手繪顯微鏡與晶片
+  - **Unit 11: Education & Learning** (教育與學習) - 📚 教學模式與學術體系
+  - **Unit 12: Media & Communication** (媒體與傳播) - 📡 大眾傳播與社群網路
+  - **Unit 13: Law, Crime & Society** (法律與社會) - ⚖️ 司法體系與社會治安
+  - **Unit 14: Culture, Art & History** (文化與歷史) - 🏛️ 考古遺產與美學藝術
+  - **Unit 15: Transportation & Planning** (交通與都市規劃) - 🚆 大眾運輸與城市擁堵
 - 🎨 **視覺心智圖引擎 (Bezier Canvas Engine)**：即時動態計算貝茲曲線，連接中心主題與四周詞彙卡片。
 - 🔊 **Web Speech API 雙語速朗讀**：支援單字與例句點擊發音，並提供 `1.0x` 正常與 `0.75x` 慢速精聽模式。
-- ✏️ **聽音拼寫特訓 (Dictation Quiz)**：提供當前單元或全 10 大主題隨機抽考拼寫測驗，即時計算分數與連對紀錄。
+- ✏️ **聽音拼寫特訓 (Dictation Quiz)**：提供當前單元或全 15 大主題隨機抽考拼寫測驗，即時計算分數與連對紀錄。
 - ☁️ **Supabase 雲端與本機混合同步 (Hybrid Storage Sync)**：支援 LocalStorage 秒開離線遊客模式，並自動發送背景請求同步至 Supabase PostgreSQL 資料庫 (`user_learned_words`)。
 - 👁️ **遮蔽中文背單字模式 (Flashcards)**：一鍵隱藏中文翻譯與例句，點擊卡片測試記憶。
 - 🔍 **即時雙語過濾與 Band 分級**：支援中英文關鍵字、音標高亮過濾，並可篩選 Band 6.0 ~ 8.5+ 難度。
@@ -94,7 +99,7 @@ graph TD
 
 | 層級 (Layer) | 技術 / 工具 (Technology / Tools) | 說明與職責 (Description) |
 | :--- | :--- | :--- |
-| **AI 協同開發** | Google Gemini 3.6 AI | 資料庫生成校對、音標驗證與 AI Pair Programming 輔助開發。 |
+| **AI 協同開發** | Google Gemini 3.6 AI | 15 大單元資料庫生成校對、音標驗證與 AI Pair Programming 輔助開發。 |
 | **前端基底 (Frontend Core)** | HTML5, Vanilla JavaScript (ES6+), CSS3 | 零框架依賴負擔，畫面載入極速 (<50ms)。 |
 | **圖形渲染引擎 (Visualization Engine)** | Dynamic SVG & Bezier Curve Math | 即時動態計算二次/三次貝茲曲線與 SVG 節點座標。 |
 | **語音合成引擎 (Audio Synthesis)** | Web Speech API (`window.speechSynthesis`) | 瀏覽器原生 TTS 語音朗讀，支援雙語速切換 (`0.75x` / `1.0x`)。 |
@@ -135,13 +140,13 @@ ON public.user_learned_words (user_id);
 ```
 ielts-vocab-mindmap/
 ├── index.html         # 主頁面結構、控制面板、彈窗與 UI 組件
-├── unitsData.js       # AI 生成與校對之 10 大主題動態資料庫
+├── unitsData.js       # AI 生成與校對之 15 大主題動態資料庫
 ├── script.js          # 核心控制器: Bezier SVG 引擎, Web Speech TTS, 拼寫測驗與 Supabase 同步
 ├── style.css          # 設計系統, 毛玻璃樣式, 主題與響應式切點
 ├── .env.example       # Supabase 密鑰與專案設定樣板
 ├── README.md          # 全英文主說明文件
 ├── README.zh-TW.md    # 繁體中文說明文件
-└── .gitignore         # Git 忽略設定
+└── .gitignore         # Git忽略設定
 ```
 
 ---
@@ -173,7 +178,7 @@ open index.html
 本專案遵循 [Semantic Versioning](https://semver.org/) 語意化版本規範。
 
 ### 目前版本: `v1.0.0`
-- 使用 Google Gemini 3.6 AI 協同推出 10 大雅思場景單元與精選詞彙。
+- 使用 Google Gemini 3.6 AI 協同推出 15 大雅思場景單元與精選詞彙。
 - 動態 Bezier 曲線 SVG 心智圖渲染引擎。
 - Web Speech API 語音發音與 `0.75x` / `1.0x` 雙語速。
 - 聽音拼寫特訓與計分連對機制。
