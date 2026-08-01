@@ -85,9 +85,8 @@ document.addEventListener('DOMContentLoaded', () => {
      0. Supabase (PostgreSQL) Database Integration & Hybrid Sync
      ------------------------------------------------------------------------ */
   // Supabase Configuration
-  // 提示：請在 Supabase Dashboard 取得您的 Project URL 與 anon public key 並填入下方
-  const SUPABASE_URL = 'YOUR_SUPABASE_URL.supabase.co';
-  const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
+  const SUPABASE_URL = 'https://fcceeisskcgegpbvuzch.supabase.co';
+  const SUPABASE_ANON_KEY = 'sb_publishable_Ht3BFrEwq9-t8-EPXJPr_g_rIxttZpm';
 
   let supabase = null;
   let isSupabaseConfigured = false;

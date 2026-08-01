@@ -22,4 +22,7 @@ yarn-error.log*
 *client_secret*.json
 credentials.json
 *.json.secret
+*.secret
+supabase_credentials.local.txt
+
 
