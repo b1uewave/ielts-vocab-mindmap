@@ -79,17 +79,17 @@ graph TD
         RLS["Row Level Security / 存取控制"]
     end
 
-    Gemini -->|資料生成與驗證| DataPipeline
-    DataPipeline -->|結構化 unitsData.js| State
+    Gemini -->|"資料生成與驗證"| DataPipeline
+    DataPipeline -->|"結構化 unitsData.js"| State
 
-    UI -->|操作/過濾/切換| State
-    State -->|更新節點座標| Engine
-    State -->|觸發單字/例句朗讀| TTS
-    State -->|載入測驗題目| Quiz
+    UI -->|"操作 / 過濾 / 切換"| State
+    State -->|"更新節點座標"| Engine
+    State -->|"觸發單字 / 例句朗讀"| TTS
+    State -->|"載入測驗題目"| Quiz
     
-    State -->|已學單字異動| LocalDB
-    State -->|混合同步 (Hybrid Sync)| SupaClient
-    SupaClient -->|Upsert / Delete / Select| PgDB
+    State -->|"已學單字異動"| LocalDB
+    State -->|"混合同步 (Hybrid Sync)"| SupaClient
+    SupaClient -->|"Upsert / Delete / Select"| PgDB
     PgDB --- RLS
 ```
 
