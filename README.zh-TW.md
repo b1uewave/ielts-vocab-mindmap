@@ -151,25 +151,31 @@ ielts-vocab-mindmap/
 
 ---
 
-## 🚀 快速開始與線上預覽 (Quick Start & Live Demo)
+## 🚀 快速開始與本地開發 (Quick Start & Local Development)
 
 ### 🌐 線上展示 (Live Demo)
 專案已部署於 Cloudflare Pages 全球邊緣網路，歡迎直接線上體驗：
 👉 **[https://ielts-vocab-mindmap.pages.dev/](https://ielts-vocab-mindmap.pages.dev/)**
 
-### 本地開發 (Local Development)
+### 方法 1：直接瀏覽器預覽 (最簡免設定)
 無需安裝額外依賴套件或 Node.js 環境，直接使用瀏覽器開啟 `index.html` 即可：
 
 ```bash
-# 複製專案庫
-git clone https://github.com/b1uewave/ielts-vocab-mindmap.git
-
-# 進入專案目錄
-cd ielts-vocab-mindmap
-
-# 使用瀏覽器開啟 index.html
+# 使用預設瀏覽器開啟 index.html (macOS)
 open index.html
 ```
+
+### 方法 2：本地 HTTP 伺服器 (開發者推薦)
+使用本地 HTTP 伺服器可以避免瀏覽器 `file://` 通訊協定的安全性限制（如跨域 CORS、Origin 標頭檢測與 DevTools 網路請求觀察）：
+
+```bash
+# 使用 Python 3 原生 HTTP 伺服器 (推薦)
+python3 -m http.server 8000
+
+# 或使用 Node.js npx serve
+npx serve .
+```
+啟動後於瀏覽器造訪 `http://localhost:8000` 即可。
 
 ---
 

@@ -151,25 +151,31 @@ ielts-vocab-mindmap/
 
 ---
 
-## 🚀 Quick Start & Live Demo
+## 🚀 Quick Start & Local Development
 
 ### 🌐 Live Demo
 Experience the live application deployed on Cloudflare Pages:
 👉 **[https://ielts-vocab-mindmap.pages.dev/](https://ielts-vocab-mindmap.pages.dev/)**
 
-### Local Development
-Simply clone and open `index.html` in your browser:
+### Method 1: Instant Browser Preview (Zero Setup)
+Simply open `index.html` directly in your browser:
 
 ```bash
-# Clone the repository
-git clone https://github.com/b1uewave/ielts-vocab-mindmap.git
-
-# Navigate to project directory
-cd ielts-vocab-mindmap
-
 # Open index.html in your default browser (macOS)
 open index.html
 ```
+
+### Method 2: Local HTTP Server (Recommended for Developers)
+Running a local HTTP server prevents browser `file://` protocol security restrictions (CORS, origin headers, and network DevTools inspection):
+
+```bash
+# Using Python 3 native HTTP server (Recommended)
+python3 -m http.server 8000
+
+# Or using Node.js npx serve
+npx serve .
+```
+Then visit `http://localhost:8000` in your browser.
 
 ---
 
