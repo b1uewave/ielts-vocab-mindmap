@@ -59,24 +59,24 @@ This project showcases a **Human-in-the-Loop AI Engineering Workflow**, leveragi
 
 ```mermaid
 graph TD
-    subgraph Client [Browser Client Application]
-        UI[User Interface & Control Panel]
-        Engine[Bezier SVG Mindmap Engine]
-        TTS[Web Speech API Audio Engine]
-        Quiz[Dictation Quiz Controller]
-        State[Global App State]
-        LocalDB[(Web LocalStorage Cache)]
+    subgraph Client ["Browser Client Application"]
+        UI["User Interface & Control Panel"]
+        Engine["Bezier SVG Mindmap Engine"]
+        TTS["Web Speech API Audio Engine"]
+        Quiz["Dictation Quiz Controller"]
+        State["Global App State"]
+        LocalDB[("Web LocalStorage Cache")]
     end
 
-    subgraph AI [AI Data & Engineering Layer]
-        Gemini[Google Gemini 3.6 AI]
-        DataPipeline[AI-Curated IELTS Dataset Pipeline]
+    subgraph AI ["AI Data & Engineering Layer"]
+        Gemini["Google Gemini 3.6 AI"]
+        DataPipeline["AI-Curated IELTS Dataset Pipeline"]
     end
 
-    subgraph Backend [Cloud Backend - Supabase]
-        SupaClient[Supabase JS Client SDK v2]
-        PgDB[(PostgreSQL Cloud Database)]
-        RLS[Row Level Security]
+    subgraph Backend ["Cloud Backend - Supabase"]
+        SupaClient["Supabase JS Client SDK v2"]
+        PgDB[("PostgreSQL Cloud Database")]
+        RLS["Row Level Security"]
     end
 
     Gemini -->|Dataset Generation & Validation| DataPipeline

@@ -59,24 +59,24 @@
 
 ```mermaid
 graph TD
-    subgraph Client [前端客戶端 Browser Client]
-        UI[用戶介面 Control Panel & Cards]
-        Engine[Bezier SVG 心智圖渲染引擎]
-        TTS[Web Speech API 語音發音引擎]
-        Quiz[聽音拼寫與複習測驗模組]
-        State[全域狀態管理 (State Controller)]
-        LocalDB[(Web LocalStorage 快取)]
+    subgraph Client ["前端客戶端 Browser Client"]
+        UI["用戶介面 (Control Panel & Cards)"]
+        Engine["Bezier SVG 心智圖渲染引擎"]
+        TTS["Web Speech API 語音發音引擎"]
+        Quiz["聽音拼寫與複習測驗模組"]
+        State["全域狀態管理 (State Controller)"]
+        LocalDB[("Web LocalStorage 快取")]
     end
 
-    subgraph AI [AI 資料處理與開發層]
-        Gemini[Google Gemini 3.6 AI]
-        DataPipeline[AI 詞彙生成與校對資料管線]
+    subgraph AI ["AI 資料處理與開發層"]
+        Gemini["Google Gemini 3.6 AI"]
+        DataPipeline["AI 詞彙生成與校對資料管線"]
     end
 
-    subgraph Backend [雲端後端 Supabase Backend]
-        SupaClient[Supabase JS Client SDK v2]
-        PgDB[(PostgreSQL 雲端資料庫)]
-        RLS[Row Level Security / 存取控制]
+    subgraph Backend ["雲端後端 Supabase Backend"]
+        SupaClient["Supabase JS Client SDK v2"]
+        PgDB[("PostgreSQL 雲端資料庫")]
+        RLS["Row Level Security / 存取控制"]
     end
 
     Gemini -->|資料生成與驗證| DataPipeline
