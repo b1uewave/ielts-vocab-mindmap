@@ -5,10 +5,6 @@
 
 document.addEventListener('DOMContentLoaded', () => {
   // Global State
-  let currentSubject = 'ielts'; // 'ielts' or 'swe-interview'
-  let currentRoleTrack = 'all'; // 'all', 'frontend', 'backend', 'sre', 'sdet', 'mobile'
-  let sweUnlocked = localStorage.getItem('swe_interview_unlocked') === 'true';
-  const VIP_PASSCODE = 'SWE2026';
   let currentUnitId = 'unit-1';
   let currentBandFilter = 'all';
   let currentStatusFilter = 'all'; // 'all', 'learned', 'unlearned'
@@ -30,9 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentThemeColors = {};
 
   // DOM Elements
-  const subjectSelect = document.getElementById('subjectSelect');
-  const roleTrackFilterGroup = document.getElementById('roleTrackFilterGroup');
-  const roleBtns = document.querySelectorAll('.role-btn');
   const unitSelect = document.getElementById('unitSelect');
   const brandBadge = document.getElementById('brandBadge');
   const pageTitle = document.getElementById('pageTitle');
@@ -55,13 +48,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const toastText = document.getElementById('toastText');
   const speedBtns = document.querySelectorAll('.speed-btn');
   const userProfileBar = document.getElementById('userProfileBar');
-
-  // Access Code Modal Elements
-  const accessCodeModal = document.getElementById('accessCodeModal');
-  const closeAccessModalBtn = document.getElementById('closeAccessModalBtn');
-  const accessCodeInput = document.getElementById('accessCodeInput');
-  const btnSubmitAccessCode = document.getElementById('btnSubmitAccessCode');
-  const accessCodeError = document.getElementById('accessCodeError');
 
   // Word Modal Elements
   const wordModal = document.getElementById('wordModal');
@@ -277,13 +263,6 @@ document.addEventListener('DOMContentLoaded', () => {
           currentUser = null;
           localStorage.removeItem('ielts_vocab_user');
           updateUserProfileBar();
-          if (currentSubject === 'swe-interview') {
-            currentSubject = 'ielts';
-            if (subjectSelect) subjectSelect.value = 'ielts';
-            populateUnitDropdown();
-            currentUnitId = 'unit-1';
-            unitSelect.value = 'unit-1';
-          }
           renderUnit(currentUnitId);
         });
       }
@@ -308,35 +287,6 @@ document.addEventListener('DOMContentLoaded', () => {
     updateStatusFilterLocks();
   }
 
-  function isGmailUser() {
-    if (!currentUser || !currentUser.email) return false;
-    const email = currentUser.email.toLowerCase().trim();
-    return email.endsWith('@gmail.com') || email.includes('gmail');
-  }
-
-  function checkSWEAccess() {
-    return isGmailUser();
-  }
-
-  if (subjectSelect) {
-    subjectSelect.addEventListener('change', (e) => {
-      const selected = e.target.value;
-      if (selected === 'swe-interview') {
-        if (!checkSWEAccess()) {
-          subjectSelect.value = currentSubject;
-          openLoginPromptModal();
-          return;
-        }
-      }
-      currentSubject = selected;
-      currentQuadrantView = 'all';
-      populateUnitDropdown();
-      const defaultUnit = (currentSubject === 'swe-interview') ? 'swe-mod-1' : 'unit-1';
-      unitSelect.value = defaultUnit;
-      renderUnit(defaultUnit);
-    });
-  }
-
   function updateStatusFilterLocks() {
     if (learnedLockTag && unlearnedLockTag) {
       if (currentUser) {
@@ -350,206 +300,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ------------------------------------------------------------------------
-     Bookmark / Favorite QA Questions Helpers
+     1. Dynamic Unit Rendering Engine
      ------------------------------------------------------------------------ */
-  function getBookmarkedQASet() {
-    const raw = localStorage.getItem('ielts_vocab_bookmarked_qa');
-    if (!raw) return new Set();
-    try {
-      return new Set(JSON.parse(raw));
-    } catch (e) {
-      return new Set();
-    }
-  }
-
-  function saveBookmarkedQASet(set) {
-    localStorage.setItem('ielts_vocab_bookmarked_qa', JSON.stringify(Array.from(set)));
-  }
-
-  function isQABookmarked(qaId) {
-    return getBookmarkedQASet().has(qaId);
-  }
-
-  function toggleQABookmark(qaId) {
-    const set = getBookmarkedQASet();
-    let isNowBookmarked = false;
-    if (set.has(qaId)) {
-      set.delete(qaId);
-      isNowBookmarked = false;
-    } else {
-      set.add(qaId);
-      isNowBookmarked = true;
-    }
-    saveBookmarkedQASet(set);
-    return isNowBookmarked;
-  }
-
-  function updateHeaderControlsForSubject() {
-    const bandFilterGroup = document.querySelector('.band-filter-group');
-    const filterLearnedBtnText = document.querySelector('#filterLearnedBtn .btn-text');
-    const filterUnlearnedBtnText = document.querySelector('#filterUnlearnedBtn .btn-text');
-    const btnToggleAllQA = document.getElementById('btnToggleAllQA');
-
-    if (currentSubject === 'swe-interview') {
-      if (bandFilterGroup) bandFilterGroup.style.display = 'none';
-      if (btnDictationQuiz) btnDictationQuiz.style.display = 'none';
-      if (btnToggleAllQA) btnToggleAllQA.style.display = 'inline-flex';
-      if (filterLearnedBtnText) filterLearnedBtnText.textContent = '已收藏 ⭐';
-      if (filterUnlearnedBtnText) filterUnlearnedBtnText.textContent = '未收藏 ⏳';
-    } else {
-      if (bandFilterGroup) bandFilterGroup.style.display = 'flex';
-      if (btnDictationQuiz) btnDictationQuiz.style.display = 'inline-flex';
-      if (btnToggleAllQA) btnToggleAllQA.style.display = 'none';
-      if (filterLearnedBtnText) filterLearnedBtnText.textContent = '已背完 ✅';
-      if (filterUnlearnedBtnText) filterUnlearnedBtnText.textContent = '未背完 ⏳';
-    }
-  }
-
-  const btnToggleAllQA = document.getElementById('btnToggleAllQA');
-  if (btnToggleAllQA) {
-    btnToggleAllQA.addEventListener('click', () => {
-      const qaCards = document.querySelectorAll('.qa-card');
-      if (qaCards.length === 0) return;
-
-      const hasCollapsed = Array.from(qaCards).some(card => card.classList.contains('collapsed'));
-
-      qaCards.forEach(card => {
-        const indicator = card.querySelector('.qa-toggle-indicator');
-        if (hasCollapsed) {
-          card.classList.remove('collapsed');
-          card.classList.add('expanded');
-          if (indicator) indicator.innerHTML = '▲ 收起詳情 🔼';
-        } else {
-          card.classList.remove('expanded');
-          card.classList.add('collapsed');
-          if (indicator) indicator.innerHTML = '💡 點擊展開範例與解說 🔽';
-        }
-      });
-    });
-  }
-
-  /* ------------------------------------------------------------------------
-     1. Dynamic Unit Rendering Engine & Subject Switcher
-     ------------------------------------------------------------------------ */
-  function getCurrentDataset() {
-    return (currentSubject === 'swe-interview') ? window.interviewData : window.unitsData;
-  }
-
-  function populateUnitDropdown() {
-    if (!unitSelect) return;
-    unitSelect.innerHTML = '';
-    const dataset = getCurrentDataset();
-    if (dataset) {
-      Object.keys(dataset).forEach(uId => {
-        const u = dataset[uId];
-        const opt = document.createElement('option');
-        opt.value = uId;
-        if (currentSubject === 'swe-interview') {
-          opt.textContent = u.moduleName || `Module ${u.number}: ${u.titleEn} (${u.titleCn})`;
-        } else {
-          opt.textContent = `Unit ${u.number}: ${u.titleEn} (${u.titleCn})`;
-        }
-        unitSelect.appendChild(opt);
-      });
-    }
-
-    // Toggle visibility of roleTrackFilterGroup
-    if (roleTrackFilterGroup) {
-      roleTrackFilterGroup.style.display = (currentSubject === 'swe-interview') ? 'flex' : 'none';
-    }
-
-    updateHeaderControlsForSubject();
-  }
-
-  function checkSWEAccess() {
-    if (sweUnlocked) return true;
-    return false;
-  }
-
-  function openAccessCodeModal() {
-    if (accessCodeModal) {
-      accessCodeModal.style.display = 'flex';
-      if (accessCodeInput) accessCodeInput.value = '';
-      if (accessCodeError) accessCodeError.style.display = 'none';
-      if (accessCodeInput) accessCodeInput.focus();
-    }
-  }
-
-  function closeAccessCodeModal() {
-    if (accessCodeModal) {
-      accessCodeModal.style.display = 'none';
-    }
-  }
-
-  if (closeAccessModalBtn) {
-    closeAccessModalBtn.addEventListener('click', closeAccessCodeModal);
-  }
-
-  if (accessCodeModal) {
-    accessCodeModal.addEventListener('click', (e) => {
-      if (e.target === accessCodeModal) {
-        closeAccessCodeModal();
-      }
-    });
-  }
-
-  if (btnSubmitAccessCode) {
-    btnSubmitAccessCode.addEventListener('click', () => {
-      const input = (accessCodeInput ? accessCodeInput.value : '').trim();
-      if (input === VIP_PASSCODE || input.toUpperCase() === 'SWE2026' || input.toLowerCase() === 'admin') {
-        sweUnlocked = true;
-        localStorage.setItem('swe_interview_unlocked', 'true');
-        closeAccessCodeModal();
-        currentSubject = 'swe-interview';
-        if (subjectSelect) subjectSelect.value = 'swe-interview';
-        currentQuadrantView = 'all';
-        populateUnitDropdown();
-        unitSelect.value = 'swe-mod-1';
-        renderUnit('swe-mod-1');
-      } else {
-        if (accessCodeError) accessCodeError.style.display = 'block';
-      }
-    });
-  }
-
-  }
-
-  if (roleBtns) {
-    roleBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        roleBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        currentRoleTrack = btn.getAttribute('data-role');
-        renderUnit(currentUnitId);
-        applyFilters();
-      });
-    });
-  }
-
   function renderUnit(unitId) {
-    const dataset = getCurrentDataset();
-    const unit = dataset ? dataset[unitId] : null;
+    const unit = window.unitsData[unitId];
     if (!unit) return;
 
     currentUnitId = unitId;
 
     // 1. Update Header Information
-    if (currentSubject === 'swe-interview') {
-      brandBadge.textContent = unit.moduleName || 'SWE Interview';
-      pageTitle.textContent = unit.badgeText;
-    } else {
-      brandBadge.textContent = `IELTS Mindmap • Unit ${unit.number}`;
-      pageTitle.textContent = unit.badgeText;
-    }
+    brandBadge.textContent = `IELTS Mindmap • Unit ${unit.number}`;
+    pageTitle.textContent = unit.badgeText;
 
     // 2. Render Top Bar Unit Hero (Illustration & Sticky Note)
     if (topBarGraphic) {
       topBarGraphic.innerHTML = `
         <div class="cloud-title-box">
-          <h2>${currentSubject === 'swe-interview' ? (unit.moduleName ? unit.moduleName.split(':')[0] : `Module ${unit.number}`) : `Unit ${unit.number}`}<br><span class="en-title">${escapeHtml(unit.titleEn)}</span><br><span class="cn-title">${escapeHtml(unit.titleCn)}</span></h2>
+          <h2>Unit ${unit.number}<br><span class="en-title">${escapeHtml(unit.titleEn)}</span><br><span class="cn-title">${escapeHtml(unit.titleCn)}</span></h2>
         </div>
         <div class="hero-svg-wrapper">
-          ${unit.centerSvg || ''}
+          ${unit.centerSvg}
         </div>
       `;
     }
@@ -562,196 +332,12 @@ document.addEventListener('DOMContentLoaded', () => {
       ` : '';
     }
 
-    // 3. Render QA Cards or Quadrants
-    if (unit.type === 'qa-cards') {
-      quadrantsGrid.classList.remove('single-quadrant-mode');
-
-      const itemsToRender = (currentSubject === 'swe-interview' && currentRoleTrack !== 'all')
-        ? unit.items.filter(item => item.roleTrack === 'general' || item.roleTrack === currentRoleTrack)
-        : unit.items;
-
-      quadrantsGrid.innerHTML = `
-        <div class="qa-cards-container">
-          ${itemsToRender.map(item => `
-            <div class="qa-card collapsed" data-qa-id="${item.id}" data-role="${item.roleTrack || 'general'}">
-              <div class="qa-card-header">
-                <div style="display:flex; align-items:center; gap:8px;">
-                  <span class="qa-category-badge">${escapeHtml(item.category)}</span>
-                  <button class="qa-bookmark-btn ${isQABookmarked(item.id) ? 'is-bookmarked' : ''}" data-qa-id="${item.id}">
-                    ⭐ ${isQABookmarked(item.id) ? '已收藏' : '收藏考題'}
-                  </button>
-                </div>
-                <span class="qa-toggle-indicator">💡 點擊展開範例與解說 🔽</span>
-              </div>
-              <div class="qa-question-box">
-                <div class="qa-question-en">❓ ${escapeHtml(item.questionEn)}</div>
-                <div class="qa-question-cn">${escapeHtml(item.questionCn)}</div>
-              </div>
-              <div class="qa-card-details">
-                <div class="qa-answer-box">
-                  <div class="qa-answer-header">
-                    <strong>💬 口述答題範例 (Model Answer)：</strong>
-                    <div style="display:flex; gap:8px;">
-                      <button class="qa-audio-btn play-qa-answer-btn" data-text="${escapeHtml(item.answerEn)}">🔊 朗讀回答</button>
-                      <button class="qa-audio-btn secondary play-qa-slow-btn" data-text="${escapeHtml(item.answerEn)}">🐢 0.75x 慢速跟讀</button>
-                    </div>
-                  </div>
-                  <div class="qa-answer-en">${escapeHtml(item.answerEn)}</div>
-                  <div class="qa-answer-cn">${escapeHtml(item.answerCn)}</div>
-                </div>
-                ${item.keywords && item.keywords.length > 0 ? `
-                  <div class="qa-keywords-section">
-                    <div class="qa-keywords-title">💡 關鍵詞彙與句型發音 (Keywords & IPA)：</div>
-                    <div class="qa-keywords-list">
-                      ${item.keywords.map(kw => `
-                        <div class="qa-keyword-chip play-keyword-btn" data-word="${escapeHtml(kw.word)}">
-                          <span class="word-text">${escapeHtml(kw.word)}</span>
-                          ${kw.ipa ? `<span class="word-ipa">${escapeHtml(kw.ipa)}</span>` : ''}
-                          <span class="word-cn">${escapeHtml(kw.cn)}</span>
-                          <span>🔊</span>
-                        </div>
-                      `).join('')}
-                    </div>
-                  </div>
-                ` : ''}
-
-                <!-- Voice Recognition Challenge Practice -->
-                <div class="qa-voice-practice-section">
-                  <div class="qa-voice-header">
-                    <span>🎙️ 口語跟讀與發音測試 (Voice Challenge)：</span>
-                    <button class="record-btn start-record-btn" data-target="${escapeHtml(item.answerEn)}">🎤 點擊開始錄音跟讀</button>
-                  </div>
-                  <div class="voice-result-box"></div>
-                </div>
-              </div>
-            </div>
-          `).join('')}
-        </div>
-      `;
-
-      // Bind QA Card click expand / collapse
-      quadrantsGrid.querySelectorAll('.qa-card').forEach(card => {
-        card.addEventListener('click', (e) => {
-          if (e.target.closest('.qa-audio-btn') || e.target.closest('.play-keyword-btn') || e.target.closest('.record-btn') || e.target.closest('.qa-bookmark-btn')) {
-            return;
-          }
-          const isExpanded = card.classList.contains('expanded');
-          const indicator = card.querySelector('.qa-toggle-indicator');
-          if (isExpanded) {
-            card.classList.remove('expanded');
-            card.classList.add('collapsed');
-            if (indicator) indicator.innerHTML = '💡 點擊展開範例與解說 🔽';
-          } else {
-            card.classList.remove('collapsed');
-            card.classList.add('expanded');
-            if (indicator) indicator.innerHTML = '▲ 收起詳情 🔼';
-          }
-        });
-      });
-
-      // Bind Bookmark button click
-      quadrantsGrid.querySelectorAll('.qa-bookmark-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const qaId = btn.getAttribute('data-qa-id');
-          const isBookmarked = toggleQABookmark(qaId);
-          btn.classList.toggle('is-bookmarked', isBookmarked);
-          btn.innerHTML = `⭐ ${isBookmarked ? '已收藏' : '收藏考題'}`;
-          applyFilters();
-        });
-      });
-
-      // Bind QA audio button events
-      quadrantsGrid.querySelectorAll('.play-qa-answer-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          speakText(btn.getAttribute('data-text'), speechRate);
-        });
-      });
-      quadrantsGrid.querySelectorAll('.play-qa-slow-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          speakText(btn.getAttribute('data-text'), 0.75);
-        });
-      });
-      quadrantsGrid.querySelectorAll('.play-keyword-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          speakWord(btn.getAttribute('data-word'));
-        });
-      });
-
-      // Bind Speech Recognition Voice Challenge
-      quadrantsGrid.querySelectorAll('.start-record-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-          e.stopPropagation();
-          const card = btn.closest('.qa-card');
-          const resultBox = card.querySelector('.voice-result-box');
-          const targetText = btn.getAttribute('data-target');
-
-          const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-          if (!SpeechRecognition) {
-            alert('您的瀏覽器暫不支援麥克風語音辨識功能，建議使用 Chrome 或 Edge 瀏覽器進行跟讀測試！');
-            return;
-          }
-
-          const recognition = new SpeechRecognition();
-          recognition.lang = 'en-US';
-          recognition.interimResults = false;
-
-          btn.classList.add('recording');
-          btn.textContent = '🔴 正在聆聽中... (請唸出答案)';
-          if (resultBox) {
-            resultBox.style.display = 'block';
-            resultBox.textContent = '🎙️ 正在收音中，請大聲唸出英文答題句型...';
-          }
-
-          recognition.onresult = (event) => {
-            btn.classList.remove('recording');
-            btn.textContent = '🎤 點擊重新錄音跟讀';
-            const transcript = event.results[0][0].transcript;
-
-            // Calculate word match percentage
-            const targetWords = targetText.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ').filter(Boolean);
-            const spokenWords = transcript.toLowerCase().replace(/[^a-z0-9 ]/g, '').split(' ').filter(Boolean);
-            const matchedWords = targetWords.filter(w => spokenWords.includes(w));
-            const matchPct = Math.round((matchedWords.length / targetWords.length) * 100);
-
-            if (resultBox) {
-              let feedbackMsg = matchPct >= 70 ? '🎉 太棒了！發音清晰又精準！' : matchPct >= 40 ? '👍 表現不錯！關鍵字有唸出來！' : '💪 繼續加油，可以再多聽幾次跟讀！';
-              resultBox.innerHTML = `
-                <strong>語音辨識結果：</strong> "${escapeHtml(transcript)}"<br>
-                <strong>關鍵字匹配度：</strong> <span style="color:#059669; font-weight:700;">${matchPct}%</span> (${matchedWords.length}/${targetWords.length} 字關鍵詞)<br>
-                <span style="color:#2563eb; font-weight:600;">${feedbackMsg}</span>
-              `;
-            }
-          };
-
-          recognition.onerror = () => {
-            btn.classList.remove('recording');
-            btn.textContent = '🎤 點擊錄音跟讀';
-            if (resultBox) {
-              resultBox.innerHTML = `<span style="color:#ef4444;">❌ 錄音辨識超時或未偵測到聲音，請確認麥克風權限後再試一次！</span>`;
-            }
-          };
-
-          recognition.start();
-        });
-      });
-
-      return;
-    }
-
     // 3. Render Quadrants Grid & Cards
     if (currentQuadrantView === 'all') {
       quadrantsGrid.classList.remove('single-quadrant-mode');
       // OVERVIEW MODE: Render ALL 4 Quadrant sections, each showing up to 9 featured cards + 10th More card
       quadrantsGrid.innerHTML = unit.quadrants.map(q => {
         let qWords = [...q.words];
-
-        if (currentSubject === 'swe-interview' && currentRoleTrack !== 'all') {
-          qWords = qWords.filter(w => !w.roleTrack || w.roleTrack === 'general' || w.roleTrack === currentRoleTrack);
-        }
 
         // Prioritize matching score-band words if a band filter is selected
         if (currentBandFilter !== 'all') {
@@ -768,9 +354,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const remainingCount = qWords.length - top9Words.length;
 
         let cardsHtml = top9Words.map(w => {
-          const isTool = w.isTool || w.band === 'Tool';
-          const bandVal = isTool ? '🛠️ Tool' : (w.band || '6.5');
-          const bandClass = isTool ? 'band-tool' : ((w.band === '5.0') ? 'band-5' : (w.band === '7.5+') ? 'band-7' : 'band-6');
+          const bandVal = w.band || '6.5';
+          const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
           const learnedClass = isWordLearned(w.word) ? 'is-learned' : '';
           return `
             <div class="vocab-card ${learnedClass}" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
@@ -843,9 +428,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="cards-wrapper grid-layout">
             ${qWords.map(w => {
-              const isTool = w.isTool || w.band === 'Tool';
-              const bandVal = isTool ? '🛠️ Tool' : (w.band || '6.5');
-              const bandClass = isTool ? 'band-tool' : ((w.band === '5.0') ? 'band-5' : (w.band === '7.5+') ? 'band-7' : 'band-6');
+              const bandVal = w.band || '6.5';
+              const bandClass = (bandVal === '5.0') ? 'band-5' : (bandVal === '7.5+') ? 'band-7' : 'band-6';
               const learnedClass = isWordLearned(w.word) ? 'is-learned' : '';
               return `
                 <div class="vocab-card ${learnedClass}" data-word="${escapeHtml(w.word)}" data-ipa="${escapeHtml(w.ipa)}" data-cn="${escapeHtml(w.cn)}" data-band="${escapeHtml(bandVal)}" data-example="${escapeHtml(w.example)}" data-tip="${escapeHtml(w.tip)}">
@@ -924,33 +508,6 @@ document.addEventListener('DOMContentLoaded', () => {
     utterance.onerror = () => {
       if (cardElement) cardElement.classList.remove('speaking');
       audioToast.classList.remove('show');
-    };
-
-    synth.speak(utterance);
-  }
-
-  function speakText(text, rate = 1.0) {
-    if (!synth || !text) return;
-    if (synth.speaking) {
-      synth.cancel();
-    }
-    const utterance = new SpeechSynthesisUtterance(text);
-    utterance.lang = 'en-US';
-    utterance.rate = rate;
-
-    utterance.onstart = () => {
-      if (toastText && audioToast) {
-        toastText.textContent = `朗讀中 (${rate === 0.75 ? '慢速' : '正常'}): "${text.substring(0, 35)}..."`;
-        audioToast.classList.add('show');
-      }
-    };
-
-    utterance.onend = () => {
-      if (audioToast) audioToast.classList.remove('show');
-    };
-
-    utterance.onerror = () => {
-      if (audioToast) audioToast.classList.remove('show');
     };
 
     synth.speak(utterance);
@@ -1365,9 +922,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function applyFilters() {
     const query = searchInput.value.trim().toLowerCase();
     const vocabCards = document.querySelectorAll('.vocab-card');
-    const qaCards = document.querySelectorAll('.qa-card');
 
-    // 1. Filter Vocab Cards (IELTS / Mindmap)
     vocabCards.forEach(card => {
       const word = card.getAttribute('data-word').toLowerCase();
       const cn = card.getAttribute('data-cn').toLowerCase();
@@ -1390,34 +945,6 @@ document.addEventListener('DOMContentLoaded', () => {
           card.classList.add('dimmed');
         } else {
           card.classList.remove('dimmed');
-        }
-      }
-    });
-
-    // 2. Filter QA Cards (SWE Interview)
-    qaCards.forEach(card => {
-      const qEn = (card.querySelector('.qa-question-en') ? card.querySelector('.qa-question-en').textContent : '').toLowerCase();
-      const qCn = (card.querySelector('.qa-question-cn') ? card.querySelector('.qa-question-cn').textContent : '').toLowerCase();
-      const aEn = (card.querySelector('.qa-answer-en') ? card.querySelector('.qa-answer-en').textContent : '').toLowerCase();
-      const aCn = (card.querySelector('.qa-answer-cn') ? card.querySelector('.qa-answer-cn').textContent : '').toLowerCase();
-      const cat = (card.querySelector('.qa-category-badge') ? card.querySelector('.qa-category-badge').textContent : '').toLowerCase();
-      const qaId = card.getAttribute('data-qa-id') || '';
-      const isBookmarked = isQABookmarked(qaId);
-
-      const matchesSearch = !query || qEn.includes(query) || qCn.includes(query) || aEn.includes(query) || aCn.includes(query) || cat.includes(query);
-      const matchesStatus = (currentStatusFilter === 'all') ||
-                            (currentStatusFilter === 'learned' && isBookmarked) ||
-                            (currentStatusFilter === 'unlearned' && !isBookmarked);
-
-      if (!matchesSearch || !matchesStatus) {
-        card.style.display = 'none';
-      } else {
-        card.style.display = 'block';
-        if (query && query.length > 0) {
-          card.classList.remove('collapsed');
-          card.classList.add('expanded');
-          const indicator = card.querySelector('.qa-toggle-indicator');
-          if (indicator) indicator.innerHTML = '▲ 收起詳情 🔼';
         }
       }
     });
@@ -1444,7 +971,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // Initialize App
-  populateUnitDropdown();
   updateUserProfileBar();
   renderUnit(currentUnitId);
 

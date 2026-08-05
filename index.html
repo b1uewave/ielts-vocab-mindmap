@@ -37,27 +37,6 @@
           </div>
 
           <div class="controls-group">
-            <!-- Subject Switcher Dropdown -->
-            <div class="subject-selector-box" title="切換學習科別">
-              <span class="subject-select-icon">🎓</span>
-              <select id="subjectSelect" class="subject-select-dropdown">
-                <option value="ielts">📚 雅思聽力高頻單字</option>
-                <option value="swe-interview">💻 軟體工程師英文面試 🔒</option>
-              </select>
-            </div>
-
-            <!-- Role Track Filter (Visible when SWE Interview subject is active) -->
-            <div class="role-filter-group" id="roleTrackFilterGroup" style="display: none;" title="依軟體工程領域篩選面試內容">
-              <span class="role-filter-label">🎯 領域:</span>
-              <button class="role-btn active" data-role="all">🌐 全部</button>
-              <button class="role-btn" data-role="frontend">🎨 前端</button>
-              <button class="role-btn" data-role="backend">⚙️ 後端</button>
-              <button class="role-btn" data-role="sre">🛠️ SRE</button>
-              <button class="role-btn" data-role="sdet">🧪 SDET</button>
-              <button class="role-btn" data-role="mobile">📱 Mobile</button>
-              <button class="role-btn" data-role="ai">🤖 AI</button>
-            </div>
-
             <!-- Unit Switcher Dropdown -->
             <div class="unit-selector-box" title="切換雅思場景單元">
               <span class="unit-select-icon">📚</span>
@@ -135,12 +114,6 @@
             <button id="toggleFlashcards" class="action-btn">
               <span class="icon">👁️</span>
               <span class="label">遮蔽中文 (背單字)</span>
-            </button>
-
-            <!-- Toggle All QA Cards Expand/Collapse Button (Visible in SWE Interview) -->
-            <button id="btnToggleAllQA" class="action-btn" style="display: none;" title="一鍵全展開或全折疊所有題目卡片">
-              <span class="icon">🔽</span>
-              <span class="label">全展開 / 折疊卡片</span>
             </button>
 
             <!-- Dictation Test Mode Toggle -->
@@ -266,35 +239,10 @@
       </div>
     </div>
 
-    <!-- VIP Access Code Permission Modal for SWE Interview -->
-    <div id="accessCodeModal" class="word-modal-overlay" style="display: none;">
-      <div class="word-modal-card login-prompt-card">
-        <button id="closeAccessModalBtn" class="close-modal-btn">✕</button>
-        <div class="login-prompt-header">
-          <div class="login-prompt-icon">🔒</div>
-          <h2>解鎖「軟體工程師英文面試」專屬科別</h2>
-          <p>本專題包含高頻技術單字發音、白板題解題口述句型與系統設計 Q&A，需授權通行金鑰解鎖觀看！</p>
-        </div>
-        <div class="login-prompt-body">
-          <div class="access-form-group" style="margin-bottom: 16px;">
-            <label style="display:block; text-align:left; font-weight:600; margin-bottom:6px; color:#334155; font-size:14px;">🔑 請輸入 VIP 解鎖通行碼：</label>
-            <input type="text" id="accessCodeInput" placeholder="請輸入通行碼 (測試密碼: SWE2026)" style="width:100%; padding:10px 14px; border:2px solid #cbd5e1; border-radius:10px; font-size:15px; box-sizing:border-box;" autocomplete="off">
-            <div id="accessCodeError" style="color:#ef4444; font-size:13px; margin-top:6px; display:none; text-align:left;">❌ 通行碼錯誤，請重新輸入！</div>
-          </div>
-          <button id="btnSubmitAccessCode" class="demo-login-btn" style="background:#2563eb; color:#ffffff; font-weight:700;">🔓 立即驗證解鎖</button>
-          <div class="divider" style="margin:16px 0;"><span>授權說明</span></div>
-          <p style="font-size:12px; color:#64748b; text-align:left; line-height:1.5;">
-            💡 提示：若您已登入授權管理員帳號，亦可自動獲得存取權限。
-          </p>
-        </div>
-      </div>
-    </div>
-
   </div> <!-- End App Container -->
 
   <!-- Load Data Store and Interactive Logic (Cache-Busted) -->
   <script src="unitsData.js?v=20260804_final_fix"></script>
-  <script src="interviewData.js?v=20260804_final_fix"></script>
   <script src="script.js?v=20260804_final_fix"></script>
 </body>
 </html>
