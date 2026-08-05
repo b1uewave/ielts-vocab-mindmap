@@ -11,7 +11,7 @@
 
 🌐 **Live Application**: [https://ielts-vocab-mindmap.pages.dev/](https://ielts-vocab-mindmap.pages.dev/)
 
-**IELTS Vocab Mindmap** is an interactive, visual, and data-driven IELTS & General English scenario vocabulary learning platform. Co-engineered with **Google Gemini 3.6 AI**, the platform combines an AI-curated exam dataset across 15 scenario units with a dynamic SVG Bezier curve engine, Web Speech API audio synthesis, and a hybrid dual-layer storage sync backed by Supabase PostgreSQL.
+**IELTS Vocab Mindmap** is an interactive, visual, and data-driven IELTS & General English scenario vocabulary learning platform. Co-engineered with **Google Gemini 3.6 AI**, the platform combines an AI-curated Cambridge IELTS exam dataset across **30 scenario units (1,148 core high-frequency words)** with a dynamic SVG Bezier curve engine, 100% unique educational flashcard SVG illustrations, Web Speech API audio synthesis, and a hybrid dual-layer storage sync backed by Supabase PostgreSQL.
 
 ---
 
@@ -19,7 +19,8 @@
 
 This project showcases a **Human-in-the-Loop AI Engineering Workflow**, leveraging cutting-edge LLMs to accelerate development velocity and elevate data quality:
 
-- 🧠 **AI Data Pipeline & Curation**: Utilized **Google Gemini 3.6** to generate, validate, and structure 15 high-frequency IELTS scenario vocabulary datasets (`unitsData.js`), ensuring precise IPA phonetics, contextual exam collocations, and authentic sample sentences.
+- 🧠 **AI Data Pipeline & Curation**: Utilized **Google Gemini 3.6** to generate, validate, and structure **30 high-frequency IELTS scenario vocabulary datasets** (`unitsData.js`), ensuring 1,148 words complete with precise IPA phonetics, IELTS Band target levels (Band 5.0 ~ 7.5+), authentic sample sentences, and exam tips.
+- 🎨 **100% Unique Educational Vector Art Engine**: Generated 1,148 dedicated, non-repetitive educational flashcard SVG illustrations with crisp white backgrounds and domain-matched visual metaphors.
 - ⚡ **AI Co-Engineered Codebase**: Architected in collaboration with Google Antigravity & Gemini 3.6 AI pair programming for rapid prototyping of custom SVG Bezier math engines and cloud storage synchronization.
 - 🔮 **Future AI Integration Roadmap**:
   - [ ] **AI Adaptive Learning Engine**: Dynamic difficulty adjustment based on user spelling quiz performance.
@@ -30,28 +31,44 @@ This project showcases a **Human-in-the-Loop AI Engineering Workflow**, leveragi
 
 ## 🌟 Key Features
 
-- 📚 **15 Complete IELTS Scenario Units (150+ Core Vocabulary Items)**:
-  - **Unit 1: Accommodation** 🏠 Hand-drawn Cottage & Living Environment
-  - **Unit 2: Campus Life** 🎓 Academic Life & Graduation Cap
-  - **Unit 3: Travel & Tourism** ✈️ Globe & Flight Travel
-  - **Unit 4: Health & Medical** 🩺 First Aid Kit & ECG Waveform
-  - **Unit 5: Work & Career** 💼 Office Tower & Executive Briefcase
-  - **Unit 6: Environment & Nature** 🌿 Green Earth & Nature Conservation
-  - **Unit 7: Banking & Services** 💳 Banking Hall & Credit Card Services
-  - **Unit 8: Food & Dining** 🍔 Culinary Plate & Dining Cutlery
-  - **Unit 9: Entertainment & Sports** 🎨 Artist Palette & Sports Field
-  - **Unit 10: Science & Technology** 🔬 Microscope & AI Semiconductor Chip
-  - **Unit 11: Education & Learning** 📚 Academic Pedagogy & E-Learning
-  - **Unit 12: Media & Communication** 📡 Mass Media, Journalism & Social Networks
-  - **Unit 13: Law, Crime & Society** ⚖️ Justice System, Rehabilitation & Safety
-  - **Unit 14: Culture, Art & History** 🏛️ Archeology, Heritage & Fine Arts
-  - **Unit 15: Transportation & Planning** 🚆 Public Transit, Congestion & Urbanization
+- 📚 **30 Complete IELTS Scenario Units (1,148 Core High-Frequency Exam Vocabulary Items)**:
+  - **Unit 1: Accommodation** 🏠 Living Environment, Facilities & Leasing (60 words)
+  - **Unit 2: Campus Life** 🎓 Academic Life, Courses & Dissertations (44 words)
+  - **Unit 3: Travel & Tourism** ✈️ Flight Booking, Itineraries & Formalities (37 words)
+  - **Unit 4: Health & Medical** 🩺 Consultations, Symptoms & Treatments (33 words)
+  - **Unit 5: Work & Career** 💼 Recruitment, Employment & Compensation (34 words)
+  - **Unit 6: Environment & Nature** 🌿 Climate Change, Ecosystems & Conservation (33 words)
+  - **Unit 7: Banking & Services** 💳 Financial Accounts, Postal Services & Audits (35 words)
+  - **Unit 8: Food & Dining** 🍔 Culinary Arts, Nutrition & Hygiene (37 words)
+  - **Unit 9: Entertainment & Sports** 🎨 Fine Arts, Pastimes & Athletics (35 words)
+  - **Unit 10: Science & Technology** 🔬 Computer Science, Big Data & Robotics (34 words)
+  - **Unit 11: Education & Learning** 📚 Pedagogy, Curricula & Academic Rigor (36 words)
+  - **Unit 12: Media & Communication** 📡 Mass Media, Journalism & Broadcasting (35 words)
+  - **Unit 13: Law, Crime & Society** ⚖️ Justice System, Statutes & Rehabilitation (34 words)
+  - **Unit 14: Culture, Art & History** 🏛️ Archeology, Heritage & Artifacts (33 words)
+  - **Unit 15: Transportation & Planning** 🚆 Transit Hubs, Infrastructure & Congestion (40 words)
+  - **Unit 16: Business & Entrepreneurship** 📈 Corporate Strategy, Startups & IPOs (40 words)
+  - **Unit 17: Psychology & Human Behavior** 🧠 Cognition, Resilience & Emotion (40 words)
+  - **Unit 18: Energy & Global Climate** ⚡ Clean Energy, Wind Turbines & Carbon Sinks (39 words)
+  - **Unit 19: Architecture & Design** 🏢 Blueprints, Structural Aesthetics & Zoning (41 words)
+  - **Unit 20: Globalization & Immigration** 🌐 Cultural Assimilation, Migration & Trade (39 words)
+  - **Unit 21: Agriculture & Food Security** 🌾 Sustainable Farming, Crops & Livestock (40 words)
+  - **Unit 22: Philosophy & Social Values** 💡 Ethics, Moral Reasoning & Civic Duty (36 words)
+  - **Unit 23: Astronomy & Space Exploration** 🪐 Planetary Systems, Nebulae & Cosmos (35 words)
+  - **Unit 24: Geology & Earth Sciences** 🌋 Seismology, Plate Tectonics & Volcanism (38 words)
+  - **Unit 25: Industry & Logistics** ⚙️ Supply Chains, Manufacturing & Automation (40 words)
+  - **Unit 26: Zoology & Wildlife Ecology** 🦁 Fauna Conservation, Ecosystems & Habitats (40 words)
+  - **Unit 27: Fashion, Textiles & Consumerism** 👗 Fast Fashion, Retail Trends & Consumer Culture (40 words)
+  - **Unit 28: Nutrition & Food Science** 🍎 Metabolism, Dietary Nutrients & Public Health (40 words)
+  - **Unit 29: Urban Planning & Infrastructure** 🏙️ Smart Cities, Grid Utilities & Public Transit (40 words)
+  - **Unit 30: Academic Research & Methodology** 📊 Empirical Data, Hypotheses & Peer Review (40 words)
 - 🎨 **Dynamic Bezier Curve Mindmap Engine**: Computes smooth SVG quadratic/cubic Bezier curves dynamically between central topic hubs and vocabulary cards.
+- 🎨 **100% Word-Specific Educational Vector Art Icons**: Clean minimal flat-style SVG icons for all 1,148 words with 0% fallback cross repetition.
 - 🔊 **Web Speech API Audio Synthesis**: Native audio pronunciation for individual words and example sentences with `1.0x` standard speed and `0.75x` slow intensive listening mode.
-- ✏️ **Dictation Quiz & Streak System**: Interactive spelling quizzes for single units or all 15 scenario units with real-time scoring and streak counting.
+- ✏️ **Dictation Quiz & Streak System**: Interactive spelling quizzes across all 30 scenario units with real-time scoring and streak tracking.
 - ☁️ **Supabase Cloud Sync & Hybrid Storage**: Instant local storage updates backed by background cloud synchronization to Supabase PostgreSQL (`user_learned_words`).
 - 👁️ **Flashcards & Chinese Masking Mode**: One-click toggle to mask Chinese definitions for memory self-testing.
-- 🔍 **Instant Dual-Language Filter & Band Selector**: Real-time filtering by English/Chinese keywords, IPA phonetics, and IELTS Band levels (Band 6.0 ~ 8.5+).
+- 🔍 **Instant Dual-Language Filter & Band Selector**: Real-time filtering by English/Chinese keywords, IPA phonetics, and IELTS Band levels (Band 5.0 ~ 7.5+).
 
 ---
 
@@ -70,7 +87,7 @@ graph TD
 
     subgraph AI ["AI Data & Engineering Layer"]
         Gemini["Google Gemini 3.6 AI"]
-        DataPipeline["AI-Curated IELTS Dataset Pipeline"]
+        DataPipeline["AI-Curated 30-Unit IELTS Dataset Pipeline"]
     end
 
     subgraph Backend ["Cloud Backend - Supabase"]
@@ -79,17 +96,17 @@ graph TD
         RLS["Row Level Security"]
     end
 
-    Gemini -->|Dataset Generation & Validation| DataPipeline
-    DataPipeline -->|Structure unitsData.js| State
+    Gemini -->|"Dataset Generation & Validation"| DataPipeline
+    DataPipeline -->|"Structure 30-Unit unitsData.js"| State
 
-    UI -->|User Action / Filter| State
-    State -->|Calculate Node Layout| Engine
-    State -->|Trigger Audio Playback| TTS
-    State -->|Load Quiz Vocabulary| Quiz
+    UI -->|"User Action / Filter"| State
+    State -->|"Calculate Node Layout"| Engine
+    State -->|"Trigger Audio Playback"| TTS
+    State -->|"Load Quiz Vocabulary"| Quiz
     
-    State -->|Progress Change| LocalDB
-    State -->|Hybrid Cloud Sync| SupaClient
-    SupaClient -->|Upsert / Delete / Fetch| PgDB
+    State -->|"Progress Change"| LocalDB
+    State -->|"Hybrid Cloud Sync"| SupaClient
+    SupaClient -->|"Upsert / Delete / Fetch"| PgDB
     PgDB --- RLS
 ```
 
@@ -99,88 +116,38 @@ graph TD
 
 | Layer | Technology / Tools | Details & Responsibilities |
 | :--- | :--- | :--- |
-| **AI Co-Engineering** | Google Gemini 3.6 AI | Dataset curation across 15 units, phonetics validation, and AI pair programming. |
-| **Frontend Core** | HTML5, Vanilla JavaScript (ES6+), CSS3 | Zero framework dependency; ultra-fast initial page render (<50ms). |
-| **Visualization Engine** | Dynamic SVG & Bezier Curve Math | Real-time coordinate calculation and SVG path rendering (`d="M ... Q ... T ..."`). |
-| **Audio Synthesis** | Web Speech API (`window.speechSynthesis`) | Browser-native TTS pronunciation with customizable speech rate (`0.75x` / `1.0x`). |
-| **Cloud Database** | Supabase (PostgreSQL 15+) | Managed cloud PostgreSQL database integration via `@supabase/supabase-js`. |
-| **Client Storage** | Web Storage API (`localStorage`) | Client-side cache supporting offline access and instant UI responsiveness. |
-| **Deployment** | Cloudflare Pages | Edge network deployment for global ultra-low latency. |
+| **Frontend UI** | Vanilla HTML5 / CSS3 / ES6+ JavaScript | Zero build-step architecture, Glassmorphism UI, Responsive CSS Grid |
+| **Mindmap Rendering** | SVG Bezier Math Engine | Dynamic quadratic/cubic Bezier curves linking topic hubs to cards |
+| **Icon System** | Educational Vector SVG Icons | 1,148 custom, word-specific minimal flat vector art icons |
+| **Audio Engine** | Web Speech API (`SpeechSynthesis`) | Dual-speed (`1.0x` / `0.75x`) native pronunciation for words and sentences |
+| **Database & Cloud** | Supabase PostgreSQL & JS SDK v2 | Real-time cloud sync for user learning progress (`user_learned_words`) |
+| **State & Local Storage**| LocalStorage + Event-driven Bus | Offline-first data caching with fallback capabilities |
+| **Deployment** | Cloudflare Pages | Global Edge CDN hosting with zero latency |
+| **AI Co-Engineer** | Google Gemini 3.6 & Antigravity | AI Data Pipeline for 30 IELTS units & pair programming |
 
 ---
 
-## 🗄️ Database Design
+## 🚀 Quick Start
 
-The application implements a **Hybrid Dual-Storage Strategy**. User learning progress is stored locally in `localStorage` for zero-latency UI responsiveness and synced asynchronously with Supabase cloud database when connected.
-
-### PostgreSQL Schema (`user_learned_words`)
-
-```sql
--- Create Table for tracking user's learned vocabulary progress
-CREATE TABLE IF NOT EXISTS public.user_learned_words (
-    id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-    user_id TEXT NOT NULL,
-    word TEXT NOT NULL,
-    unit_id TEXT,
-    created_at TIMESTAMPTZ DEFAULT NOW(),
-
-    -- Unique constraint for idempotent upserts per user
-    CONSTRAINT unique_user_word UNIQUE (user_id, word)
-);
-
--- Index for fast lookup by user_id
-CREATE INDEX IF NOT EXISTS idx_user_learned_words_user_id 
-ON public.user_learned_words (user_id);
-```
-
----
-
-## 📂 Project Structure
-
-```
-ielts-vocab-mindmap/
-├── index.html         # Main HTML layout, controls, modals, and panel UI
-├── unitsData.js       # AI-curated 15 Scenario Units dataset (Words, IPA, examples & SVGs)
-├── script.js          # Controller: Bezier SVG engine, Web Speech TTS, Quiz & Supabase sync
-├── style.css          # Design system, glassmorphism UI, themes & responsive breakpoints
-├── .env.example       # Template for Supabase credentials & project configurations
-├── README.md          # Primary English Documentation
-├── README.zh-TW.md    # Traditional Chinese Documentation
-└── .gitignore         # Git ignore rules
-```
-
----
-
-## 🚀 Quick Start & Local Development
-
-### 🌐 Live Demo
-Experience the live application deployed on Cloudflare Pages:
-👉 **[https://ielts-vocab-mindmap.pages.dev/](https://ielts-vocab-mindmap.pages.dev/)**
-
-### Method 1: Instant Browser Preview (Zero Setup)
-Simply open `index.html` directly in your browser:
-
+### 1. Direct Local Execution (Zero Build Required)
+Simply clone the repository and open `index.html` in any web browser:
 ```bash
-# Open index.html in your default browser (macOS)
+git clone https://github.com/b1uewave/ielts-vocab-mindmap.git
+cd ielts-vocab-mindmap
 open index.html
 ```
 
-### Method 2: Local HTTP Server (Recommended for Developers)
-Running a local HTTP server prevents browser `file://` protocol security restrictions (CORS, origin headers, and network DevTools inspection):
-
+### 2. Local HTTP Web Server
+For testing Web Speech API and Supabase network requests:
 ```bash
-# Using Python 3 native HTTP server (Recommended)
-python3 -m http.server 8000
-
-# Or using Node.js npx serve
-npx serve .
+npx serve ./
+# or
+npx live-server ./
 ```
-Then visit `http://localhost:8000` in your browser.
+Then navigate to `http://localhost:3000` or `http://127.0.0.1:8080`.
 
 ---
 
-## 📝 License
+## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-© 2026 ielts-vocab-mindmap
+This project is licensed under the [MIT License](LICENSE).
