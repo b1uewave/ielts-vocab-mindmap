@@ -32,17 +32,19 @@
               <span class="brand-badge" id="brandBadge">IELTS Mindmap</span>
               <h1 class="page-title" id="pageTitle">Unit 1 Accommodation 住宿單字圖鑑</h1>
             </div>
-            <!-- Subject Switcher & User Profile Bar -->
-            <div class="subject-selector-box" title="切換學習科別與帳號登入">
+            <!-- User Profile Bar (Logged in user profile / Google login button) -->
+            <div class="user-profile-bar" id="userProfileBar"></div>
+          </div>
+
+          <div class="controls-group">
+            <!-- Subject Switcher Dropdown -->
+            <div class="subject-selector-box" title="切換學習科別">
               <span class="subject-select-icon">🎓</span>
               <select id="subjectSelect" class="subject-select-dropdown">
                 <option value="ielts">📚 雅思聽力高頻單字</option>
                 <option value="swe-interview">💻 軟體工程師英文面試 🔒</option>
               </select>
-              <!-- User Profile Bar / Google Login Button -->
-              <div class="user-profile-bar" id="userProfileBar"></div>
             </div>
-          </div>
 
             <!-- Role Track Filter (Visible when SWE Interview subject is active) -->
             <div class="role-filter-group" id="roleTrackFilterGroup" style="display: none;" title="依軟體工程領域篩選面試內容">
