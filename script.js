@@ -290,9 +290,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       userProfileBar.innerHTML = `
         <div class="user-badge-guest">
-          <span>👤 訪客模式</span>
+          <span class="guest-status-text">👤 訪客模式</span>
           <button class="btn-google-login" id="headerGoogleLoginBtn" title="點擊進行 Google 登入">
-            <span>🔑 登入</span>
+            <span>🔑 Google 帳號登入</span>
           </button>
         </div>
       `;

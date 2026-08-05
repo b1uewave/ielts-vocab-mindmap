@@ -1504,25 +1504,25 @@ body.flashcard-mode .vocab-card.flipped .word-cn::after {
   display: inline-flex;
   align-items: center;
   gap: 6px;
-  background: #ffffff;
-  border: 1.5px solid #cbd5e1;
-  color: #1e293b;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  border: 1.5px solid #1e40af;
+  color: #ffffff;
   padding: 6px 14px;
   border-radius: 20px;
   font-family: var(--font-heading);
-  font-size: 13px;
+  font-size: 13.5px;
   font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 3px 8px rgba(37, 99, 235, 0.25);
   transition: all 0.2s ease;
 }
 
 .btn-google-login:hover {
-  background: #f8fafc;
-  border-color: #0ea5e9;
-  color: #0284c7;
+  background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 100%);
+  border-color: #172554;
+  color: #ffffff;
   transform: translateY(-1px);
-  box-shadow: 0 4px 10px rgba(14, 165, 233, 0.15);
+  box-shadow: 0 5px 12px rgba(37, 99, 235, 0.35);
 }
 
 .user-logged-in-box {
