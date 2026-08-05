@@ -17,7 +17,18 @@ document.addEventListener('DOMContentLoaded', () => {
   let synth = window.speechSynthesis;
 
   // User Auth & Memory Tracking State
-  let currentUser = JSON.parse(localStorage.getItem('ielts_vocab_user')) || null;
+  let currentUser = null;
+  try {
+    const stored = localStorage.getItem('ielts_vocab_user');
+    if (stored && stored !== 'undefined' && stored !== 'null') {
+      const parsed = JSON.parse(stored);
+      if (parsed && typeof parsed === 'object' && (parsed.id || parsed.email || parsed.name)) {
+        currentUser = parsed;
+      }
+    }
+  } catch (e) {
+    currentUser = null;
+  }
   let currentModalWord = null;
 
   // Dictation Quiz State
